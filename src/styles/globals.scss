@@ -1,4 +1,5 @@
-@import './fonts';
+@use './fonts';
+@use './base/container.scss'; // Путь к _container.scss
 
 
 
