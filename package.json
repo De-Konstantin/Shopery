@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^1.9.0",
     "framer-motion": "^12.16.0",
-    "normalize.css": "^8.0.1",
+    "modern-css-reset": "^1.4.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",

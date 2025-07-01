@@ -1,9 +1,40 @@
-@use './fonts';
-@use './base/container.scss'; // Путь к _container.scss
+@use './base/fonts.scss';
+@import './base/variables.css';
 
-
+html,
+body {
+    height: 100%;
+}
 
 body {
     font-family: 'Segoe Script';
     font-size: 64px;
+}
+
+._container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+#root {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+
+    // Притискаємо footer
+    >main {
+        flex: 1 1 auto;
+        // height: 100%;
+    }
+
+    // Фікс для слайдерів
+    >* {
+        min-width: 0;
+    }
 }
