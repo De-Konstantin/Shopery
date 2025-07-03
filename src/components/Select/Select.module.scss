@@ -1,0 +1,34 @@
+.select {
+    all: unset;
+    /* сбросит почти все стили */
+    display: inline-block;
+    /* вернуть нужное отображение */
+    // width: 100%;
+    /* или нужную ширину */
+    box-sizing: border-box;
+    /* чтобы padding/width работали ожидаемо */
+    cursor: pointer;
+    /* курсор при наведении */
+    background-color: var(--white);
+    /* цвет фона */
+
+
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray6);
+
+    font-family: Poppins;
+    font-size: 12px;
+
+    line-height: 130%;
+
+    /* 15.6px */
+    span {
+        font-size: 7px;
+        color: var(--gray6);
+    }
+}

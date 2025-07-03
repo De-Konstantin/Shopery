@@ -1,0 +1,23 @@
+.storeAddress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray6);
+    font-size: 12px;
+
+    span {
+        font-size: 18px;
+    }
+
+    .link {
+
+        color: var(--gray6);
+        text-decoration: none;
+        // font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
