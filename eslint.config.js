@@ -18,6 +18,7 @@ export default defineConfig([
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       'react/react-in-jsx-scope': 'off', // отключаем правило
+      'react/prop-types': 'off', // отключаем правило для проптайпов
     },
   },
 ]);

@@ -12,13 +12,31 @@
     background-color: var(--white);
     /* цвет фона */
 
+    // background: transparent;
+    // color: inherit;
+    // border: none;
 
+    // appearance: none;
+    // padding: 12px;
+    option {
+
+        // background: #0F172A;
+        // display: flex;
+        text-align: center;
+
+    }
+
+    appearance: none;
+    // min-width: 34px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
+
 
 .label {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     color: var(--gray6);
 
     font-family: Poppins;
