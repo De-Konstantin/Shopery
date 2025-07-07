@@ -15,7 +15,7 @@ function HeaderMiddle() {
         <div className={styles.headerMiddle__controls}>
           <WishlistButton count={5} />
           <div className={styles.headerMiddle__line}></div>
-          <CartButton count={3} totalAmount={53.2} />
+          <CartButton count={8} totalAmount={153.2} />
         </div>
       </div>
     </div>

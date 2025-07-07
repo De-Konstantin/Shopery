@@ -5,7 +5,7 @@ import logoImg from '../../assets/images/logo.svg';
 
 function Logo() {
   return (
-    <Link to="/" className={styles.logo}>
+    <Link to="/dsf" className={styles.logo}>
       {/* Если есть картинка: */}
       <img src={logoImg} alt="Logo-img" />
       {/* Если текстовый: */}
