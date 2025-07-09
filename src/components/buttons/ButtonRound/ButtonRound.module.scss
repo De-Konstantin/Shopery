@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     padding: 2px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -88,5 +88,17 @@
 
         color: var(--white);
 
+    }
+}
+
+.social {
+    background-color: transparent;
+    color: var(--gray9);
+    border: none;
+    font-size: 18px;
+
+    &:hover {
+        background-color: var(--primary);
+        color: var(--white);
     }
 }

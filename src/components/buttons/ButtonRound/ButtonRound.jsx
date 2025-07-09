@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './ButtonRound.module.scss';
 
 // size: 'small', 'medium', 'large';
-// type: 'cart', 'bg', 'link', 'close'
+// type: 'cart', 'bg', 'link', 'close', social
 function ButtonRound({
-  type = 'bg',
+  type = 'social',
   size = 'medium',
   children,
   ...props
