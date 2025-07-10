@@ -6,6 +6,7 @@ import styles from './ButtonRound.module.scss';
 function ButtonRound({
   type = 'social',
   size = 'medium',
+  color = 'light',
   children,
   ...props
 }) {
@@ -13,6 +14,7 @@ function ButtonRound({
     styles.buttonRound,
     styles[type],
     styles[size],
+    styles[color],
   ].join(' ');
 
   return (

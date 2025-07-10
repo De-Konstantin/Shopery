@@ -102,3 +102,21 @@
         color: var(--white);
     }
 }
+
+.dark {
+
+
+
+    color: var(--gray3);
+
+
+    &:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+
+    // &:active {
+    //     background-color: var(--hard-primary);
+    //     color: var(--white);
+    // }
+}
