@@ -186,7 +186,8 @@
             text-transform: capitalize;
             list-style: none;
             font-weight: 500;
-            gap: 32px;
+            gap: 8px 32px;
+            flex-wrap: wrap;
 
             li {
                 a {

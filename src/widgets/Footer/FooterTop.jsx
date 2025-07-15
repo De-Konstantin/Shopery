@@ -7,7 +7,7 @@ function FooterTop() {
   return (
     <div className={styles.FooterTop}>
       <div className={`${styles.FooterTop__container} _container`}>
-        <div className={styles.FooterTop__content}>
+        <div className={styles.FooterTop__left}>
           <span className="icon-Envelope"></span>
           <div className={styles.FooterTop__text}>
             <h3>Subcribe our Newsletter</h3>
@@ -16,20 +16,22 @@ function FooterTop() {
             </p>
           </div>
         </div>
-        <SubscribeForm />
-        <div className={styles.FooterTop__media}>
-          <ButtonRound color="dark">
-            <span className="icon-fb"></span>
-          </ButtonRound>
-          <ButtonRound color="dark">
-            <span className="icon-tw"></span>
-          </ButtonRound>
-          <ButtonRound color="dark">
-            <span className="icon-pi"></span>
-          </ButtonRound>
-          <ButtonRound color="dark">
-            <span className="icon-inst"></span>
-          </ButtonRound>
+        <div className={styles.FooterTop__right}>
+          <SubscribeForm />
+          <div className={styles.FooterTop__socials}>
+            <ButtonRound color="dark">
+              <span className="icon-fb"></span>
+            </ButtonRound>
+            <ButtonRound color="dark">
+              <span className="icon-tw"></span>
+            </ButtonRound>
+            <ButtonRound color="dark">
+              <span className="icon-pi"></span>
+            </ButtonRound>
+            <ButtonRound color="dark">
+              <span className="icon-inst"></span>
+            </ButtonRound>
+          </div>
         </div>
       </div>
     </div>

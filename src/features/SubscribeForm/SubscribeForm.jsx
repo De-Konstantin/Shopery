@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from './SubscribeForm.module.css';
+import styles from './SubscribeForm.module.scss';
+import Button from '../../components/buttons/Button/Button';
 
 function SubscribeForm() {
   const [email, setEmail] = useState('');
@@ -21,9 +22,7 @@ function SubscribeForm() {
         required
         className={styles.input}
       />
-      <button type="submit" className={styles.button}>
-        Subscribe
-      </button>
+      <Button>Subscribe</Button>
     </form>
   );
 }
