@@ -1,0 +1,135 @@
+.createAccount {
+    &__container {
+        height: 100%;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .form {
+            margin: 0 auto;
+            max-width: 520px;
+            width: 100%;
+            padding: 24px;
+            padding-bottom: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--gray05);
+            background: var(--white);
+            box-shadow: 0px 0px 56px 0px rgba(0, 38, 3, 0.08);
+        }
+
+        .title {
+
+            font-size: 32px;
+
+            font-weight: 600;
+            line-height: 120%;
+            /* 38.4px */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input {
+
+            padding: 14px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--gray1);
+            background: var(--white);
+            width: 100%;
+            outline: none;
+            background: var(--white);
+            margin-bottom: 4px;
+
+            &:focus {
+
+
+
+                border-color: var(--gray6);
+                box-shadow: 0px 0px 0px 2px rgba(0, 38, 3, 0.08);
+            }
+        }
+
+        .passwordWrapper {
+            position: relative;
+            margin-bottom: 20px;
+
+            .input {
+                padding-right: 40px; // space for the show password button
+            }
+        }
+
+        .showPassword {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+        }
+
+
+
+        .button {
+            width: 100%;
+            padding: 14px 0;
+            background-color: var(--primary);
+
+            color: var(--white);
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-bottom: 20px;
+
+            &:hover {
+                background-color: var(--hard-primary);
+            }
+
+
+        }
+
+        .login {
+            color: var(--gray6);
+            text-align: center;
+
+            a {
+                font-weight: 500;
+
+                color: var(--gray9);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--primary);
+                }
+            }
+        }
+
+        .error {
+            color: var(--danger);
+            font-size: 14px;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+    }
+}

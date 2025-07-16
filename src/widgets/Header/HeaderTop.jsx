@@ -3,6 +3,7 @@ import styles from './Header.module.scss';
 import Adress from '../../components/Adress/Adress';
 import ChangeCurrency from '../../features/ChangeCurrency/ChangeCurrency';
 import ChangeLanguage from '../../features/ChangeLang/ChangeLang';
+import { Link } from 'react-router-dom';
 function HeaderTop() {
   return (
     <div className={styles.headerTop}>
@@ -13,13 +14,16 @@ function HeaderTop() {
           <ChangeCurrency />
           <ChangeLanguage />
           <span>|</span>
-          <a href="/login" className={styles.headerTop__link}>
+          <Link to="/login" className={styles.headerTop__link}>
             Sign In
-          </a>
+          </Link>
           <span>/</span>
-          <a href="/register" className={styles.headerTop__link}>
-            Sign up
-          </a>
+          <Link
+            to="/CreateAccount"
+            className={styles.headerTop__link}
+          >
+            Create Account
+          </Link>
         </div>
       </div>
     </div>
