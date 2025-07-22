@@ -1,40 +1,56 @@
 import React, { useState } from 'react';
 import styles from './SignIn.module.scss';
 import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+// ✅ Определяем схему валидации
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Email is required'),
+  password: Yup.string()
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
+});
 
 function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    // watch,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ email, password, rememberMe });
-    // Тут твоя логика входа
+  const onSubmit = (data) => {
+    console.log('Form Data:', data);
+    alert('Login successfully!');
   };
 
+  //   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  //   const [rememberMe, setRememberMe] = useState(false);
+
   return (
-    <page className={`${styles.signIn__container} _container`}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+    <section className={`${styles.signIn__container} _container`}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.title}>Sign In</h2>
 
         <input
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          {...register('email')}
           className={styles.input}
         />
-
+        <p className={styles.error}>{errors.email?.message}</p>
         <div className={styles.passwordWrapper}>
           <input
             type={showPassword ? 'text' : 'password'}
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            {...register('password')}
             className={styles.input}
           />
           <button
@@ -45,13 +61,14 @@ function SignIn() {
             <span className="icon-eye"></span>
           </button>
         </div>
-
+        <p className={styles.error}>{errors.password?.message}</p>
         <div className={styles.options}>
           <label>
             <input
               type="checkbox"
-              checked={rememberMe}
-              onChange={() => setRememberMe(!rememberMe)}
+              //   checked={rememberMe}
+              {...register('rememberMe')}
+              //   onChange={() => setRememberMe(!rememberMe)}
             />{' '}
             Remember me
           </label>
@@ -68,7 +85,7 @@ function SignIn() {
           Don’t have account? <Link to="/register">Register</Link>
         </p>
       </form>
-    </page>
+    </section>
   );
 }
 

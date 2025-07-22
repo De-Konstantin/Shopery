@@ -195,8 +195,12 @@
                     text-decoration: none;
                     transition: color 0.3s ease;
 
+
+                    // :global(.active) {
+      //     color: var(--white);
+      // }
                     &:hover {
-                        color: var(--white);
+                        color: var(--primary);
                     }
                 }
             }

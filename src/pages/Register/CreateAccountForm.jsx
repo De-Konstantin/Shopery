@@ -37,8 +37,8 @@ function CreateAccountForm() {
     console.log('Form Data:', data);
     alert('Account created successfully!');
   };
-
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
 
   return (
     <page className={`${styles.createAccount__container} _container`}>
@@ -65,16 +65,26 @@ function CreateAccountForm() {
           className={styles.input}
         />
         <p className={styles.error}>{errors.email?.message}</p>
-        <input
-          type="password"
-          placeholder="Password"
-          {...register('password')}
-          className={styles.input}
-        />
+        <div className={styles.passwordWrapper}>
+          {' '}
+          <input
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Password"
+            {...register('password')}
+            className={styles.input}
+          />
+          <button
+            type="button"
+            className={styles.showPassword}
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            <span className="icon-eye"></span>
+          </button>{' '}
+        </div>
         <p className={styles.error}>{errors.password?.message}</p>
         <div className={styles.passwordWrapper}>
           <input
-            type="password"
+            type={showConfirmPass ? 'text' : 'password'}
             placeholder="Confirm Password"
             {...register('confirmPassword')}
             className={styles.input}
@@ -82,7 +92,7 @@ function CreateAccountForm() {
           <button
             type="button"
             className={styles.showPassword}
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowConfirmPass(!showPassword)}
           >
             <span className="icon-eye"></span>
           </button>{' '}

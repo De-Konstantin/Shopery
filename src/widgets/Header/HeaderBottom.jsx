@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
 
 function HeaderBottom() {
@@ -34,28 +34,59 @@ function HeaderBottom() {
           )}
         </div>
         <nav className={styles.headerBottom__mainNav}>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/shop">Shop</Link>
-              </li>
-              <li>
-                <Link to="/pages">Pages</Link>
-              </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Us</Link>
-              </li>
-            </ul>
-          </nav>
+          <ul>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'headerMenuLink' : ''
+                }
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'headerMenuLink' : ''
+                }
+                to="/shop"
+              >
+                Shop
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'headerMenuLink' : ''
+                }
+                to="/blog"
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'headerMenuLink' : ''
+                }
+                to="/about"
+              >
+                About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'headerMenuLink' : ''
+                }
+                to="/contact"
+              >
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
         </nav>
 
         <div className={styles.headerBottom__phoneNumber}>
