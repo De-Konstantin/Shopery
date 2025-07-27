@@ -1,0 +1,24 @@
+.logos {
+    background: var(--white);
+
+    &__container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: flex;
+        gap: 6px;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {}
+
+    &__img {}
+
+    &__divider {
+        width: 1px;
+        height: 32px;
+        background: var(--gray3);
+
+    }
+}

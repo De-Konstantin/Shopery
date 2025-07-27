@@ -67,3 +67,17 @@
         margin-bottom: 32px;
     }
 }
+
+:global(.swiper-pagination-bullet) {
+    background-color: var(--green-gray6) !important;
+    width: 8px !important;
+    height: 8px;
+
+}
+
+:global(.swiper-pagination-bullet-active) {
+    background-color: var(--primary) !important;
+    border-radius: 50px !important;
+    width: 16px !important;
+    height: 8px !important;
+}
