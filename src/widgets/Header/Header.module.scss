@@ -99,6 +99,7 @@
 
     &__sidebar {
         position: absolute;
+        z-index: 200;
         // bottom: -100px;
         // bottom: 0;
         top: calc(100% + 10px);
@@ -197,8 +198,8 @@
 
 
                     // :global(.active) {
-      //     color: var(--white);
-      // }
+                    //     color: var(--white);
+                    // }
                     &:hover {
                         color: var(--primary);
                     }

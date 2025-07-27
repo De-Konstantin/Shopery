@@ -1,0 +1,69 @@
+.HeroSlider {
+    border-radius: 8px;
+    background: var(--gray05);
+    max-width: 1520px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+
+    img {
+        width: 50%;
+    }
+
+    &__slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 90px;
+        padding-top: 116px;
+    }
+
+    &__content {
+        // flex: 50%;
+    }
+
+    &__subtitle {
+        color: var(--primary);
+
+        font-weight: 500;
+        line-height: 100%;
+        /* 14px */
+        letter-spacing: 0.28px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        color: var(--gray9);
+
+        font-size: 72px;
+
+        font-weight: 600;
+        margin-bottom: 28px;
+
+        @media (max-width: 991px) {
+            font-size: 48px;
+        }
+
+
+    }
+
+    &__sale {
+        color: var(--gray9);
+        font-size: 32px;
+        margin-bottom: 12px;
+
+        span {
+            color: var(--warning);
+        }
+
+    }
+
+    &__text {
+        color: var(--gray5);
+
+
+        line-height: 150%;
+        /* 21px */
+        margin-bottom: 32px;
+    }
+}
