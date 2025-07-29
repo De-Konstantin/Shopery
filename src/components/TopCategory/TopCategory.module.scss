@@ -1,0 +1,116 @@
+.topCategory {
+
+    &__container {
+        padding-top: 60px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: space-between;
+        margin-bottom: 32px;
+    }
+
+    &__title {
+
+        font-size: 32px;
+
+        font-weight: 600;
+
+    }
+
+    &__view {
+        color: var(--primary);
+
+        font-size: 16px;
+
+        font-weight: 500;
+        line-height: 150%;
+        transition: color 0.3s ease-in-out;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover {
+            color: var(--soft-primary);
+
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-evenly;
+    }
+
+    &__body {}
+
+    &__item {}
+
+    &__itemTitle {
+
+        text-align: center;
+
+        font-size: 18px;
+
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: capitalize;
+
+        @media (max-width: 991px) {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        max-width: 180px;
+        height: 100%;
+        padding-top: 16px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        border-radius: 5px;
+        border: 1px solid var(--gray1);
+        background: var(--white);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+
+        &:hover {
+            border-color: var(--hard-primary);
+            border-radius: 5px;
+
+            /* Hover Shadow */
+            box-shadow: 0 0 12px 0 rgba(32, 181, 38, 0.32);
+            transform: translate(-2px, -2px);
+
+            h3 {
+                color: var(--hard-primary);
+            }
+        }
+
+        @media (max-width: 991px) {
+            max-width: 120px;
+        }
+    }
+}

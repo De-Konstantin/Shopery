@@ -1,0 +1,12 @@
+export { default as bakery } from './bakery.png';
+export { default as bakingNeeds } from './BakingNeeds.png';
+export { default as beautyHealth } from './BeautyHealth.png';
+export { default as beverages } from './Beverages.png';
+export { default as cooking } from './Cooking.png';
+export { default as diabeticFood } from './DiabeticFood.png';
+export { default as freshFruit } from './freshFruit.png';
+export { default as freshVegetables } from './FreshVegetables.png';
+export { default as MeatFish } from './MeatFish.png';
+export { default as oil } from './Oil.png';
+export { default as dishDetergents } from './DishDetergents.png';
+export { default as snacks } from './Snacks.png';

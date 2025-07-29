@@ -21,7 +21,7 @@ function HeroSlider() {
           navigation
           loop={true}
           autoplay={{
-            delay: 300000000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}

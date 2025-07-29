@@ -4,13 +4,14 @@ import ButtonRound from '../components/buttons/ButtonRound/ButtonRound';
 import SubcribeBanner from '../components/SubcribeBanner/SubcribeBanner';
 import Hero from '../components/Hero/Hero';
 import Logos from '../components/Logos/Logos';
+import TopCategory from '../components/TopCategory/TopCategory';
 
 function Home() {
   return (
     <div>
       <span className="icon-apple">
         <Hero />
-        gjhgj
+        <TopCategory />
         <Button variant="ghost" size="small">
           hchfchgchg
         </Button>
