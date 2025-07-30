@@ -12,9 +12,7 @@ function Home() {
       <span className="icon-apple">
         <Hero />
         <TopCategory />
-        <Button variant="ghost" size="small">
-          hchfchgchg
-        </Button>
+        <Button variant="ghost" size="small"></Button>
         <ButtonRound>
           <span className="icon-heart"></span>
         </ButtonRound>
