@@ -15,7 +15,7 @@ import {
 
 const categories = [
   {
-    name: 'freash Fruits',
+    name: 'Fresh Fruit',
     img: freshFruit,
     path: '/category/freshFruit',
   },
@@ -24,13 +24,14 @@ const categories = [
     img: bakery,
     path: '/category/bakery',
   },
+
   {
-    name: 'baking Needs',
+    name: 'baking',
     img: bakingNeeds,
-    path: '/category/bakingNeeds',
+    path: '/category/baking',
   },
   {
-    name: 'beauty & Health',
+    name: 'beauty & health',
     img: beautyHealth,
     path: '/category/beautyHealth',
   },
