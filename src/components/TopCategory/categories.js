@@ -48,12 +48,12 @@ const categories = [
   {
     name: 'diabetic Food',
     img: diabeticFood,
-    path: '/category/diabeticFood',
+    path: '/category/diabetic',
   },
   {
     name: 'dish Detergents',
     img: dishDetergents,
-    path: '/category/dishDetergent',
+    path: '/category/detergent',
   },
   {
     name: 'snacks',
@@ -68,7 +68,7 @@ const categories = [
   {
     name: 'Meat Fish',
     img: MeatFish,
-    path: '/category/MeatFish',
+    path: '/category/fish',
   },
   {
     name: 'fresh Vegetables',
