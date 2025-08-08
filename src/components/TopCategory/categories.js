@@ -15,7 +15,7 @@ import {
 
 const categories = [
   {
-    name: 'Fresh Fruit',
+    name: 'fresh fruit',
     img: freshFruit,
     path: '/category/freshFruit',
   },
@@ -46,12 +46,12 @@ const categories = [
     path: '/category/cooking',
   },
   {
-    name: 'diabetic Food',
+    name: 'diabetic food',
     img: diabeticFood,
     path: '/category/diabetic',
   },
   {
-    name: 'dish Detergents',
+    name: 'dish detergents',
     img: dishDetergents,
     path: '/category/detergent',
   },
@@ -66,14 +66,14 @@ const categories = [
     path: '/category/oil',
   },
   {
-    name: 'Meat Fish',
+    name: 'meat fish',
     img: MeatFish,
     path: '/category/fish',
   },
   {
-    name: 'fresh Vegetables',
+    name: 'fresh vegetables',
     img: freshVegetables,
-    path: '/category/freshVegetables',
+    path: '/category/vegetables',
   },
 ];
 
