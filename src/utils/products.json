@@ -3,9 +3,9 @@
     "id": 1,
     "productName": "Sainsbury's Extra Large Rainbow Cake",
     "image": [
-      "../assets/images/products/bakery/1.jpg",
-      "../assets/images/products/bakery/1-2.jpg",
-      "../assets/images/products/bakery/1-3.jpg"
+      "/images/products/bakery/1.jpg",
+      "/images/products/bakery/1-2.jpg",
+      "/images/products/bakery/1-3.jpg"
     ],
     "category": "Bakery",
     "tags": "bakery, cake, rainbow",
@@ -20,7 +20,7 @@
   {
     "id": 2,
     "productName": "Celebration Cake Cubes",
-    "image": ["../assets/images/products/bakery/2.jpg"],
+    "image": ["/images/products/bakery/2.jpg"],
     "category": "Bakery",
     "tags": "bakery, cake, celebration",
     "priceOrigin": 15.99,
@@ -34,7 +34,7 @@
   {
     "id": 3,
     "productName": "Sainsbury's Under the Sea Gingerbread",
-    "image": ["../assets/images/products/bakery/3.jpg"],
+    "image": ["/images/products/bakery/3.jpg"],
     "category": "Bakery",
     "tags": " bakery, gingerbread, sea",
     "priceOrigin": 1.0,
@@ -48,7 +48,7 @@
   {
     "id": 4,
     "productName": "Sainsbury's Lemon Tart, Taste the Difference",
-    "image": ["../assets/images/products/bakery/4.jpg"],
+    "image": ["/images/products/bakery/4.jpg"],
     "category": "Bakery",
     "tags": "bakery, tart, lemon",
     "priceOrigin": 2.9,
@@ -62,7 +62,7 @@
   {
     "id": 5,
     "productName": "Plant Pioneers Chocolate Cake 390g ",
-    "image": ["../assets/images/products/bakery/5.jpg"],
+    "image": ["/images/products/bakery/5.jpg"],
     "category": " Bakery",
     "tags": "bakery, cake, chocolate",
     "priceOrigin": 3.75,
@@ -76,7 +76,7 @@
   {
     "id": 7,
     "productName": "Sainsbury's Eccles Cakes x2",
-    "image": ["../assets/images/products/bakery/7.jpg"],
+    "image": ["/images/products/bakery/7.jpg"],
     "category": "Bakery",
     "tags": " bakery, cakes, eccles",
     "priceOrigin": 1.75,
@@ -90,7 +90,7 @@
   {
     "id": 6,
     "productName": " Sainsbury's Victoria Sponge Muffins, Taste the Difference x2",
-    "image": ["../assets/images/products/bakery/6.jpg"],
+    "image": ["/images/products/bakery/6.jpg"],
     "category": "Bakery",
     "tags": " bakery, muffins, victoria sponge",
     "priceOrigin": 2.0,
@@ -105,9 +105,9 @@
     "id": 8,
     "productName": "Sainsbury's Two Tier Vanilla Naked Cake 2.19kg",
     "image": [
-      "../assets/images/products/bakery/8.jpg",
-      "../assets/images/products/bakery/8-2.jpg",
-      "../assets/images/products/bakery/8-3.jpg"
+      "/images/products/bakery/8.jpg",
+      "/images/products/bakery/8-2.jpg",
+      "/images/products/bakery/8-3.jpg"
     ],
     "category": "Bakery",
     "tags": " bakery, cake, vanilla",
@@ -122,7 +122,7 @@
   {
     "id": 9,
     "productName": "Sainsbury's Pastel De Nata x4 ",
-    "image": ["../assets/images/products/bakery/9.jpg"],
+    "image": ["/images/products/bakery/9.jpg"],
     "category": "Bakery",
     "tags": "bakery, nata, pastel",
     "priceOrigin": 2.55,
@@ -136,7 +136,7 @@
   {
     "id": 10,
     "productName": " Apple Turnovers x2",
-    "image": ["../assets/images/products/bakery/10.jpg"],
+    "image": ["/images/products/bakery/10.jpg"],
     "category": "Bakery",
     "tags": "bakery, turnovers, apple",
     "priceOrigin": 1.75,
@@ -150,7 +150,7 @@
   {
     "id": 11,
     "productName": "Danish Pastry Bramley Apple Lattices x2",
-    "image": ["../assets/images/products/bakery/11.jpg"],
+    "image": ["/images/products/bakery/11.jpg"],
     "category": "Bakery",
     "tags": "bakery, pastry, apple",
     "priceOrigin": 1.75,
@@ -164,7 +164,7 @@
   {
     "id": 12,
     "productName": "Fresh Custard Slices x2 180g",
-    "image": ["../assets/images/products/bakery/12.jpg"],
+    "image": ["/images/products/bakery/12.jpg"],
     "category": "Bakery",
     "tags": "bakery, custard, slices",
     "priceOrigin": 1.85,
@@ -178,7 +178,7 @@
   {
     "id": 13,
     "productName": "Cappuccino Coffee Sponge Swiss Roll Cake",
-    "image": ["../assets/images/products/bakery/13.jpg"],
+    "image": ["/images/products/bakery/13.jpg"],
     "category": "Bakery",
     "tags": "bakery, cake, swiss roll",
     "priceOrigin": 1.75,
@@ -192,7 +192,7 @@
   {
     "id": 14,
     "productName": "Strawberry Jam & Cream Victoria Sponge 340g",
-    "image": ["../assets/images/products/bakery/14.jpg"],
+    "image": ["/images/products/bakery/14.jpg"],
     "category": "Bakery",
     "tags": "bakery, sponge, victoria",
     "priceOrigin": 3.35,
@@ -206,7 +206,7 @@
   {
     "id": 15,
     "productName": "Strawberry Jam & Cream Horns 98g",
-    "image": ["../assets/images/products/bakery/15.jpg"],
+    "image": ["/images/products/bakery/15.jpg"],
     "category": "Bakery",
     "tags": "bakery, horns, strawberry",
     "priceOrigin": 2.0,
@@ -220,7 +220,7 @@
   {
     "id": 16,
     "productName": " Pain Au Chocolat x2",
-    "image": ["../assets/images/products/bakery/16.jpg"],
+    "image": ["/images/products/bakery/16.jpg"],
     "category": "Bakery",
     "tags": "bakery, chocolate, pain au chocolat",
     "priceOrigin": 1.75,
@@ -234,7 +234,7 @@
   {
     "id": 17,
     "productName": "Mini Chocolate Chip Muffins x12 ",
-    "image": ["../assets/images/products/bakery/17.jpg"],
+    "image": ["/images/products/bakery/17.jpg"],
     "category": "Bakery",
     "tags": "bakery, muffins, chocolate chip",
     "priceOrigin": 7.0,
@@ -248,7 +248,7 @@
   {
     "id": 18,
     "productName": " Danish Pastry Cinnamon Whirls x2 ",
-    "image": ["../assets/images/products/bakery/18.jpg"],
+    "image": ["/images/products/bakery/18.jpg"],
     "category": "Bakery",
     "tags": "bakery, pastry, cinnamon",
     "priceOrigin": 1.75,
@@ -262,7 +262,7 @@
   {
     "id": 19,
     "productName": " Vanilla Flavoured Danish Crown x2",
-    "image": ["../assets/images/products/bakery/19.jpg"],
+    "image": ["/images/products/bakery/19.jpg"],
     "category": "Bakery",
     "tags": "bakery, danish, vanilla",
     "priceOrigin": 1.75,
@@ -276,7 +276,7 @@
   {
     "id": 20,
     "productName": " Zesty Lime Curd Cake",
-    "image": ["../assets/images/products/bakery/20.jpg"],
+    "image": ["/images/products/bakery/20.jpg"],
     "category": "Bakery",
     "tags": "bakery, cake, lime",
     "priceOrigin": 3.5,
@@ -290,7 +290,7 @@
   {
     "id": 21,
     "productName": " Pain Aux Raisins x2 ",
-    "image": ["../assets/images/products/bakery/21.jpg"],
+    "image": ["/images/products/bakery/21.jpg"],
     "category": "Bakery",
     "tags": "bakery, raisins, pain aux raisins",
     "priceOrigin": 3.75,
@@ -304,7 +304,7 @@
   {
     "id": 22,
     "productName": "  Danish Pastry Raisin Whirls x2",
-    "image": ["../assets/images/products/bakery/22.jpg"],
+    "image": ["/images/products/bakery/22.jpg"],
     "category": "Bakery",
     "tags": "bakery, pastry, raisin",
     "priceOrigin": 2.45,
@@ -318,7 +318,7 @@
   {
     "id": 23,
     "productName": " Triple Chocolate Muffins x4 ",
-    "image": ["../assets/images/products/bakery/23.jpg"],
+    "image": ["/images/products/bakery/23.jpg"],
     "category": "Bakery",
     "tags": "bakery, muffins, chocolate",
     "priceOrigin": 1.8,
@@ -332,7 +332,7 @@
   {
     "id": 24,
     "productName": "Raspberry Swiss Roll Cake ",
-    "image": ["../assets/images/products/bakery/24.jpg"],
+    "image": ["/images/products/bakery/24.jpg"],
     "category": "Bakery",
     "tags": "bakery, cake, swiss roll",
     "priceOrigin": 1.75,
@@ -346,7 +346,7 @@
   {
     "id": 25,
     "productName": "Danish Maple & Pecan Plait x2 ",
-    "image": ["../assets/images/products/bakery/25.jpg"],
+    "image": ["/images/products/bakery/25.jpg"],
     "category": "Bakery",
     "tags": "bakery, danish, maple, pecan",
     "priceOrigin": 1.65,
@@ -360,7 +360,7 @@
   {
     "id": 26,
     "productName": " All Butter Croissants x2",
-    "image": ["../assets/images/products/bakery/26.jpg"],
+    "image": ["/images/products/bakery/26.jpg"],
     "category": "Bakery",
     "tags": "bakery, croissants, butter",
     "priceOrigin": 1.75,
@@ -374,7 +374,7 @@
   {
     "id": 27,
     "productName": " Apple Turnovers 2x77g",
-    "image": ["../assets/images/products/bakery/27.jpg"],
+    "image": ["/images/products/bakery/27.jpg"],
     "category": "Bakery",
     "tags": "bakery, turnovers, apple",
     "priceOrigin": 2,
@@ -388,7 +388,7 @@
   {
     "id": 28,
     "productName": " Chocolate Chip Muffins x4",
-    "image": ["../assets/images/products/bakery/28.jpg"],
+    "image": ["/images/products/bakery/28.jpg"],
     "category": "Bakery",
     "tags": "bakery, muffins, chocolate chip",
     "priceOrigin": 1.8,
@@ -402,7 +402,7 @@
   {
     "id": 29,
     "productName": "Blueberry Muffins x4 ",
-    "image": ["../assets/images/products/bakery/29.jpg"],
+    "image": ["/images/products/bakery/29.jpg"],
     "category": "Bakery",
     "tags": "bakery, muffins, blueberry",
     "priceOrigin": 1.8,
@@ -416,7 +416,7 @@
   {
     "id": 30,
     "productName": " Belgian Chocolate Eclairs 4x34g",
-    "image": ["../assets/images/products/bakery/30.jpg"],
+    "image": ["/images/products/bakery/30.jpg"],
     "category": "Bakery",
     "tags": "bakery, eclairs, chocolate",
     "priceOrigin": 2.25,
@@ -430,7 +430,7 @@
   {
     "id": 31,
     "productName": " Egg Custard Tarts 4 x 81g ",
-    "image": ["../assets/images/products/bakery/31.jpg"],
+    "image": ["/images/products/bakery/31.jpg"],
     "category": "Bakery",
     "tags": "bakery, tarts, custard",
     "priceOrigin": 7.5,
@@ -444,7 +444,7 @@
   {
     "id": 32,
     "productName": " Raspberry Ripple Cake, Limited Edition, Taste the Difference 955g ",
-    "image": ["../assets/images/products/bakery/32.jpg"],
+    "image": ["/images/products/bakery/32.jpg"],
     "category": "Bakery",
     "tags": "bakery, cake, raspberry",
     "priceOrigin": 18.0,
@@ -458,7 +458,7 @@
   {
     "id": 33,
     "productName": " Oranges",
-    "image": ["../assets/images/products/fruits/1.jpg"],
+    "image": ["/images/products/fruits/1.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, oranges, citrus",
     "priceOrigin": 2.3,
@@ -472,7 +472,7 @@
   {
     "id": 34,
     "productName": "Braeburn Apple Single ",
-    "image": ["../assets/images/products/fruits/2.jpg"],
+    "image": ["/images/products/fruits/2.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, apple, braeburn",
     "priceOrigin": 0.3,
@@ -486,7 +486,7 @@
   {
     "id": 35,
     "productName": "Figs 140g ",
-    "image": ["../assets/images/products/fruits/3.jpg"],
+    "image": ["/images/products/fruits/3.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, figs, fresh",
     "priceOrigin": 2,
@@ -500,7 +500,7 @@
   {
     "id": 36,
     "productName": "Large Kiwi Fruit Single ",
-    "image": ["../assets/images/products/fruits/4.jpg"],
+    "image": ["/images/products/fruits/4.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, kiwi, fresh",
     "priceOrigin": 0.5,
@@ -514,7 +514,7 @@
   {
     "id": 37,
     "productName": "Watermelon Fingers",
-    "image": ["../assets/images/products/fruits/5.jpg"],
+    "image": ["/images/products/fruits/5.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, watermelon, fresh",
     "priceOrigin": 4,
@@ -528,7 +528,7 @@
   {
     "id": 38,
     "productName": "Granny Smith Apples ",
-    "image": ["../assets/images/products/fruits/6.jpg"],
+    "image": ["/images/products/fruits/6.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, apple, granny smith",
     "priceOrigin": 2,
@@ -542,7 +542,7 @@
   {
     "id": 39,
     "productName": " Mango, Pineapple & Passion Fruit ",
-    "image": ["../assets/images/products/fruits/7.jpg"],
+    "image": ["/images/products/fruits/7.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, mango, pineapple, passion fruit",
     "priceOrigin": 2.5,
@@ -556,7 +556,7 @@
   {
     "id": 40,
     "productName": "Nectarine Family Punnet",
-    "image": ["../assets/images/products/fruits/8.jpg"],
+    "image": ["/images/products/fruits/8.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, nectarine, family",
     "priceOrigin": 2.2,
@@ -570,7 +570,7 @@
   {
     "id": 41,
     "productName": "Mango 120g ",
-    "image": ["../assets/images/products/fruits/9.jpg"],
+    "image": ["/images/products/fruits/9.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, mango, fresh",
     "priceOrigin": 1.4,
@@ -584,7 +584,7 @@
   {
     "id": 42,
     "productName": " ",
-    "image": ["../assets/images/products/vegetables/.jpg"],
+    "image": ["/images/products/vegetables/.jpg"],
     "category": "fresh vegetables",
     "tags": "",
     "priceOrigin": 1,
@@ -598,7 +598,7 @@
   {
     "id": 43,
     "productName": " Plum Punnet",
-    "image": ["../assets/images/products/fruits/10.jpg"],
+    "image": ["/images/products/fruits/10.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, plum, punnet",
     "priceOrigin": 1.29,
@@ -612,7 +612,7 @@
   {
     "id": 44,
     "productName": "  Conference Pear",
-    "image": ["../assets/images/products/fruits/11.jpg"],
+    "image": ["/images/products/fruits/11.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, pear, conference",
     "priceOrigin": 1,
@@ -626,7 +626,7 @@
   {
     "id": 45,
     "productName": " Ripe & Ready Kiwi",
-    "image": ["../assets/images/products/fruits/12.jpg"],
+    "image": ["/images/products/fruits/12.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, kiwi, ripe",
     "priceOrigin": 1.5,
@@ -640,7 +640,7 @@
   {
     "id": 46,
     "productName": "Cantaloupe Melon ",
-    "image": ["../assets/images/products/fruits/13.jpg"],
+    "image": ["/images/products/fruits/13.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, melon, cantaloupe",
     "priceOrigin": 2,
@@ -654,7 +654,7 @@
   {
     "id": 47,
     "productName": " Baby Watermelon",
-    "image": ["../assets/images/products/fruits/14.jpg"],
+    "image": ["/images/products/fruits/14.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, watermelon, baby",
     "priceOrigin": 2.3,
@@ -668,7 +668,7 @@
   {
     "id": 48,
     "productName": " ",
-    "image": ["../assets/images/products/vegetables/.jpg"],
+    "image": ["/images/products/vegetables/.jpg"],
     "category": "fresh vegetables",
     "tags": "",
     "priceOrigin": 1,
@@ -682,7 +682,7 @@
   {
     "id": 49,
     "productName": "Mango ",
-    "image": ["../assets/images/products/fruits/15.jpg"],
+    "image": ["/images/products/fruits/15.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, mango, fresh",
     "priceOrigin": 2.4,
@@ -696,7 +696,7 @@
   {
     "id": 50,
     "productName": " ",
-    "image": ["../assets/images/products/vegetables/.jpg"],
+    "image": ["/images/products/vegetables/.jpg"],
     "category": "fresh vegetables",
     "tags": "",
     "priceOrigin": 1,
@@ -710,7 +710,7 @@
   {
     "id": 51,
     "productName": "Nectarine Punnet ",
-    "image": ["../assets/images/products/fruits/16.jpg"],
+    "image": ["/images/products/fruits/16.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, nectarine, punnet",
     "priceOrigin": 1.7,
@@ -724,7 +724,7 @@
   {
     "id": 52,
     "productName": "Galia Melon ",
-    "image": ["../assets/images/products/fruits/17.jpg"],
+    "image": ["/images/products/fruits/17.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, melon, galia",
     "priceOrigin": 2,
@@ -738,7 +738,7 @@
   {
     "id": 53,
     "productName": "Strawberries, Taste the Difference 250g ",
-    "image": ["../assets/images/products/fruits/18.jpg"],
+    "image": ["/images/products/fruits/18.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, strawberries, taste the difference",
     "priceOrigin": 2.85,
@@ -752,7 +752,7 @@
   {
     "id": 54,
     "productName": " Crownless Pineapple",
-    "image": ["../assets/images/products/fruits/19.jpg"],
+    "image": ["/images/products/fruits/19.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, pineapple, crownless",
     "priceOrigin": 1,
@@ -766,7 +766,7 @@
   {
     "id": 55,
     "productName": "Watermelon ",
-    "image": ["../assets/images/products/fruits/20.jpg"],
+    "image": ["/images/products/fruits/20.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, watermelon, fresh",
     "priceOrigin": 3.5,
@@ -780,7 +780,7 @@
   {
     "id": 56,
     "productName": " Honeydew Melon ",
-    "image": ["../assets/images/products/fruits/21.jpg"],
+    "image": ["/images/products/fruits/21.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, melon, honeydew",
     "priceOrigin": 1.89,
@@ -794,7 +794,7 @@
   {
     "id": 57,
     "productName": "Limes x5 ",
-    "image": ["../assets/images/products/fruits/22.jpg"],
+    "image": ["/images/products/fruits/22.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, limes, fresh",
     "priceOrigin": 1.18,
@@ -808,7 +808,7 @@
   {
     "id": 58,
     "productName": "Kiwi Fruit",
-    "image": ["../assets/images/products/fruits/23.jpg"],
+    "image": ["/images/products/fruits/23.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, kiwi, fresh",
     "priceOrigin": 1.19,
@@ -822,7 +822,7 @@
   {
     "id": 59,
     "productName": "Berry Fruit Salad ",
-    "image": ["../assets/images/products/fruits/24.jpg"],
+    "image": ["/images/products/fruits/24.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, berry, salad",
     "priceOrigin": 2.5,
@@ -836,7 +836,7 @@
   {
     "id": 60,
     "productName": "Passion Fruit Loose ",
-    "image": ["../assets/images/products/fruits/25.jpg"],
+    "image": ["/images/products/fruits/25.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, passion fruit, loose",
     "priceOrigin": 1.5,
@@ -850,7 +850,7 @@
   {
     "id": 61,
     "productName": " ",
-    "image": ["../assets/images/products/vegetables/.jpg"],
+    "image": ["/images/products/vegetables/.jpg"],
     "category": "fresh vegetables",
     "tags": "",
     "priceOrigin": 1,
@@ -864,7 +864,7 @@
   {
     "id": 62,
     "productName": "Mango, Watermelon & Pineapple  ",
-    "image": ["../assets/images/products/fruits/26.jpg"],
+    "image": ["/images/products/fruits/26.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, mango, watermelon, pineapple",
     "priceOrigin": 2.75,
@@ -878,7 +878,7 @@
   {
     "id": 63,
     "productName": "Rainbow Fruit Platter",
-    "image": ["../assets/images/products/fruits/27.jpg"],
+    "image": ["/images/products/fruits/27.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, rainbow, platter",
     "priceOrigin": 3.75,
@@ -892,7 +892,7 @@
   {
     "id": 64,
     "productName": " Conference Pears, Ripe & Ready",
-    "image": ["../assets/images/products/fruits/28.jpg"],
+    "image": ["/images/products/fruits/28.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, pear, conference, ripe",
     "priceOrigin": 2.3,
@@ -906,7 +906,7 @@
   {
     "id": 65,
     "productName": "  Easy Peelers 600g",
-    "image": ["../assets/images/products/fruits/29.jpg"],
+    "image": ["/images/products/fruits/29.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, easy peelers, fresh",
     "priceOrigin": 1.35,
@@ -920,7 +920,7 @@
   {
     "id": 66,
     "productName": " Conference Pears x4 ",
-    "image": ["../assets/images/products/fruits/30.jpg"],
+    "image": ["/images/products/fruits/30.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, pear, conference",
     "priceOrigin": 1.6,
@@ -934,7 +934,7 @@
   {
     "id": 67,
     "productName": "Cherries 250g",
-    "image": ["../assets/images/products/fruits/31.jpg"],
+    "image": ["/images/products/fruits/31.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, cherries, fresh",
     "priceOrigin": 3,
@@ -948,7 +948,7 @@
   {
     "id": 68,
     "productName": "Sweet Blackberries 150g ",
-    "image": ["../assets/images/products/fruits/32.jpg"],
+    "image": ["/images/products/fruits/32.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, blackberries, sweet",
     "priceOrigin": 2.5,
@@ -962,7 +962,7 @@
   {
     "id": 69,
     "productName": "Blueberries 500g ",
-    "image": ["../assets/images/products/fruits/33.jpg"],
+    "image": ["/images/products/fruits/33.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, blueberries, fresh",
     "priceOrigin": 4.5,
@@ -976,7 +976,7 @@
   {
     "id": 70,
     "productName": "Nectarines, Ripe & Ready ",
-    "image": ["../assets/images/products/fruits/34.jpg"],
+    "image": ["/images/products/fruits/34.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, nectarine, ripe",
     "priceOrigin": 2.5,
@@ -990,7 +990,7 @@
   {
     "id": 71,
     "productName": "Lemons Unwaxed ",
-    "image": ["../assets/images/products/fruits/35.jpg"],
+    "image": ["/images/products/fruits/35.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, lemon, unwaxed",
     "priceOrigin": 1.5,
@@ -1004,7 +1004,7 @@
   {
     "id": 72,
     "productName": " Red & White Seedless Grapes",
-    "image": ["../assets/images/products/fruits/36.jpg"],
+    "image": ["/images/products/fruits/36.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, grapes, red, white, seedless",
     "priceOrigin": 2,
@@ -1018,7 +1018,7 @@
   {
     "id": 73,
     "productName": " Limes",
-    "image": ["../assets/images/products/fruits/37.jpg"],
+    "image": ["/images/products/fruits/37.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, limes, fresh",
     "priceOrigin": 2,
@@ -1032,7 +1032,7 @@
   {
     "id": 74,
     "productName": "Pink Lady Apples ",
-    "image": ["../assets/images/products/fruits/38.jpg"],
+    "image": ["/images/products/fruits/38.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, apple, pink lady",
     "priceOrigin": 2.9,
@@ -1046,7 +1046,7 @@
   {
     "id": 75,
     "productName": " Raspberries, Taste the Difference 150g",
-    "image": ["../assets/images/products/fruits/39.jpg"],
+    "image": ["/images/products/fruits/39.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, raspberry, taste the difference",
     "priceOrigin": 2.5,
@@ -1060,7 +1060,7 @@
   {
     "id": 76,
     "productName": " Raspberries 250g",
-    "image": ["../assets/images/products/fruits/40.jpg"],
+    "image": ["/images/products/fruits/40.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, raspberry, fresh",
     "priceOrigin": 3.25,
@@ -1074,7 +1074,7 @@
   {
     "id": 77,
     "productName": " Lemons ",
-    "image": ["../assets/images/products/fruits/41.jpg"],
+    "image": ["/images/products/fruits/41.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, lemon, fresh",
     "priceOrigin": 1.5,
@@ -1088,7 +1088,7 @@
   {
     "id": 78,
     "productName": " Raspberries",
-    "image": ["../assets/images/products/fruits/42.jpg"],
+    "image": ["/images/products/fruits/42.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, raspberry, fresh",
     "priceOrigin": 2,
@@ -1102,7 +1102,7 @@
   {
     "id": 79,
     "productName": "Fairtrade Bananas",
-    "image": ["../assets/images/products/fruits/43.jpg"],
+    "image": ["/images/products/fruits/43.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, banana, fairtrade",
     "priceOrigin": 1,
@@ -1116,7 +1116,7 @@
   {
     "id": 80,
     "productName": "White Seedless Grapes",
-    "image": ["../assets/images/products/fruits/44.jpg"],
+    "image": ["/images/products/fruits/44.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, grapes, white, seedless",
     "priceOrigin": 2,
@@ -1130,7 +1130,7 @@
   {
     "id": 81,
     "productName": "Blueberries ",
-    "image": ["../assets/images/products/fruits/45.jpg"],
+    "image": ["/images/products/fruits/45.jpg"],
     "category": "Fresh Fruit",
     "tags": "fruit, grapes, red, seedless",
     "priceOrigin": 2,
@@ -1144,7 +1144,7 @@
   {
     "id": 82,
     "productName": " Wright's Mixed Grain Bread Mix 500g",
-    "image": ["../assets/images/products/baking/1.jpg"],
+    "image": ["/images/products/baking/1.jpg"],
     "category": "Baking",
     "tags": "baking, bread, mix",
     "priceOrigin": 1.4,
@@ -1158,7 +1158,7 @@
   {
     "id": 83,
     "productName": "Hartley's Blackcurrant Jelly 135g ",
-    "image": ["../assets/images/products/baking/2.jpg"],
+    "image": ["/images/products/baking/2.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, blackcurrant",
     "priceOrigin": 1,
@@ -1172,7 +1172,7 @@
   {
     "id": 84,
     "productName": "Hartley's Jelly Black Cherry ",
-    "image": ["../assets/images/products/baking/3.jpg"],
+    "image": ["/images/products/baking/3.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, black cherry",
     "priceOrigin": 1,
@@ -1186,7 +1186,7 @@
   {
     "id": 85,
     "productName": " Pizza Base Mix",
-    "image": ["../assets/images/products/baking/4.jpg"],
+    "image": ["/images/products/baking/4.jpg"],
     "category": "Baking",
     "tags": "baking, pizza, base, mix",
     "priceOrigin": 1,
@@ -1200,7 +1200,7 @@
   {
     "id": 86,
     "productName": "Hartley's Sugar Free Blackcurrant Jelly Twin Pack ",
-    "image": ["../assets/images/products/baking/5.jpg"],
+    "image": ["/images/products/baking/5.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, sugar free, blackcurrant",
     "priceOrigin": 1.3,
@@ -1214,7 +1214,7 @@
   {
     "id": 87,
     "productName": "Instant Custard Powder No Added Sugar 72g ",
-    "image": ["../assets/images/products/baking/6.jpg"],
+    "image": ["/images/products/baking/6.jpg"],
     "category": "Baking",
     "tags": "baking, custard, powder, no added sugar",
     "priceOrigin": 0.75,
@@ -1228,7 +1228,7 @@
   {
     "id": 88,
     "productName": "ugar Free Orange Jelly Twin Pack ",
-    "image": ["../assets/images/products/baking/7.jpg"],
+    "image": ["/images/products/baking/7.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, sugar free, orange",
     "priceOrigin": 1.3,
@@ -1242,7 +1242,7 @@
   {
     "id": 89,
     "productName": "Evaporated Milk  ",
-    "image": ["../assets/images/products/baking/8.jpg"],
+    "image": ["/images/products/baking/8.jpg"],
     "category": "Baking",
     "tags": "baking, milk, evaporated",
     "priceOrigin": 1,
@@ -1256,7 +1256,7 @@
   {
     "id": 90,
     "productName": "Sugar Free Raspberry Jelly Twin Pack 23g ",
-    "image": ["../assets/images/products/baking/9.jpg"],
+    "image": ["/images/products/baking/9.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, sugar free, raspberry",
     "priceOrigin": 1.3,
@@ -1270,7 +1270,7 @@
   {
     "id": 91,
     "productName": "Orange Jelly ",
-    "image": ["../assets/images/products/baking/10.jpg"],
+    "image": ["/images/products/baking/10.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, orange",
     "priceOrigin": 1,
@@ -1284,7 +1284,7 @@
   {
     "id": 92,
     "productName": "Flavour Dessert ",
-    "image": ["../assets/images/products/baking/11.jpg"],
+    "image": ["/images/products/baking/11.jpg"],
     "category": "Baking",
     "tags": "baking, dessert, flavour",
     "priceOrigin": 1,
@@ -1298,7 +1298,7 @@
   {
     "id": 93,
     "productName": "Strawberry Jelly Twin Pack ",
-    "image": ["../assets/images/products/baking/12.jpg"],
+    "image": ["/images/products/baking/12.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, strawberry",
     "priceOrigin": 1.3,
@@ -1313,9 +1313,9 @@
     "id": 94,
     "productName": "Ambrosia Devon Custard ",
     "image": [
-      "../assets/images/products/baking/13.jpg",
-      "../assets/images/products/baking/13-2.jpg",
-      "../assets/images/products/baking/13-3.jpg"
+      "/images/products/baking/13.jpg",
+      "/images/products/baking/13-2.jpg",
+      "/images/products/baking/13-3.jpg"
     ],
     "category": "Baking",
     "tags": "baking, custard, ambrosia",
@@ -1330,7 +1330,7 @@
   {
     "id": 95,
     "productName": "Jelly, Raspberry  ",
-    "image": ["../assets/images/products/baking/14.jpg"],
+    "image": ["/images/products/baking/14.jpg"],
     "category": "Baking",
     "tags": "baking, jelly, raspberry",
     "priceOrigin": 1,
@@ -1344,7 +1344,7 @@
   {
     "id": 96,
     "productName": "Condensed Milk  ",
-    "image": ["../assets/images/products/baking/15.jpg"],
+    "image": ["/images/products/baking/15.jpg"],
     "category": "Baking",
     "tags": "baking, milk, condensed",
     "priceOrigin": 1,
@@ -1359,9 +1359,9 @@
     "id": 97,
     "productName": "Carnation Evaporated Milk Tin  ",
     "image": [
-      "../assets/images/products/baking/16.jpg",
-      "../assets/images/products/baking/16-2.jpg",
-      "../assets/images/products/baking/16-3.jpg"
+      "/images/products/baking/16.jpg",
+      "/images/products/baking/16-2.jpg",
+      "/images/products/baking/16-3.jpg"
     ],
     "category": "Baking",
     "tags": "baking, milk, evaporated",
@@ -1376,7 +1376,7 @@
   {
     "id": 98,
     "productName": "Agave Nectar ",
-    "image": ["../assets/images/products/baking/17.jpg"],
+    "image": ["/images/products/baking/17.jpg"],
     "category": "Baking",
     "tags": "baking, nectar, agave",
     "priceOrigin": 2.85,
@@ -1390,7 +1390,7 @@
   {
     "id": 99,
     "productName": " Dark Chocolate Giant Buttons ",
-    "image": ["../assets/images/products/baking/18.jpg"],
+    "image": ["/images/products/baking/18.jpg"],
     "category": "Baking",
     "tags": "baking, chocolate, dark, giant buttons",
     "priceOrigin": 1,
@@ -1404,7 +1404,7 @@
   {
     "id": 100,
     "productName": "McDougalls Plain Flour  ",
-    "image": ["../assets/images/products/baking/19.jpg"],
+    "image": ["/images/products/baking/19.jpg"],
     "category": "Baking",
     "tags": "baking, flour, plain",
     "priceOrigin": 1.5,
@@ -1418,7 +1418,7 @@
   {
     "id": 101,
     "productName": " Buttermilk 300ml ",
-    "image": ["../assets/images/products/baking/20.jpg"],
+    "image": ["/images/products/baking/20.jpg"],
     "category": "Baking",
     "tags": "baking, buttermilk",
     "priceOrigin": 3,
@@ -1432,7 +1432,7 @@
   {
     "id": 102,
     "productName": "Baking Powder ",
-    "image": ["../assets/images/products/baking/21.jpg"],
+    "image": ["/images/products/baking/21.jpg"],
     "category": "Baking",
     "tags": "baking, powder",
     "priceOrigin": 1,
@@ -1446,7 +1446,7 @@
   {
     "id": 103,
     "productName": "Dark Chocolate Chips  ",
-    "image": ["../assets/images/products/baking/22.jpg"],
+    "image": ["/images/products/baking/22.jpg"],
     "category": "Baking",
     "tags": "baking, chocolate, dark, chips",
     "priceOrigin": 1.4,
@@ -1460,7 +1460,7 @@
   {
     "id": 104,
     "productName": " Dark 90% Cocoa Chocolate",
-    "image": ["../assets/images/products/baking/23.jpg"],
+    "image": ["/images/products/baking/23.jpg"],
     "category": "Baking",
     "tags": "baking, chocolate, dark, 90% cocoa",
     "priceOrigin": 3.5,
@@ -1474,7 +1474,7 @@
   {
     "id": 105,
     "productName": "Whole Almonds ",
-    "image": ["../assets/images/products/baking/24.jpg"],
+    "image": ["/images/products/baking/24.jpg"],
     "category": "Baking",
     "tags": "baking, almonds, whole",
     "priceOrigin": 4,
@@ -1488,7 +1488,7 @@
   {
     "id": 106,
     "productName": "Fairtrade Demerara Cane Sugar  ",
-    "image": ["../assets/images/products/baking/25.jpg"],
+    "image": ["/images/products/baking/25.jpg"],
     "category": "Baking",
     "tags": "baking, sugar, fairtrade, demerara cane",
     "priceOrigin": 1.6,
@@ -1502,7 +1502,7 @@
   {
     "id": 107,
     "productName": "Fairtrade White Granulated Sugar ",
-    "image": ["../assets/images/products/baking/26.jpg"],
+    "image": ["/images/products/baking/26.jpg"],
     "category": "Baking",
     "tags": "baking, sugar, fairtrade, white granulated",
     "priceOrigin": 1.2,
@@ -1517,10 +1517,10 @@
     "id": 108,
     "productName": " Shelled Walnuts  ",
     "image": [
-      "../assets/images/products/baking/27.jpg",
-      "../assets/images/products/baking/27-2.jpg",
-      "../assets/images/products/baking/27-3.jpg",
-      "../assets/images/products/baking/27-4.jpg"
+      "/images/products/baking/27.jpg",
+      "/images/products/baking/27-2.jpg",
+      "/images/products/baking/27-3.jpg",
+      "/images/products/baking/27-4.jpg"
     ],
     "category": "Baking",
     "tags": "baking, walnuts, shelled",
@@ -1535,7 +1535,7 @@
   {
     "id": 109,
     "productName": "Eggs x6 ",
-    "image": ["../assets/images/products/baking/28.jpg"],
+    "image": ["/images/products/baking/28.jpg"],
     "category": "Baking",
     "tags": "baking, eggs, x6",
     "priceOrigin": 3.2,
@@ -1550,10 +1550,10 @@
     "id": 110,
     "productName": "Clean & Clear Exfoliating Daily Wash Face Wash ",
     "image": [
-      "../assets/images/products/beauty/1.jpg",
-      "../assets/images/products/beauty/1-2.jpg",
-      "../assets/images/products/beauty/1-3.jpg",
-      "../assets/images/products/beauty/1-4.jpg"
+      "/images/products/beauty/1.jpg",
+      "/images/products/beauty/1-2.jpg",
+      "/images/products/beauty/1-3.jpg",
+      "/images/products/beauty/1-4.jpg"
     ],
     "category": "beauty",
     "tags": "beauty, face wash, exfoliating, daily wash",
@@ -1569,12 +1569,12 @@
     "id": 111,
     "productName": "Sleep Aromatherapy Bath Soak Bubble Bath 1L ",
     "image": [
-      "../assets/images/products/beauty/2.jpg",
-      "../assets/images/products/beauty/2-2.jpg",
-      "../assets/images/products/beauty/2-3.jpg",
-      "../assets/images/products/beauty/2-4.jpg",
-      "../assets/images/products/beauty/2-5.jpg",
-      "../assets/images/products/beauty/2-6.jpg"
+      "/images/products/beauty/2.jpg",
+      "/images/products/beauty/2-2.jpg",
+      "/images/products/beauty/2-3.jpg",
+      "/images/products/beauty/2-4.jpg",
+      "/images/products/beauty/2-5.jpg",
+      "/images/products/beauty/2-6.jpg"
     ],
     "category": "beauty",
     "tags": "beauty, aromatherapy, bath soak, bubble bath",
@@ -1589,7 +1589,7 @@
   {
     "id": 112,
     "productName": "  Acetone Free Nail Polish Remover",
-    "image": ["../assets/images/products/beauty/3.jpg"],
+    "image": ["/images/products/beauty/3.jpg"],
     "category": "beauty",
     "tags": "beauty, nail polish remover, acetone free",
     "priceOrigin": 1.75,
@@ -1603,7 +1603,7 @@
   {
     "id": 113,
     "productName": "Rimmel Stay Matte Pressed Powder Silky Beige ",
-    "image": ["../assets/images/products/beauty/4.jpg"],
+    "image": ["/images/products/beauty/4.jpg"],
     "category": "beauty",
     "tags": "beauty, pressed powder, silky beige",
     "priceOrigin": 5,
@@ -1617,7 +1617,7 @@
   {
     "id": 114,
     "productName": "Nivea Lip Balm, Original Care  ",
-    "image": ["../assets/images/products/beauty/5.jpg"],
+    "image": ["/images/products/beauty/5.jpg"],
     "category": "beauty",
     "tags": "beauty, lip balm, original care",
     "priceOrigin": 1.9,
@@ -1631,7 +1631,7 @@
   {
     "id": 115,
     "productName": "Kind to Skin Refreshing Face Wash Gel ",
-    "image": ["../assets/images/products/beauty/6.jpg"],
+    "image": ["/images/products/beauty/6.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, gel, refreshing",
     "priceOrigin": 2.48,
@@ -1645,7 +1645,7 @@
   {
     "id": 116,
     "productName": " Garnier Micellar Water ",
-    "image": ["../assets/images/products/beauty/7.jpg"],
+    "image": ["/images/products/beauty/7.jpg"],
     "category": "beauty",
     "tags": "beauty, micellar water, garnier",
     "priceOrigin": 9,
@@ -1659,7 +1659,7 @@
   {
     "id": 117,
     "productName": "E45 Moisturiser Body Cream  ",
-    "image": ["../assets/images/products/beauty/8.jpg"],
+    "image": ["/images/products/beauty/8.jpg"],
     "category": "beauty",
     "tags": "beauty, moisturiser, body cream, e45",
     "priceOrigin": 4.5,
@@ -1673,7 +1673,7 @@
   {
     "id": 118,
     "productName": "Kind to Skin Eye Makeup Remover for Sensitive Skin ",
-    "image": ["../assets/images/products/beauty/9.jpg"],
+    "image": ["/images/products/beauty/9.jpg"],
     "category": "beauty",
     "tags": "beauty, eye makeup remover, sensitive skin",
     "priceOrigin": 2.8,
@@ -1687,7 +1687,7 @@
   {
     "id": 119,
     "productName": "Nivea Double Effect Eye Make Up Remover ",
-    "image": ["../assets/images/products/beauty/10.jpg"],
+    "image": ["/images/products/beauty/10.jpg"],
     "category": "beauty",
     "tags": "beauty, eye make up remover, nivea, double effect",
     "priceOrigin": 4,
@@ -1701,7 +1701,7 @@
   {
     "id": 120,
     "productName": "Simple Kind to Skin Moisturising Face Wash for Sensitive Skin ",
-    "image": ["../assets/images/products/beauty/11.jpg"],
+    "image": ["/images/products/beauty/11.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, moisturising, sensitive skin",
     "priceOrigin": 3.5,
@@ -1716,9 +1716,9 @@
     "id": 121,
     "productName": "Johnson's Make Up Be Gone Facial Wipes ",
     "image": [
-      "../assets/images/products/beauty/12.jpg",
-      "../assets/images/products/beauty/12-2.jpg",
-      "../assets/images/products/beauty/12-3.jpg"
+      "/images/products/beauty/12.jpg",
+      "/images/products/beauty/12-2.jpg",
+      "/images/products/beauty/12-3.jpg"
     ],
     "category": "beauty",
     "tags": "beauty, facial wipes, make up be gone",
@@ -1733,7 +1733,7 @@
   {
     "id": 122,
     "productName": "Johnson's Make Up Be Gone Facial Wipes ",
-    "image": ["../assets/images/products/beauty/13.jpg"],
+    "image": ["/images/products/beauty/13.jpg"],
     "category": "beauty",
     "tags": "beauty, facial wipes, make up be gone",
     "priceOrigin": 1.5,
@@ -1747,7 +1747,7 @@
   {
     "id": 123,
     "productName": "Stamford Street Co. Cotton Wool Pads ",
-    "image": ["../assets/images/products/beauty/14.jpg"],
+    "image": ["/images/products/beauty/14.jpg"],
     "category": "beauty",
     "tags": "beauty, cotton wool pads, stamford street co.",
     "priceOrigin": 1,
@@ -1761,7 +1761,7 @@
   {
     "id": 124,
     "productName": "Simple Kind to Skin Biodegradable Facial Cleansing Make-Up Remover Wipes  ",
-    "image": ["../assets/images/products/beauty/15.jpg"],
+    "image": ["/images/products/beauty/15.jpg"],
     "category": "beauty",
     "tags": "beauty, facial cleansing, make-up remover wipes, biodegradable",
     "priceOrigin": 1.98,
@@ -1775,7 +1775,7 @@
   {
     "id": 125,
     "productName": "Double Faced Round Cotton Wool Pads x100 ",
-    "image": ["../assets/images/products/beauty/16.jpg"],
+    "image": ["/images/products/beauty/16.jpg"],
     "category": "beauty",
     "tags": "beauty, cotton wool pads, double faced, round",
     "priceOrigin": 1.5,
@@ -1789,7 +1789,7 @@
   {
     "id": 126,
     "productName": "CeraVe Eye Repair Cream ",
-    "image": ["../assets/images/products/beauty/17.jpg"],
+    "image": ["/images/products/beauty/17.jpg"],
     "category": "beauty",
     "tags": "beauty, eye repair cream, cerave",
     "priceOrigin": 14.5,
@@ -1803,7 +1803,7 @@
   {
     "id": 127,
     "productName": "L’Oréal Shampoo for Dry & Dehydrated  ",
-    "image": ["../assets/images/products/beauty/18.jpg"],
+    "image": ["/images/products/beauty/18.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 6,
@@ -1817,7 +1817,7 @@
   {
     "id": 128,
     "productName": "Repair Shampoo Nutritive Solutions ",
-    "image": ["../assets/images/products/beauty/19.jpg"],
+    "image": ["/images/products/beauty/19.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, exfoliating, daily wash",
     "priceOrigin": 2.24,
@@ -1831,7 +1831,7 @@
   {
     "id": 129,
     "productName": "L'Oréal Paris Elvive Dream Lengths Antisplit Ends Conditioner for Long Hair ",
-    "image": ["../assets/images/products/beauty/20.jpg"],
+    "image": ["/images/products/beauty/20.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, exfoliating, daily wash",
     "priceOrigin": 5,
@@ -1845,7 +1845,7 @@
   {
     "id": 130,
     "productName": " L'Oréal Paris Elvive Colour Protect Conditioner for Coloured & Highlighted Hair 300ml",
-    "image": ["../assets/images/products/beauty/21.jpg"],
+    "image": ["/images/products/beauty/21.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, exfoliating, daily wash",
     "priceOrigin": 5,
@@ -1859,7 +1859,7 @@
   {
     "id": 131,
     "productName": " Pantene Pro-V Repair ",
-    "image": ["../assets/images/products/beauty/22.jpg"],
+    "image": ["/images/products/beauty/22.jpg"],
     "category": "beauty",
     "tags": "beauty, cotton wool pads, stamford street co.",
     "priceOrigin": 5.5,
@@ -1873,7 +1873,7 @@
   {
     "id": 132,
     "productName": " Anti Dandruff 2 In 1 Shampoo 500ml",
-    "image": ["../assets/images/products/beauty/24.jpg"],
+    "image": ["/images/products/beauty/24.jpg"],
     "category": "beauty",
     "tags": "beauty, face wash, gel, refreshing",
     "priceOrigin": 3,
@@ -1887,7 +1887,7 @@
   {
     "id": 133,
     "productName": "Wash & Go 2 in 1 Universal Shampoo 200ml ",
-    "image": ["../assets/images/products/beauty/23.jpg"],
+    "image": ["/images/products/beauty/23.jpg"],
     "category": "beauty",
     "tags": "beauty, facial cleansing, make-up remover wipes, biodegradable",
     "priceOrigin": 1,
@@ -1901,7 +1901,7 @@
   {
     "id": 134,
     "productName": "Head & Shoulders Apple Fresh 2in1 Anti Dandruff Shampoo 330ml ",
-    "image": ["../assets/images/products/beauty/25.jpg"],
+    "image": ["/images/products/beauty/25.jpg"],
     "category": "beauty",
     "tags": "Head & Shoulders, Classic Clean, 2in1 shampoo and conditioner, anti-dandruff shampoo, refreshing scent, 330ml shampoo, hair care, daily use shampoo, clean and fresh, unisex shampoo, dandruff control, scalp care, deep cleansing, moisturizing shampoo, smooth and shiny hair, itch relief, flake-free, for oily scalp, for dry scalp, ",
     "priceOrigin": 6,
@@ -1915,7 +1915,7 @@
   {
     "id": 135,
     "productName": "Herbal Essences Dazzling Shine Conditioner Hair Gloss For Shine 275ml ",
-    "image": ["../assets/images/products/beauty/26.jpg"],
+    "image": ["/images/products/beauty/26.jpg"],
     "category": "beauty",
     "tags": "Herbal Essences, Dazzling Shine, shine conditioner, hair gloss, glossy hair, 275ml conditioner, hair care, for dull hair, radiant shine, smooth finish, lightweight conditioner, daily use, salon-quality,",
     "priceOrigin": 1,
@@ -1929,7 +1929,7 @@
   {
     "id": 136,
     "productName": "Apple Shampoo 500ml",
-    "image": ["../assets/images/products/beauty/26.jpg"],
+    "image": ["/images/products/beauty/26.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 5,
@@ -1944,9 +1944,9 @@
     "id": 137,
     "productName": "Alberto Balsam Sunkissed Raspberry Conditioner 300ml ",
     "image": [
-      "../assets/images/products/beauty/27.jpg",
-      "../assets/images/products/beauty/27-2.jpg",
-      "../assets/images/products/beauty/27-3.jpg"
+      "/images/products/beauty/27.jpg",
+      "/images/products/beauty/27-2.jpg",
+      "/images/products/beauty/27-3.jpg"
     ],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
@@ -1961,7 +1961,7 @@
   {
     "id": 138,
     "productName": "Dove Daily Moisture Shampoo Nutritive Solutions ",
-    "image": ["../assets/images/products/beauty/28.jpg"],
+    "image": ["/images/products/beauty/28.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 2.25,
@@ -1975,7 +1975,7 @@
   {
     "id": 139,
     "productName": "Beauty Full Strength ProPlex Conditioner Repairs ",
-    "image": ["../assets/images/products/beauty/29.jpg"],
+    "image": ["/images/products/beauty/29.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 5.0,
@@ -1989,7 +1989,7 @@
   {
     "id": 140,
     "productName": "Miracle Moist Shampoo  ",
-    "image": ["../assets/images/products/beauty/30.jpg"],
+    "image": ["/images/products/beauty/30.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 4.5,
@@ -2003,7 +2003,7 @@
   {
     "id": 141,
     "productName": "Head & Shoulders Classic Clean Anti-Dandruff Shampoo ",
-    "image": ["../assets/images/products/beauty/31.jpg"],
+    "image": ["/images/products/beauty/31.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 5,
@@ -2017,7 +2017,7 @@
   {
     "id": 142,
     "productName": "Blush Floral & Flirty Dry Shampoo",
-    "image": ["../assets/images/products/beauty/32.jpg"],
+    "image": ["/images/products/beauty/32.jpg"],
     "category": "beauty",
     "tags": "beauty, shampoo, dry & dehydrated",
     "priceOrigin": 2.2,
@@ -2031,7 +2031,7 @@
   {
     "id": 143,
     "productName": "Still British Bottled Spring Water 4x2L",
-    "image": ["../assets/images/products/drink/1.jpg"],
+    "image": ["/images/products/drink/1.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 2,
@@ -2045,7 +2045,7 @@
   {
     "id": 144,
     "productName": "British Bottled Still Spring Water 5L ",
-    "image": ["../assets/images/products/drink/2.jpg"],
+    "image": ["/images/products/drink/2.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 1.5,
@@ -2059,7 +2059,7 @@
   {
     "id": 145,
     "productName": "British Bottled Spring Sparkling Water 2L ",
-    "image": ["../assets/images/products/drink/3.jpg"],
+    "image": ["/images/products/drink/3.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 1,
@@ -2073,7 +2073,7 @@
   {
     "id": 146,
     "productName": "Bottled Sparkling Flavoured Water, Lemon & Lime 1L ",
-    "image": ["../assets/images/products/drink/4.jpg"],
+    "image": ["/images/products/drink/4.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 1,
@@ -2087,7 +2087,7 @@
   {
     "id": 147,
     "productName": "Bottled Sparkling Flavoured Water, Mango & Passionfruit ",
-    "image": ["../assets/images/products/drink/5.jpg"],
+    "image": ["/images/products/drink/5.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 1,
@@ -2101,7 +2101,7 @@
   {
     "id": 148,
     "productName": "Bottled Raspberry & Rhubarb Sparkling Water ",
-    "image": ["../assets/images/products/drink/6.jpg"],
+    "image": ["/images/products/drink/6.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, still water, British spring water, bottled water, natural hydration",
     "priceOrigin": 3,
@@ -2115,7 +2115,7 @@
   {
     "id": 149,
     "productName": "Energy Drink Original ",
-    "image": ["../assets/images/products/drink/7.jpg"],
+    "image": ["/images/products/drink/7.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Energy Drink, Lucozade  ",
     "priceOrigin": 3.4,
@@ -2129,7 +2129,7 @@
   {
     "id": 150,
     "productName": "Energy Drink ",
-    "image": ["../assets/images/products/drink/8.jpg"],
+    "image": ["/images/products/drink/8.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Energy Drink, Lucozade ",
     "priceOrigin": 3.25,
@@ -2143,7 +2143,7 @@
   {
     "id": 151,
     "productName": " GetPro 25g Strawberry High Protein Yoghurt",
-    "image": ["../assets/images/products/drink/9.jpg"],
+    "image": ["/images/products/drink/9.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, GetPro, 25g, Strawberry, High Protein ,Yoghurt",
     "priceOrigin": 2,
@@ -2157,7 +2157,7 @@
   {
     "id": 152,
     "productName": " Lucozade Zero Pink Lemonade 4x380ml",
-    "image": ["../assets/images/products/drink/10.jpg"],
+    "image": ["/images/products/drink/10.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Energy Drink, Lucozade ",
     "priceOrigin": 3.25,
@@ -2171,7 +2171,7 @@
   {
     "id": 153,
     "productName": " Kombucha Ginger Turmeric Live Sparkling Soda ",
-    "image": ["../assets/images/products/drink/11.jpg"],
+    "image": ["/images/products/drink/11.jpg"],
     "category": "beverages",
     "tags": "drink, beverages ",
     "priceOrigin": 1.8,
@@ -2185,7 +2185,7 @@
   {
     "id": 154,
     "productName": "One Living Ginger Kombucha with Turmeric 750ml ",
-    "image": ["../assets/images/products/drink/12.jpg"],
+    "image": ["/images/products/drink/12.jpg"],
     "category": "beverages",
     "tags": "drink, beverages,Kombucha",
     "priceOrigin": 3.5,
@@ -2199,7 +2199,7 @@
   {
     "id": 155,
     "productName": "Nexba Kombucha Mixed Berry 1l",
-    "image": ["../assets/images/products/drink/13.jpg"],
+    "image": ["/images/products/drink/13.jpg"],
     "category": "beverages",
     "tags": "drink, beverages,Kombucha",
     "priceOrigin": 13.5,
@@ -2213,7 +2213,7 @@
   {
     "id": 156,
     "productName": "One Living Mango Kombucha with Lime ",
-    "image": ["../assets/images/products/drink/14.jpg"],
+    "image": ["/images/products/drink/14.jpg"],
     "category": "beverages",
     "tags": "drink, beverages,Kombucha",
     "priceOrigin": 21,
@@ -2227,7 +2227,7 @@
   {
     "id": 157,
     "productName": " Kombucha Live Naturally Sugar Free Sparkling Probiotic Strawberry Peach 1L",
-    "image": ["../assets/images/products/drink/15.jpg"],
+    "image": ["/images/products/drink/15.jpg"],
     "category": "beverages",
     "tags": "drink, beverages,Kombucha",
     "priceOrigin": 7,
@@ -2241,7 +2241,7 @@
   {
     "id": 158,
     "productName": "Kombucha Ginger Lemon 700ml ",
-    "image": ["../assets/images/products/drink/16.jpg"],
+    "image": ["/images/products/drink/16.jpg"],
     "category": "beverages",
     "tags": "drink, beverages,Kombucha",
     "priceOrigin": 5,
@@ -2255,7 +2255,7 @@
   {
     "id": 159,
     "productName": "Innocent Mangoes, Apples & Passion Fruits Smoothie ",
-    "image": ["../assets/images/products/drink/17.jpg"],
+    "image": ["/images/products/drink/17.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Smoothie",
     "priceOrigin": 3.5,
@@ -2269,7 +2269,7 @@
   {
     "id": 160,
     "productName": " Apple & Mango Juice ",
-    "image": ["../assets/images/products/drink/18.jpg"],
+    "image": ["/images/products/drink/18.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 3.1,
@@ -2284,10 +2284,10 @@
     "id": 161,
     "productName": " Ginger Vitality Dosing Bottle Shots x7 420ml ",
     "image": [
-      "../assets/images/products/drink/19.jpg",
-      "../assets/images/products/drink/19-2.jpg",
-      "../assets/images/products/drink/19-3.jpg",
-      "../assets/images/products/drink/19-4.jpg"
+      "/images/products/drink/19.jpg",
+      "/images/products/drink/19-2.jpg",
+      "/images/products/drink/19-3.jpg",
+      "/images/products/drink/19-4.jpg"
     ],
     "category": "beverages",
     "tags": "drink, beverages",
@@ -2302,7 +2302,7 @@
   {
     "id": 162,
     "productName": "Copella Apple & Elderflower Fruit Juice ",
-    "image": ["../assets/images/products/drink/20.jpg"],
+    "image": ["/images/products/drink/20.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 7,
@@ -2316,7 +2316,7 @@
   {
     "id": 163,
     "productName": "Apple & Pear Juice ",
-    "image": ["../assets/images/products/drink/21.jpg"],
+    "image": ["/images/products/drink/21.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 8,
@@ -2330,7 +2330,7 @@
   {
     "id": 164,
     "productName": "Biotiful Gut Health Kefir Milk Drink Original  ",
-    "image": ["../assets/images/products/drink/22.jpg"],
+    "image": ["/images/products/drink/22.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Kefir",
     "priceOrigin": 2,
@@ -2344,7 +2344,7 @@
   {
     "id": 165,
     "productName": " Mango & Passionfruit Smoothie 750ml ",
-    "image": ["../assets/images/products/drink/23.jpg"],
+    "image": ["/images/products/drink/23.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Smoothie",
     "priceOrigin": 3,
@@ -2358,7 +2358,7 @@
   {
     "id": 166,
     "productName": "Tropicana Pure Smooth Orange Fruit Juice 1.5L ",
-    "image": ["../assets/images/products/drink/24.jpg"],
+    "image": ["/images/products/drink/24.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Juice ",
     "priceOrigin": 4.5,
@@ -2372,7 +2372,7 @@
   {
     "id": 167,
     "productName": "Lipton Ice Tea Peach Flavoured ",
-    "image": ["../assets/images/products/drink/25.jpg"],
+    "image": ["/images/products/drink/25.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, tea",
     "priceOrigin": 2.5,
@@ -2386,7 +2386,7 @@
   {
     "id": 168,
     "productName": " Cherry Juice with Vitamins ",
-    "image": ["../assets/images/products/drink/26.jpg"],
+    "image": ["/images/products/drink/26.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 4,
@@ -2400,7 +2400,7 @@
   {
     "id": 169,
     "productName": "Super Smoothies with Vitamins & Iron 4x150ml ",
-    "image": ["../assets/images/products/drink/27.jpg"],
+    "image": ["/images/products/drink/27.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, Smoothie",
     "priceOrigin": 4.1,
@@ -2414,7 +2414,7 @@
   {
     "id": 170,
     "productName": "Apple Fruit Juice ",
-    "image": ["../assets/images/products/drink/28.jpg"],
+    "image": ["/images/products/drink/28.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 3.75,
@@ -2428,7 +2428,7 @@
   {
     "id": 171,
     "productName": " Pineapple Juice 1L ",
-    "image": ["../assets/images/products/drink/29.jpg"],
+    "image": ["/images/products/drink/29.jpg"],
     "category": "beverages",
     "tags": "drink, beverages, juice",
     "priceOrigin": 1.5,
@@ -2442,7 +2442,7 @@
   {
     "id": 172,
     "productName": "Crunchy Cheese Coleslaw ",
-    "image": ["../assets/images/products/cooking/1.jpg"],
+    "image": ["/images/products/cooking/1.jpg"],
     "category": "cooking",
     "tags": "cooking, Cheese",
     "priceOrigin": 2,
@@ -2456,7 +2456,7 @@
   {
     "id": 173,
     "productName": "Tabbouleh with Herb Roasted Garlic & Lemon ",
-    "image": ["../assets/images/products/cooking/2.jpg"],
+    "image": ["/images/products/cooking/2.jpg"],
     "category": "cooking",
     "tags": "cooking, Tabbouleh, Garlic, Lemon",
     "priceOrigin": 3,
@@ -2470,7 +2470,7 @@
   {
     "id": 174,
     "productName": "Feta Dip with Mint Oil ",
-    "image": ["../assets/images/products/cooking/3.jpg"],
+    "image": ["/images/products/cooking/3.jpg"],
     "category": "cooking",
     "tags": "cooking, Feta",
     "priceOrigin": 3,
@@ -2484,7 +2484,7 @@
   {
     "id": 175,
     "productName": "Selection Tex-Mex Dips ",
-    "image": ["../assets/images/products/cooking/4.jpg"],
+    "image": ["/images/products/cooking/4.jpg"],
     "category": "cooking",
     "tags": "cooking, Salsa ",
     "priceOrigin": 3.2,
@@ -2498,7 +2498,7 @@
   {
     "id": 176,
     "productName": " Brussels Pate 170g ",
-    "image": ["../assets/images/products/cooking/5.jpg"],
+    "image": ["/images/products/cooking/5.jpg"],
     "category": "cooking",
     "tags": "Pate, cooking",
     "priceOrigin": 1.3,
@@ -2512,7 +2512,7 @@
   {
     "id": 177,
     "productName": "Egg Mayo Deli Filler ",
-    "image": ["../assets/images/products/cooking/6.jpg"],
+    "image": ["/images/products/cooking/6.jpg"],
     "category": "cooking",
     "tags": "cooking, ",
     "priceOrigin": 1,
@@ -2526,7 +2526,7 @@
   {
     "id": 178,
     "productName": "Mature Cheddar Coleslaw ",
-    "image": ["../assets/images/products/cooking/7.jpg"],
+    "image": ["/images/products/cooking/7.jpg"],
     "category": "cooking",
     "tags": "cooking, Taste ",
     "priceOrigin": 3,
@@ -2540,7 +2540,7 @@
   {
     "id": 179,
     "productName": " Caramelised Onion Houmous  ",
-    "image": ["../assets/images/products/cooking/8.jpg"],
+    "image": ["/images/products/cooking/8.jpg"],
     "category": "cooking",
     "tags": "cooking, Houmous ",
     "priceOrigin": 1,
@@ -2554,7 +2554,7 @@
   {
     "id": 180,
     "productName": "Pitted Green Olives  ",
-    "image": ["../assets/images/products/cooking/9.jpg"],
+    "image": ["/images/products/cooking/9.jpg"],
     "category": "cooking",
     "tags": "cooking, olive",
     "priceOrigin": 2.3,
@@ -2568,7 +2568,7 @@
   {
     "id": 181,
     "productName": "Extra Smooth Houmous ",
-    "image": ["../assets/images/products/cooking/10.jpg"],
+    "image": ["/images/products/cooking/10.jpg"],
     "category": "cooking",
     "tags": "cooking, Houmous ",
     "priceOrigin": 3,
@@ -2582,7 +2582,7 @@
   {
     "id": 182,
     "productName": " Four Bean Salad  ",
-    "image": ["../assets/images/products/cooking/11.jpg"],
+    "image": ["/images/products/cooking/11.jpg"],
     "category": "cooking",
     "tags": "cooking, salad",
     "priceOrigin": 1.85,
@@ -2596,7 +2596,7 @@
   {
     "id": 183,
     "productName": "Rich Potato Salad ",
-    "image": ["../assets/images/products/cooking/12.jpg"],
+    "image": ["/images/products/cooking/12.jpg"],
     "category": "cooking",
     "tags": "cooking, salad",
     "priceOrigin": 2,
@@ -2610,7 +2610,7 @@
   {
     "id": 184,
     "productName": "Queen Olives with Lemon ",
-    "image": ["../assets/images/products/cooking/13.jpg"],
+    "image": ["/images/products/cooking/13.jpg"],
     "category": "cooking",
     "tags": "cooking, olive",
     "priceOrigin": 5,
@@ -2624,7 +2624,7 @@
   {
     "id": 185,
     "productName": "Moroccan Cous Cous",
-    "image": ["../assets/images/products/cooking/14.jpg"],
+    "image": ["/images/products/cooking/14.jpg"],
     "category": "cooking",
     "tags": "cooking, taste ",
     "priceOrigin": 3,
@@ -2638,7 +2638,7 @@
   {
     "id": 186,
     "productName": "Coleslaw ",
-    "image": ["../assets/images/products/cooking/15.jpg"],
+    "image": ["/images/products/cooking/15.jpg"],
     "category": "cooking",
     "tags": "cooking, taste",
     "priceOrigin": 1.3,
@@ -2652,7 +2652,7 @@
   {
     "id": 187,
     "productName": "Trio of Spanish Olives ",
-    "image": ["../assets/images/products/cooking/16.jpg"],
+    "image": ["/images/products/cooking/16.jpg"],
     "category": "cooking",
     "tags": "cooking, olives",
     "priceOrigin": 3,
@@ -2666,7 +2666,7 @@
   {
     "id": 188,
     "productName": "Crunchy Traditional Coleslaw ",
-    "image": ["../assets/images/products/cooking/17.jpg"],
+    "image": ["/images/products/cooking/17.jpg"],
     "category": "cooking",
     "tags": "Coleslaw ",
     "priceOrigin": 1,
@@ -2680,7 +2680,7 @@
   {
     "id": 189,
     "productName": "Fridge Raiders Slow Roasted Chicken Snack ",
-    "image": ["../assets/images/products/cooking/18.jpg"],
+    "image": ["/images/products/cooking/18.jpg"],
     "category": "cooking",
     "tags": "Fridge, Chicken, Snack",
     "priceOrigin": 2.25,
@@ -2694,7 +2694,7 @@
   {
     "id": 190,
     "productName": "Beetroot Salad  ",
-    "image": ["../assets/images/products/cooking/19.jpg"],
+    "image": ["/images/products/cooking/19.jpg"],
     "category": "cooking",
     "tags": "cooking, salad",
     "priceOrigin": 1,
@@ -2708,7 +2708,7 @@
   {
     "id": 191,
     "productName": "Giant Cous Cous & Feta Salad ",
-    "image": ["../assets/images/products/cooking/20.jpg"],
+    "image": ["/images/products/cooking/20.jpg"],
     "category": "cooking",
     "tags": "salad, feta",
     "priceOrigin": 3,
@@ -2722,7 +2722,7 @@
   {
     "id": 192,
     "productName": "Pasta, Spinach & Pinenut Salad ",
-    "image": ["../assets/images/products/cooking/21.jpg"],
+    "image": ["/images/products/cooking/21.jpg"],
     "category": "cooking",
     "tags": "pasta, spinach, salad",
     "priceOrigin": 2,
@@ -2736,7 +2736,7 @@
   {
     "id": 193,
     "productName": "Mild Salsa",
-    "image": ["../assets/images/products/cooking/22.jpg"],
+    "image": ["/images/products/cooking/22.jpg"],
     "category": "cooking",
     "tags": "salsa",
     "priceOrigin": 1,
@@ -2750,7 +2750,7 @@
   {
     "id": 194,
     "productName": "Coleslaw ",
-    "image": ["../assets/images/products/cooking/23.jpg"],
+    "image": ["/images/products/cooking/23.jpg"],
     "category": "cooking",
     "tags": "cooking, ",
     "priceOrigin": 3,
@@ -2764,7 +2764,7 @@
   {
     "id": 195,
     "productName": "Chorizo Ring Mild  ",
-    "image": ["../assets/images/products/cooking/24.jpg"],
+    "image": ["/images/products/cooking/24.jpg"],
     "category": "cooking",
     "tags": "mild",
     "priceOrigin": 2.5,
@@ -2778,7 +2778,7 @@
   {
     "id": 196,
     "productName": "Raiders Slow Roasted Chicken Snack ",
-    "image": ["../assets/images/products/cooking/25.jpg"],
+    "image": ["/images/products/cooking/25.jpg"],
     "category": "cooking",
     "tags": "bites, snack",
     "priceOrigin": 5,
@@ -2792,7 +2792,7 @@
   {
     "id": 197,
     "productName": "Guacamole  ",
-    "image": ["../assets/images/products/cooking/26.jpg"],
+    "image": ["/images/products/cooking/26.jpg"],
     "category": "cooking",
     "tags": "Guacamole",
     "priceOrigin": 1.9,
@@ -2806,7 +2806,7 @@
   {
     "id": 198,
     "productName": "Deli-Style Traditional Coleslaw  ",
-    "image": ["../assets/images/products/cooking/27.jpg"],
+    "image": ["/images/products/cooking/27.jpg"],
     "category": "cooking",
     "tags": "Coleslaw ",
     "priceOrigin": 1,
@@ -2820,7 +2820,7 @@
   {
     "id": 199,
     "productName": "Creamy Classic Houmous",
-    "image": ["../assets/images/products/cooking/28.jpg"],
+    "image": ["/images/products/cooking/28.jpg"],
     "category": "cooking",
     "tags": "cooking, Houmous ",
     "priceOrigin": 1.5,
@@ -2834,7 +2834,7 @@
   {
     "id": 200,
     "productName": "Rocket Salad ",
-    "image": ["../assets/images/products/cooking/29.jpg"],
+    "image": ["/images/products/cooking/29.jpg"],
     "category": "cooking",
     "tags": "salad",
     "priceOrigin": 1,
@@ -2848,7 +2848,7 @@
   {
     "id": 201,
     "productName": "Soured Cream & Chive Dip ",
-    "image": ["../assets/images/products/cooking/30.jpg"],
+    "image": ["/images/products/cooking/30.jpg"],
     "category": "cooking",
     "tags": "salad",
     "priceOrigin": 1,
@@ -2862,7 +2862,7 @@
   {
     "id": 202,
     "productName": "Corned Beef Slices",
-    "image": ["../assets/images/products/cooking/31.jpg"],
+    "image": ["/images/products/cooking/31.jpg"],
     "category": "cooking",
     "tags": "beef",
     "priceOrigin": 2.36,
@@ -2876,7 +2876,7 @@
   {
     "id": 203,
     "productName": "Roasted Red Pepper Houmous ",
-    "image": ["../assets/images/products/cooking/32.jpg"],
+    "image": ["/images/products/cooking/32.jpg"],
     "category": "cooking",
     "tags": "cooking, Houmous ",
     "priceOrigin": 1,
@@ -2890,7 +2890,7 @@
   {
     "id": 204,
     "productName": "Roast Cooked British Beef Slices ",
-    "image": ["../assets/images/products/cooking/33.jpg"],
+    "image": ["/images/products/cooking/33.jpg"],
     "category": "cooking",
     "tags": "beef, slices",
     "priceOrigin": 3.25,
@@ -2904,7 +2904,7 @@
   {
     "id": 205,
     "productName": "Tzatziki ",
-    "image": ["../assets/images/products/cooking/34.jpg"],
+    "image": ["/images/products/cooking/34.jpg"],
     "category": "cooking",
     "tags": "Tzatziki",
     "priceOrigin": 2,
@@ -2918,7 +2918,7 @@
   {
     "id": 206,
     "productName": "Alpro Plain No Sugars Soya Dairy ",
-    "image": ["../assets/images/products/diabetic/1.jpg"],
+    "image": ["/images/products/diabetic/1.jpg"],
     "category": "diabetic",
     "tags": "diabetic",
     "priceOrigin": 3,
@@ -2932,7 +2932,7 @@
   {
     "id": 207,
     "productName": "Vanilla Soya Plant Based Yoghurt ",
-    "image": ["../assets/images/products/diabetic/2.jpg"],
+    "image": ["/images/products/diabetic/2.jpg"],
     "category": "diabetic",
     "tags": "diabetic, Yoghurt, Alternative ",
     "priceOrigin": 5,
@@ -2946,7 +2946,7 @@
   {
     "id": 208,
     "productName": "Oat Drink Whole Chilled ",
-    "image": ["../assets/images/products/diabetic/3.jpg"],
+    "image": ["/images/products/diabetic/3.jpg"],
     "category": "diabetic",
     "tags": "",
     "priceOrigin": 2,
@@ -2961,12 +2961,12 @@
     "id": 209,
     "productName": "Protein Peanuts Dark Chocolate Fruit & Nut  ",
     "image": [
-      "../assets/images/products/diabetic/4.jpg",
-      "../assets/images/products/diabetic/4-2.jpg",
-      "../assets/images/products/diabetic/4-3.jpg",
-      "../assets/images/products/diabetic/4-4.jpg",
-      "../assets/images/products/diabetic/4-5.jpg",
-      "../assets/images/products/diabetic/4-6.jpg"
+      "/images/products/diabetic/4.jpg",
+      "/images/products/diabetic/4-2.jpg",
+      "/images/products/diabetic/4-3.jpg",
+      "/images/products/diabetic/4-4.jpg",
+      "/images/products/diabetic/4-5.jpg",
+      "/images/products/diabetic/4-6.jpg"
     ],
     "category": "diabetic",
     "tags": "diabetic, protein",
@@ -2981,7 +2981,7 @@
   {
     "id": 210,
     "productName": "Strawberry Banana Peach Pear Soya Plant Based Yoghurt ",
-    "image": ["../assets/images/products/diabetic/5.jpg"],
+    "image": ["/images/products/diabetic/5.jpg"],
     "category": "diabetic",
     "tags": "diabetic, Yoghurt, Alternative ",
     "priceOrigin": 2,
@@ -2995,7 +2995,7 @@
   {
     "id": 211,
     "productName": "Almond Milk No Sugars Chilled Dairy ",
-    "image": ["../assets/images/products/diabetic/6.jpg"],
+    "image": ["/images/products/diabetic/6.jpg"],
     "category": "diabetic",
     "tags": "diabetic, milk, Alternative",
     "priceOrigin": 3,
@@ -3009,7 +3009,7 @@
   {
     "id": 212,
     "productName": "Diet Coke ",
-    "image": ["../assets/images/products/diabetic/7.jpg"],
+    "image": ["/images/products/diabetic/7.jpg"],
     "category": "diabetic",
     "tags": "diet, coke, diabetic ",
     "priceOrigin": 4,
@@ -3023,7 +3023,7 @@
   {
     "id": 213,
     "productName": "Rude Health Almond Drink ",
-    "image": ["../assets/images/products/diabetic/8.jpg"],
+    "image": ["/images/products/diabetic/8.jpg"],
     "category": "diabetic",
     "tags": "diabetic, milk, Alternative",
     "priceOrigin": 5,
@@ -3037,7 +3037,7 @@
   {
     "id": 214,
     "productName": "Fairy Non Bio Platinum  ",
-    "image": ["../assets/images/products/detergent/1.jpg"],
+    "image": ["/images/products/detergent/1.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 3,
@@ -3051,7 +3051,7 @@
   {
     "id": 215,
     "productName": " Lavendar & Camomile Laundry ",
-    "image": ["../assets/images/products/detergent/2.jpg"],
+    "image": ["/images/products/detergent/2.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 6,
@@ -3065,7 +3065,7 @@
   {
     "id": 216,
     "productName": "Persil Silk & Wool Delicate Washing Liquid  ",
-    "image": ["../assets/images/products/detergent/3.jpg"],
+    "image": ["/images/products/detergent/3.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3079,7 +3079,7 @@
   {
     "id": 217,
     "productName": "Fairy Non Bio Platinum Laundry  ",
-    "image": ["../assets/images/products/detergent/4.jpg"],
+    "image": ["/images/products/detergent/4.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 7,
@@ -3093,7 +3093,7 @@
   {
     "id": 218,
     "productName": "Bold Pink Blossom ",
-    "image": ["../assets/images/products/detergent/5.jpg"],
+    "image": ["/images/products/detergent/5.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 2,
@@ -3107,7 +3107,7 @@
   {
     "id": 219,
     "productName": "Persil Ultimate Non Bio Aloe Vera ",
-    "image": ["../assets/images/products/detergent/6.jpg"],
+    "image": ["/images/products/detergent/6.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 18,
@@ -3121,7 +3121,7 @@
   {
     "id": 220,
     "productName": "Persil Wonder Wash Bio Liquid Detergent  ",
-    "image": ["../assets/images/products/detergent/7.jpg"],
+    "image": ["/images/products/detergent/7.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3135,7 +3135,7 @@
   {
     "id": 221,
     "productName": "Ariel Colour Laundry Washing  ",
-    "image": ["../assets/images/products/detergent/8.jpg"],
+    "image": ["/images/products/detergent/8.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 3,
@@ -3149,7 +3149,7 @@
   {
     "id": 222,
     "productName": "Ariel Original Laundry  ",
-    "image": ["../assets/images/products/detergent/9.jpg"],
+    "image": ["/images/products/detergent/9.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3163,7 +3163,7 @@
   {
     "id": 223,
     "productName": "Persil Ultimate Active Clean Laundry Washing Liquid  ",
-    "image": ["../assets/images/products/detergent/10.jpg"],
+    "image": ["/images/products/detergent/10.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 4,
@@ -3177,7 +3177,7 @@
   {
     "id": 224,
     "productName": "Bold Spring Awakening Laundry Washing ",
-    "image": ["../assets/images/products/detergent/11.jpg"],
+    "image": ["/images/products/detergent/11.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3191,7 +3191,7 @@
   {
     "id": 225,
     "productName": "Bold Pink Blossom Laundry ",
-    "image": ["../assets/images/products/detergent/12.jpg"],
+    "image": ["/images/products/detergent/12.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 3,
@@ -3205,7 +3205,7 @@
   {
     "id": 226,
     "productName": "Ariel Original Laundry Washing Liquid Detergent ",
-    "image": ["../assets/images/products/detergent/13.jpg"],
+    "image": ["/images/products/detergent/13.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3219,7 +3219,7 @@
   {
     "id": 227,
     "productName": "Persil Bio Laundry Washing Liquid  ",
-    "image": ["../assets/images/products/detergent/14.jpg"],
+    "image": ["/images/products/detergent/14.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3233,7 +3233,7 @@
   {
     "id": 228,
     "productName": " Surf Peony & Rose Concentrated",
-    "image": ["../assets/images/products/detergent/15.jpg"],
+    "image": ["/images/products/detergent/15.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3247,7 +3247,7 @@
   {
     "id": 229,
     "productName": "Woolite Laundry Detergent Liquid Delicates  ",
-    "image": ["../assets/images/products/detergent/16.jpg"],
+    "image": ["/images/products/detergent/16.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 3,
@@ -3261,7 +3261,7 @@
   {
     "id": 230,
     "productName": " cover Sensitive Detergent Non Bio Laundry 40 Washes ",
-    "image": ["../assets/images/products/detergent/17.jpg"],
+    "image": ["/images/products/detergent/17.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 5,
@@ -3275,7 +3275,7 @@
   {
     "id": 231,
     "productName": "Persil Colour Laundry Washing Liquid Detergent ",
-    "image": ["../assets/images/products/detergent/18.jpg"],
+    "image": ["/images/products/detergent/18.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 2,
@@ -3289,7 +3289,7 @@
   {
     "id": 232,
     "productName": "Persil Wonder Wash Non Bio Liquid Detergent Speed Clean Quick Wash ",
-    "image": ["../assets/images/products/detergent/19.jpg"],
+    "image": ["/images/products/detergent/19.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 6,
@@ -3303,7 +3303,7 @@
   {
     "id": 233,
     "productName": "Surf Coconut Bliss Concentrated Washing Liquid Laundry Detergent ",
-    "image": ["../assets/images/products/detergent/20.jpg"],
+    "image": ["/images/products/detergent/20.jpg"],
     "category": "detergent",
     "tags": "detergent",
     "priceOrigin": 8,
@@ -3317,7 +3317,7 @@
   {
     "id": 234,
     "productName": "Nature Valley Protein Peanut & Chocolate Cereal Biscuit ",
-    "image": ["../assets/images/products/snacks/1.jpg"],
+    "image": ["/images/products/snacks/1.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 9,
@@ -3331,7 +3331,7 @@
   {
     "id": 235,
     "productName": "McVitie's Jaffa Cakes Original Biscuits ",
-    "image": ["../assets/images/products/snacks/2.jpg"],
+    "image": ["/images/products/snacks/2.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 7,
@@ -3345,7 +3345,7 @@
   {
     "id": 236,
     "productName": "Go Ahead Yoghurt Breaks Forest Fruit ",
-    "image": ["../assets/images/products/snacks/3.jpg"],
+    "image": ["/images/products/snacks/3.jpg"],
     "category": "snacks",
     "tags": "snacks",
     "priceOrigin": 6,
@@ -3359,7 +3359,7 @@
   {
     "id": 237,
     "productName": "Graze Lemon & Blueberry Oat Boost Flapjack ",
-    "image": ["../assets/images/products/snacks/4.jpg"],
+    "image": ["/images/products/snacks/4.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 4,
@@ -3373,7 +3373,7 @@
   {
     "id": 238,
     "productName": "Go Ahead Yogurt Breaks Strawberry ",
-    "image": ["../assets/images/products/snacks/5.jpg"],
+    "image": ["/images/products/snacks/5.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 7,
@@ -3387,7 +3387,7 @@
   {
     "id": 239,
     "productName": "Smiths Chipsticks Salt & Vinegar ",
-    "image": ["../assets/images/products/snacks/6.jpg"],
+    "image": ["/images/products/snacks/6.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 11,
@@ -3401,7 +3401,7 @@
   {
     "id": 240,
     "productName": "Nature Valley Crunchy Oats & Dark Chocolate ",
-    "image": ["../assets/images/products/snacks/7.jpg"],
+    "image": ["/images/products/snacks/7.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 8,
@@ -3415,7 +3415,7 @@
   {
     "id": 241,
     "productName": "Go Ahead Apple Crispy Fruit Slices ",
-    "image": ["../assets/images/products/snacks/8.jpg"],
+    "image": ["/images/products/snacks/8.jpg"],
     "category": "snacks",
     "tags": "snacks",
     "priceOrigin": 5,
@@ -3429,7 +3429,7 @@
   {
     "id": 242,
     "productName": "Walkers Quavers Cheese ",
-    "image": ["../assets/images/products/snacks/9.jpg"],
+    "image": ["/images/products/snacks/9.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 6,
@@ -3443,7 +3443,7 @@
   {
     "id": 243,
     "productName": "Walkers Wotsits Really Cheesy ",
-    "image": ["../assets/images/products/snacks/10.jpg"],
+    "image": ["/images/products/snacks/10.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 11,
@@ -3457,7 +3457,7 @@
   {
     "id": 244,
     "productName": "Smiths Frazzles Crispy Bacon ",
-    "image": ["../assets/images/products/snacks/11.jpg"],
+    "image": ["/images/products/snacks/11.jpg"],
     "category": "snacks",
     "tags": "snacks",
     "priceOrigin": 11,
@@ -3471,7 +3471,7 @@
   {
     "id": 245,
     "productName": "Mini Snack Raisins ",
-    "image": ["../assets/images/products/snacks/12.jpg"],
+    "image": ["/images/products/snacks/12.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 4,
@@ -3485,7 +3485,7 @@
   {
     "id": 246,
     "productName": "Valley Crunchy Oats & Honey Cereal ",
-    "image": ["../assets/images/products/snacks/13.jpg"],
+    "image": ["/images/products/snacks/13.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 3,
@@ -3499,7 +3499,7 @@
   {
     "id": 247,
     "productName": "Walkers French Fries Ready Salted",
-    "image": ["../assets/images/products/snacks/14.jpg"],
+    "image": ["/images/products/snacks/14.jpg"],
     "category": "snacks",
     "tags": "snacks",
     "priceOrigin": 9,
@@ -3513,7 +3513,7 @@
   {
     "id": 248,
     "productName": "Walkers Squares Variety",
-    "image": ["../assets/images/products/snacks/15.jpg"],
+    "image": ["/images/products/snacks/15.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 15,
@@ -3527,7 +3527,7 @@
   {
     "id": 249,
     "productName": "Walkers Wotsits Really Cheesy",
-    "image": ["../assets/images/products/snacks/16.jpg"],
+    "image": ["/images/products/snacks/16.jpg"],
     "category": "snacks",
     "tags": "snacks",
     "priceOrigin": 8,
@@ -3541,7 +3541,7 @@
   {
     "id": 250,
     "productName": "Go Ahead Apple Fruit & Oat Bakes ",
-    "image": ["../assets/images/products/snacks/17.jpg"],
+    "image": ["/images/products/snacks/17.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 7,
@@ -3555,7 +3555,7 @@
   {
     "id": 251,
     "productName": "Dark Chocolate Corn Thins",
-    "image": ["../assets/images/products/snacks/18.jpg"],
+    "image": ["/images/products/snacks/18.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 2,
@@ -3569,7 +3569,7 @@
   {
     "id": 252,
     "productName": "Quavers Cheese ",
-    "image": ["../assets/images/products/snacks/19.jpg"],
+    "image": ["/images/products/snacks/19.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 4,
@@ -3583,7 +3583,7 @@
   {
     "id": 253,
     "productName": "Fridge Raiders Southern",
-    "image": ["../assets/images/products/snacks/20.jpg"],
+    "image": ["/images/products/snacks/20.jpg"],
     "category": "snacks",
     "tags": "snacks, tasty snack, healthy snack, sweet snack, salty snack, crunchy snack",
     "priceOrigin": 5,
@@ -3597,7 +3597,7 @@
   {
     "id": 254,
     "productName": "Karyatis Greek Extra Virgin Olive Oil ",
-    "image": ["../assets/images/products/oil/1.jpg"],
+    "image": ["/images/products/oil/1.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 11,
@@ -3611,7 +3611,7 @@
   {
     "id": 255,
     "productName": " Garlic Flavoured Olive Oil ",
-    "image": ["../assets/images/products/oil/2.jpg"],
+    "image": ["/images/products/oil/2.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 3,
@@ -3625,7 +3625,7 @@
   {
     "id": 256,
     "productName": "Flora Pure Sunflower Oil  ",
-    "image": ["../assets/images/products/oil/3.jpg"],
+    "image": ["/images/products/oil/3.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 42,
@@ -3639,7 +3639,7 @@
   {
     "id": 257,
     "productName": "Napolina Extra Virgin Olive Oil ",
-    "image": ["../assets/images/products/oil/4.jpg"],
+    "image": ["/images/products/oil/4.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 30,
@@ -3653,7 +3653,7 @@
   {
     "id": 258,
     "productName": "Vegetable Oil 3L ",
-    "image": ["../assets/images/products/oil/5.jpg"],
+    "image": ["/images/products/oil/5.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 15,
@@ -3667,7 +3667,7 @@
   {
     "id": 259,
     "productName": "Frylight 1 Cal Golden Sunflower Oil Cooking  ",
-    "image": ["../assets/images/products/oil/6.jpg"],
+    "image": ["/images/products/oil/6.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 12,
@@ -3681,7 +3681,7 @@
   {
     "id": 260,
     "productName": " Olive Oil 250ml",
-    "image": ["../assets/images/products/oil/7.jpg"],
+    "image": ["/images/products/oil/7.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 9,
@@ -3695,7 +3695,7 @@
   {
     "id": 261,
     "productName": " Olive Oil 500ml ",
-    "image": ["../assets/images/products/oil/8.jpg"],
+    "image": ["/images/products/oil/8.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 8,
@@ -3709,7 +3709,7 @@
   {
     "id": 262,
     "productName": "Filippo Berio Organic Extra Virgin Olive Oil",
-    "image": ["../assets/images/products/oil/9.jpg"],
+    "image": ["/images/products/oil/9.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 8,
@@ -3723,7 +3723,7 @@
   {
     "id": 263,
     "productName": "Olive Oil, Extra Virgin, SO Organic ",
-    "image": ["../assets/images/products/oil/10.jpg"],
+    "image": ["/images/products/oil/10.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 7,
@@ -3737,7 +3737,7 @@
   {
     "id": 264,
     "productName": "Frylight 1 Cal Olive Oil Cooking Spray ",
-    "image": ["../assets/images/products/oil/11.jpg"],
+    "image": ["/images/products/oil/11.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 11,
@@ -3751,7 +3751,7 @@
   {
     "id": 265,
     "productName": "  Olive Oil 1L",
-    "image": ["../assets/images/products/oil/12.jpg"],
+    "image": ["/images/products/oil/12.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 21,
@@ -3765,7 +3765,7 @@
   {
     "id": 266,
     "productName": "JS Sunflower Oil 1L ",
-    "image": ["../assets/images/products/oil/13.jpg"],
+    "image": ["/images/products/oil/13.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 12,
@@ -3779,7 +3779,7 @@
   {
     "id": 267,
     "productName": "Vegetable Oil 1L ",
-    "image": ["../assets/images/products/oil/14.jpg"],
+    "image": ["/images/products/oil/14.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 5,
@@ -3793,7 +3793,7 @@
   {
     "id": 268,
     "productName": "Olive Oil, Extra Virgin 1L ",
-    "image": ["../assets/images/products/oil/15.jpg"],
+    "image": ["/images/products/oil/15.jpg"],
     "category": "oil",
     "tags": "oil, cooking oil, vegetable oil, olive oil, sunflower oil, canola oil, organic oil",
     "priceOrigin": 9,
@@ -3807,7 +3807,7 @@
   {
     "id": 269,
     "productName": "Large King Prawns",
-    "image": ["../assets/images/products/fish/1.jpg"],
+    "image": ["/images/products/fish/1.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 19,
@@ -3821,7 +3821,7 @@
   {
     "id": 270,
     "productName": "Birds Eye Omega 3 Fish Fingers",
-    "image": ["../assets/images/products/fish/2.jpg"],
+    "image": ["/images/products/fish/2.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 11,
@@ -3835,7 +3835,7 @@
   {
     "id": 271,
     "productName": "Chunky Cod Fish Fingers",
-    "image": ["../assets/images/products/fish/3.jpg"],
+    "image": ["/images/products/fish/3.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 5,
@@ -3849,7 +3849,7 @@
   {
     "id": 272,
     "productName": "Sea Bass Fillets ASC  ",
-    "image": ["../assets/images/products/fish/4.jpg"],
+    "image": ["/images/products/fish/4.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 6,
@@ -3863,7 +3863,7 @@
   {
     "id": 273,
     "productName": "Skin on ASC Scottish Salmon Fillets ",
-    "image": ["../assets/images/products/fish/5.jpg"],
+    "image": ["/images/products/fish/5.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 4,
@@ -3877,7 +3877,7 @@
   {
     "id": 274,
     "productName": "ASC Scottish Mild Smoked Salmon",
-    "image": ["../assets/images/products/fish/6.jpg"],
+    "image": ["/images/products/fish/6.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 5,
@@ -3891,7 +3891,7 @@
   {
     "id": 275,
     "productName": "Skin on ASC Scottish Salmon Fillets ",
-    "image": ["../assets/images/products/fish/7.jpg"],
+    "image": ["/images/products/fish/7.jpg"],
     "category": "fish",
     "tags": "fish",
     "priceOrigin": 3.75,
@@ -3905,7 +3905,7 @@
   {
     "id": 276,
     "productName": " Sweet Potato 1.25kg ",
-    "image": ["../assets/images/products/vegetables/1.jpg"],
+    "image": ["/images/products/vegetables/1.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potato",
     "priceOrigin": 2,
@@ -3919,7 +3919,7 @@
   {
     "id": 277,
     "productName": "Extra Fine Beans 200g ",
-    "image": ["../assets/images/products/vegetables/2.jpg"],
+    "image": ["/images/products/vegetables/2.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Fine Beans, beans",
     "priceOrigin": 5,
@@ -3933,7 +3933,7 @@
   {
     "id": 278,
     "productName": "Asparagus Spears 250g ",
-    "image": ["../assets/images/products/vegetables/3.jpg"],
+    "image": ["/images/products/vegetables/3.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Asparagus",
     "priceOrigin": 3.2,
@@ -3947,7 +3947,7 @@
   {
     "id": 279,
     "productName": "Baby Sweet Peppers ",
-    "image": ["../assets/images/products/vegetables/4.jpg"],
+    "image": ["/images/products/vegetables/4.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Sweet Peppers, Peppers",
     "priceOrigin": 2,
@@ -3961,7 +3961,7 @@
   {
     "id": 280,
     "productName": "Pomodorino Baby Plum Tomatoes ",
-    "image": ["../assets/images/products/vegetables/5.jpg"],
+    "image": ["/images/products/vegetables/5.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Pomodorino, Tomatoes",
     "priceOrigin": 3,
@@ -3975,7 +3975,7 @@
   {
     "id": 281,
     "productName": "Vittoria Cherry Vine Tomatoes ",
-    "image": ["../assets/images/products/vegetables/6.jpg"],
+    "image": ["/images/products/vegetables/6.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Cherry, Tomatoes",
     "priceOrigin": 3.5,
@@ -3989,7 +3989,7 @@
   {
     "id": 282,
     "productName": "Baking Potatoes Loose ",
-    "image": ["../assets/images/products/vegetables/7.jpg"],
+    "image": ["/images/products/vegetables/7.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potatoes",
     "priceOrigin": 1,
@@ -4003,7 +4003,7 @@
   {
     "id": 283,
     "productName": "Fine Green Beans ",
-    "image": ["../assets/images/products/vegetables/8.jpg"],
+    "image": ["/images/products/vegetables/8.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Fine Beans, Beans",
     "priceOrigin": 1.3,
@@ -4017,7 +4017,7 @@
   {
     "id": 284,
     "productName": "Cauliflower ",
-    "image": ["../assets/images/products/vegetables/9.jpg"],
+    "image": ["/images/products/vegetables/9.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Cauliflower ",
     "priceOrigin": 1.3,
@@ -4031,7 +4031,7 @@
   {
     "id": 285,
     "productName": "Carrots ",
-    "image": ["../assets/images/products/vegetables/10.jpg"],
+    "image": ["/images/products/vegetables/10.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Carrots",
     "priceOrigin": 1.6,
@@ -4045,7 +4045,7 @@
   {
     "id": 286,
     "productName": "Yellow Pepper ",
-    "image": ["../assets/images/products/vegetables/11.jpg"],
+    "image": ["/images/products/vegetables/11.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Yellow Pepper, Pepper",
     "priceOrigin": 1,
@@ -4059,7 +4059,7 @@
   {
     "id": 287,
     "productName": "Aubergine ",
-    "image": ["../assets/images/products/vegetables/12.jpg"],
+    "image": ["/images/products/vegetables/12.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Aubergine",
     "priceOrigin": 1,
@@ -4073,7 +4073,7 @@
   {
     "id": 288,
     "productName": "Cherry Tomatoes ",
-    "image": ["../assets/images/products/vegetables/13.jpg"],
+    "image": ["/images/products/vegetables/13.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Cherry, Tomatoes ",
     "priceOrigin": 3,
@@ -4087,7 +4087,7 @@
   {
     "id": 289,
     "productName": "Onions ",
-    "image": ["../assets/images/products/vegetables/14.jpg"],
+    "image": ["/images/products/vegetables/14.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Onions ",
     "priceOrigin": 1,
@@ -4101,7 +4101,7 @@
   {
     "id": 290,
     "productName": "Courgettes ",
-    "image": ["../assets/images/products/vegetables/15.jpg"],
+    "image": ["/images/products/vegetables/15.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Courgettes",
     "priceOrigin": 2,
@@ -4115,7 +4115,7 @@
   {
     "id": 291,
     "productName": "Garlic ",
-    "image": ["../assets/images/products/vegetables/16.jpg"],
+    "image": ["/images/products/vegetables/16.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Garlic",
     "priceOrigin": 5,
@@ -4129,7 +4129,7 @@
   {
     "id": 292,
     "productName": "Baby Potatoes ",
-    "image": ["../assets/images/products/vegetables/17.jpg"],
+    "image": ["/images/products/vegetables/17.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potatoes",
     "priceOrigin": 1,
@@ -4143,7 +4143,7 @@
   {
     "id": 293,
     "productName": "White Potatoes 2kg ",
-    "image": ["../assets/images/products/vegetables/18.jpg"],
+    "image": ["/images/products/vegetables/18.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potatoes",
     "priceOrigin": 1.45,
@@ -4157,7 +4157,7 @@
   {
     "id": 294,
     "productName": "Carrots  ",
-    "image": ["../assets/images/products/vegetables/19.jpg"],
+    "image": ["/images/products/vegetables/19.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, ",
     "priceOrigin": 1.2,
@@ -4171,7 +4171,7 @@
   {
     "id": 295,
     "productName": "Courgettes Loose ",
-    "image": ["../assets/images/products/vegetables/20.jpg"],
+    "image": ["/images/products/vegetables/20.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Courgettes",
     "priceOrigin": 1,
@@ -4185,7 +4185,7 @@
   {
     "id": 296,
     "productName": "Chestnut Closed Cup Mushrooms ",
-    "image": ["../assets/images/products/vegetables/21.jpg"],
+    "image": ["/images/products/vegetables/21.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Mushrooms",
     "priceOrigin": 1,
@@ -4199,7 +4199,7 @@
   {
     "id": 297,
     "productName": "Red Onions Loose ",
-    "image": ["../assets/images/products/vegetables/22.jpg"],
+    "image": ["/images/products/vegetables/22.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Onion",
     "priceOrigin": 0.8,
@@ -4213,7 +4213,7 @@
   {
     "id": 298,
     "productName": "Onions Loose ",
-    "image": ["../assets/images/products/vegetables/23.jpg"],
+    "image": ["/images/products/vegetables/23.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Onion",
     "priceOrigin": 1,
@@ -4227,7 +4227,7 @@
   {
     "id": 299,
     "productName": "Baby Leaf Spinach ",
-    "image": ["../assets/images/products/vegetables/24.jpg"],
+    "image": ["/images/products/vegetables/24.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Spinach",
     "priceOrigin": 1,
@@ -4241,7 +4241,7 @@
   {
     "id": 300,
     "productName": "Closed Cup Mushrooms 400g",
-    "image": ["../assets/images/products/vegetables/25.jpg"],
+    "image": ["/images/products/vegetables/25.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Mushrooms",
     "priceOrigin": 1.39,
@@ -4255,7 +4255,7 @@
   {
     "id": 301,
     "productName": "Classic Round Tomatoes x6",
-    "image": ["../assets/images/products/vegetables/26.jpg"],
+    "image": ["/images/products/vegetables/26.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Tomatoes",
     "priceOrigin": 1,
@@ -4269,7 +4269,7 @@
   {
     "id": 302,
     "productName": "Red Onions x3 ",
-    "image": ["../assets/images/products/vegetables/27.jpg"],
+    "image": ["/images/products/vegetables/27.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, onion",
     "priceOrigin": 1,
@@ -4283,7 +4283,7 @@
   {
     "id": 303,
     "productName": "Brown Onions x3",
-    "image": ["../assets/images/products/vegetables/28.jpg"],
+    "image": ["/images/products/vegetables/28.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, onion",
     "priceOrigin": 1,
@@ -4297,7 +4297,7 @@
   {
     "id": 304,
     "productName": "Carrots Loose ",
-    "image": ["../assets/images/products/vegetables/29.jpg"],
+    "image": ["/images/products/vegetables/29.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, carrot",
     "priceOrigin": 1,
@@ -4311,7 +4311,7 @@
   {
     "id": 305,
     "productName": "Maris Piper Potatoes ",
-    "image": ["../assets/images/products/vegetables/30.jpg"],
+    "image": ["/images/products/vegetables/30.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potatoes",
     "priceOrigin": 4,
@@ -4325,7 +4325,7 @@
   {
     "id": 306,
     "productName": "Baby Plum Tomatoes  ",
-    "image": ["../assets/images/products/vegetables/31.jpg"],
+    "image": ["/images/products/vegetables/31.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, tomatoes",
     "priceOrigin": 7,
@@ -4339,7 +4339,7 @@
   {
     "id": 307,
     "productName": "Medium Ripe & Ready Avocado",
-    "image": ["../assets/images/products/vegetables/32.jpg"],
+    "image": ["/images/products/vegetables/32.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, avocado",
     "priceOrigin": 3,
@@ -4353,7 +4353,7 @@
   {
     "id": 308,
     "productName": "Baking Potatoes",
-    "image": ["../assets/images/products/vegetables/33.jpg"],
+    "image": ["/images/products/vegetables/33.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Potatoes",
     "priceOrigin": 1,
@@ -4367,7 +4367,7 @@
   {
     "id": 309,
     "productName": "Jubilee Large Vine Tomatoes ",
-    "image": ["../assets/images/products/vegetables/34.jpg"],
+    "image": ["/images/products/vegetables/34.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Tomatoes",
     "priceOrigin": 2,
@@ -4381,7 +4381,7 @@
   {
     "id": 310,
     "productName": "Tenderstem Broccoli ",
-    "image": ["../assets/images/products/vegetables/35.jpg"],
+    "image": ["/images/products/vegetables/35.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Broccoli",
     "priceOrigin": 3,
@@ -4395,7 +4395,7 @@
   {
     "id": 311,
     "productName": "Carrots ",
-    "image": ["../assets/images/products/vegetables/36.jpg"],
+    "image": ["/images/products/vegetables/36.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Carrots",
     "priceOrigin": 1,
@@ -4409,7 +4409,7 @@
   {
     "id": 312,
     "productName": "Medium Ripe & Ready Avocados x2 ",
-    "image": ["../assets/images/products/vegetables/37.jpg"],
+    "image": ["/images/products/vegetables/37.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, avocado",
     "priceOrigin": 1,
@@ -4423,7 +4423,7 @@
   {
     "id": 313,
     "productName": "Sweet Peppers (Colours may vary) ",
-    "image": ["../assets/images/products/vegetables/38.jpg"],
+    "image": ["/images/products/vegetables/38.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Peppers",
     "priceOrigin": 3,
@@ -4437,7 +4437,7 @@
   {
     "id": 314,
     "productName": "Red Pepper ",
-    "image": ["../assets/images/products/vegetables/39.jpg"],
+    "image": ["/images/products/vegetables/39.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Pepper",
     "priceOrigin": 2,
@@ -4451,7 +4451,7 @@
   {
     "id": 315,
     "productName": "Broccoli Loose ",
-    "image": ["../assets/images/products/vegetables/40.jpg"],
+    "image": ["/images/products/vegetables/40.jpg"],
     "category": "fresh vegetables",
     "tags": "fresh vegetables, Broccoli",
     "priceOrigin": 3.2,
