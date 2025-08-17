@@ -1,4 +1,57 @@
 .productCard {
     max-width: 270px;
+    position: relative;
+    border: 1px solid var(--gray1);
+    background: var(--white);
+    padding: 10px;
 
+
+    &:hover {
+        // padding: 10px;
+
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        // transform: translateY(-2px);
+        img {
+            transform: scale(1.09);
+            filter: grayscale(0);
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        z-index: 5;
+        display: inline-block;
+        top: 8px;
+        left: 8px;
+        border-radius: 4px;
+        background: var(--Branding-Error, #EA4B48);
+        padding: 3px 8px;
+        color: var(--white, #FFF);
+
+        font-weight: 500;
+        line-height: 150%;
+
+    }
+
+    &__imageContainer {
+        position: relative;
+        overflow: hidden;
+        //         display: flex;
+        //    justify-content: center;
+        //    align-items: center;
+        border-radius: 10px;
+        margin-bottom: 16px;
+        padding: 0;
+        background: #000;
+
+        img {
+            filter: grayscale(0.3);
+
+            position: relative;
+            width: 100%;
+
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+        }
+    }
 }

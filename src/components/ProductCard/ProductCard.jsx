@@ -11,11 +11,13 @@ function ProductCard({ product1 }) {
           Sale {product.discount}%{' '}
         </span>
       ) : null}
-      <img
-        src={product.image[0]}
-        alt={product.productName}
-        className={styles.productCard__image}
-      />
+      <div className={styles.productCard__imageContainer}>
+        <img
+          src={product.image[0]}
+          alt={product.productName}
+          className={styles.productCard__image}
+        />
+      </div>
       <h3 className={styles.productCard__name}>
         {product.productName}
       </h3>
