@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {} from 'react';
 import styles from './TopProducts.module.scss';
+import productData from '../../utils/products.json';
+
 
 function TopProducts() {
+    const [products, setProducts] = React.useState([]);
+
+    React.useEffect(() => {
+
+
   return (
     <div className={styles.topProducts}>
       <div className={`${styles.topProducts__container} _container`}>
