@@ -53,19 +53,22 @@
 }
 
 .cart {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--gray05);
+    color: var(--gray9);
     border: none;
+    // padding: 4px;
+
 
     &:hover {
-        background: var(--hard-primary);
+        color: var(--white);
+        background: var(--primary);
 
     }
 
     &:disabled {
         background: none;
-        color: var(--gray8);
-        border: 1px solid var(--gray2);
+        color: var(--gray7);
+        // border: 1px solid var(--gray2);
         cursor: not-allowed;
     }
 

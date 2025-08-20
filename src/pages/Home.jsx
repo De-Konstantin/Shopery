@@ -6,20 +6,19 @@ import Logos from '../components/Logos/Logos';
 import TopCategory from '../components/TopCategory/TopCategory';
 import ProductCard from '../components/ProductCard/ProductCard';
 import TopProducts from '../components/topProducts/TopProducts';
+import Countdown from '../features/Countdown/Countdown';
 
 function Home() {
   console.log(ProductCard);
 
   return (
     <div>
-      <span className="icon-apple">
-        <Hero />
-        <TopCategory />
-        <TopProducts />
-        <ProductCard />
-        <SubcribeBanner />
-        <Logos />
-      </span>
+      <Hero />
+      <TopCategory />
+      <TopProducts />
+      <Countdown targetDate="2026-12-31T23:59:59" />
+      <SubcribeBanner />
+      <Logos />
     </div>
   );
 }

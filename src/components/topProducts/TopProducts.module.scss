@@ -1,0 +1,29 @@
+.topProducts {
+    margin-bottom: 50px;
+
+    &__container {}
+
+    &__title {
+
+        font-size: 32px;
+
+        font-weight: 600;
+        line-height: 120%;
+        /* 38.4px */
+        margin-bottom: 32px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 20%;
+
+        // background: #000;
+        @media(max-width: 767px) {
+            width: 33%;
+        }
+    }
+}

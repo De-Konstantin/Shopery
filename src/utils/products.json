@@ -581,20 +581,7 @@
     "rating": 4.6,
     "isAvailable": true
   },
-  {
-    "id": 42,
-    "productName": " ",
-    "image": ["/images/products/vegetables/.jpg"],
-    "category": "fresh vegetables",
-    "tags": "",
-    "priceOrigin": 1,
-    "weight": "750ml",
-    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
-    "quantity": "12",
-    "discount": 0,
-    "rating": 3.7,
-    "isAvailable": true
-  },
+
   {
     "id": 43,
     "productName": " Plum Punnet",
@@ -665,20 +652,7 @@
     "rating": 4.3,
     "isAvailable": true
   },
-  {
-    "id": 48,
-    "productName": " ",
-    "image": ["/images/products/vegetables/.jpg"],
-    "category": "fresh vegetables",
-    "tags": "",
-    "priceOrigin": 1,
-    "weight": "500g",
-    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-    "quantity": "42",
-    "discount": 18,
-    "rating": 4.7,
-    "isAvailable": true
-  },
+
   {
     "id": 49,
     "productName": "Mango ",
@@ -693,20 +667,7 @@
     "rating": 3.8,
     "isAvailable": true
   },
-  {
-    "id": 50,
-    "productName": " ",
-    "image": ["/images/products/vegetables/.jpg"],
-    "category": "fresh vegetables",
-    "tags": "",
-    "priceOrigin": 1,
-    "weight": "2L",
-    "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
-    "quantity": "41",
-    "discount": 0,
-    "rating": 4.8,
-    "isAvailable": true
-  },
+
   {
     "id": 51,
     "productName": "Nectarine Punnet ",
@@ -847,20 +808,7 @@
     "rating": 3.5,
     "isAvailable": true
   },
-  {
-    "id": 61,
-    "productName": " ",
-    "image": ["/images/products/vegetables/.jpg"],
-    "category": "fresh vegetables",
-    "tags": "",
-    "priceOrigin": 1,
-    "weight": "1kg",
-    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
-    "quantity": "41",
-    "discount": 25,
-    "rating": 3.3,
-    "isAvailable": true
-  },
+
   {
     "id": 62,
     "productName": "Mango, Watermelon & Pineapple  ",
