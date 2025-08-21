@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import styles from './countdown.module.scss';
 
-const Countdown = ({ targetDate }) => {
+function Countdown({ targetDate }) {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {};
@@ -28,13 +29,28 @@ const Countdown = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div className="banner__timer">
-      <span>{String(timeLeft.days).padStart(2, '0')}d</span> :
-      <span>{String(timeLeft.hours).padStart(2, '0')}h</span> :
-      <span>{String(timeLeft.minutes).padStart(2, '0')}m</span> :
-      <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+    <div className={styles.countdown}>
+      <div>
+        <span>{String(timeLeft.days).padStart(2, '0')}</span>
+        <span className={styles.text}>days</span>
+      </div>
+      :
+      <div>
+        <span>{String(timeLeft.hours).padStart(2, '0')}</span>
+        <span className={styles.text}>Hours</span>
+      </div>
+      :
+      <div>
+        <span>{String(timeLeft.minutes).padStart(2, '0')}</span>
+        <span className={styles.text}>mins</span>
+      </div>
+      :
+      <div>
+        <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
+        <span className={styles.text}>secs</span>
+      </div>
     </div>
   );
-};
+}
 
 export default Countdown;

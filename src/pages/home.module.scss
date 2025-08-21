@@ -1,0 +1,23 @@
+.banners {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+
+    @media(max-width: 991px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        >div {
+            width: 48%;
+        }
+    }
+
+    @media(max-width: 580px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        >div {
+            width: 80%;
+        }
+    }
+}
