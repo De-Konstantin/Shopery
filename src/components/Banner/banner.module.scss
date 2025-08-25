@@ -39,11 +39,16 @@
         // margin-bottom: 16px;
     }
 
+
     &__title {
         font-size: 40px;
         font-style: normal;
         font-weight: 600;
         line-height: 120%;
+
+        @media(max-width: 1100px) {
+            font-size: 32px;
+        }
     }
 
     &__text {
