@@ -9,9 +9,8 @@ import TopProducts from '../components/topProducts/TopProducts';
 import Countdown from '../features/Countdown/Countdown';
 import Banner from '../components/Banner/Banner';
 import styles from './home.module.scss';
+import HotDeals from '../components/HotDeals/HotDeals';
 function Home() {
-  console.log(ProductCard);
-
   return (
     <div>
       <Hero />
@@ -42,7 +41,7 @@ function Home() {
           />
         </div>
       </div>
-
+      <HotDeals />
       <Countdown targetDate="2026-12-31T23:59:59" />
       <SubcribeBanner />
       <Logos />

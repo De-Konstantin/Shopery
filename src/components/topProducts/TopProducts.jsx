@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TopProducts.module.scss';
 import productData from '../../utils/products.json';
 import ProductCard from '../ProductCard/ProductCard';
+import { Link } from 'react-router-dom';
 
 function TopProducts() {
   const [products, setProducts] = React.useState([]);
@@ -18,9 +19,14 @@ function TopProducts() {
   return (
     <div className={styles.topProducts}>
       <div className={`${styles.topProducts__container} _container`}>
-        <h2 className={styles.topProducts__title}>
-          Popular Products
-        </h2>
+        <div className={styles.topProducts__top}>
+          <h2 className={styles.topProducts__title}>
+            Popular Products
+          </h2>
+          <Link className={styles.topProducts__view}>
+            View All <span className="icon-arr-r"></span>
+          </Link>
+        </div>
         <div className={styles.topProducts__items}>
           {products.map((product, index) => (
             <ProductCard

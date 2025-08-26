@@ -27,7 +27,7 @@
     "weight": "500g",
     "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
     "quantity": "42",
-    "discount": 8,
+    "discount": 42,
     "rating": 2.7,
     "isAvailable": true
   },
@@ -41,7 +41,7 @@
     "weight": "750ml",
     "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
     "quantity": "17",
-    "discount": 0,
+    "discount": 50,
     "rating": 4.6,
     "isAvailable": true
   },
@@ -1586,7 +1586,7 @@
     "weight": "150ml",
     "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
     "quantity": "47",
-    "discount": 7,
+    "discount": 50,
     "rating": 4.0,
     "isAvailable": true
   },
