@@ -16,7 +16,14 @@ function HotDeals() {
     const limitedProducts = shuffled.slice(0, 12); // or 12
     setProducts(limitedProducts);
   }, []);
-  console.log(products);
+
+  if (products.length === 0) return null; // пока нет товаров — ничего не рендерим
+
+  const featuredIndex = 5;
+  const featuredProduct = products[featuredIndex];
+  const otherProducts = products.filter(
+    (_, i) => i !== featuredIndex,
+  );
 
   return (
     <div className={styles.hotDeals}>
@@ -28,12 +35,13 @@ function HotDeals() {
           </Link>
         </div>
         <div className={styles.hotDeals__items}>
-          <ProductCardLarge
-            key={5}
-            className={styles.hotDeals__item}
-            product={products[5]}
-          />
-          {products.map((product, index) => (
+          {featuredProduct && (
+            <ProductCardLarge
+              className={styles.hotDeals__item}
+              product={featuredProduct}
+            />
+          )}
+          {otherProducts.map((product, index) => (
             <ProductCard
               className={styles.hotDeals__item}
               key={index}

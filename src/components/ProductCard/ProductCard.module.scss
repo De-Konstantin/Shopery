@@ -103,4 +103,10 @@
         /* 24px */
         text-decoration-line: line-through;
     }
+
+    &__rating {
+        font-size: 18px;
+        color: var(--warning);
+    }
+
 }
