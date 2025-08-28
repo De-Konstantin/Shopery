@@ -1,0 +1,62 @@
+.hotDeals {
+    &__container {}
+
+    &__top {}
+
+    &__title {}
+
+    &__view {}
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* 4 колонки */
+
+        @media (max-width: 991px) {
+
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        @media (max-width: 600px) {
+
+            grid-template-columns: 2fr;
+
+        }
+
+
+    }
+
+    &__item {
+
+        &:not(:first-child) {
+            @media (max-width: 600px) {
+                grid-column: span 2;
+                grid-row: span 2;
+
+
+            }
+        }
+
+        &:first-child {
+            grid-column: span 2;
+            /* занимает 2 колонки */
+            grid-row: span 2;
+
+            /* занимает 2 строки */
+            @media (max-width: 991px) {
+                grid-column: span 2;
+                grid-row: span 2;
+                /* чтобы не было слишком высоким */
+
+            }
+
+            @media (max-width: 600px) {
+                grid-column: span 2;
+                grid-row: span 1;
+
+
+            }
+        }
+    }
+}
