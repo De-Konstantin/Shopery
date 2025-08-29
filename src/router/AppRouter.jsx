@@ -4,7 +4,7 @@ import NotFound from '../pages/NotFound/NotFound';
 import SignIn from '../pages/SignIn/SignIn';
 import CreateAccountForm from '../pages/Register/CreateAccountForm';
 import Shop from '../pages/Shop';
-import About from '../pages/About';
+import About from '../pages/About/About';
 import Blog from '../pages/blog';
 import Contact from '../pages/Contact';
 import Product from '../pages/Product';

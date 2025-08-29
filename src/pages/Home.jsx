@@ -10,6 +10,9 @@ import Countdown from '../features/Countdown/Countdown';
 import Banner from '../components/Banner/Banner';
 import styles from './home.module.scss';
 import HotDeals from '../components/HotDeals/HotDeals';
+import BannerLarge from '../components/BannerLarge/BannerLarge';
+import NewsCard from '../components/NewsCard/newsCard';
+import LatestNews from '../components/LatestNews/LatestNews';
 function Home() {
   return (
     <div>
@@ -42,7 +45,8 @@ function Home() {
         </div>
       </div>
       <HotDeals />
-      <Countdown targetDate="2026-12-31T23:59:59" />
+      <BannerLarge />
+      <LatestNews />
       <SubcribeBanner />
       <Logos />
     </div>

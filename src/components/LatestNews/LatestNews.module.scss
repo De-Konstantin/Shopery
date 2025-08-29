@@ -1,0 +1,40 @@
+.latestNews {
+    background: var(--white);
+
+    &__container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    &__title {
+        text-align: center;
+
+        font-size: 32px;
+
+        font-weight: 600;
+        line-height: 120%;
+        margin-bottom: 32px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        gap: 8px;
+
+        @media(max-width: 1024px) {
+            flex-wrap: wrap;
+
+            li {
+                max-width: 390px;
+            }
+        }
+
+        @media(max-width: 820px) {
+
+
+            li {
+                max-width: 490px;
+            }
+        }
+    }
+}

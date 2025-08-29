@@ -20,7 +20,7 @@
 
         @media (max-width: 600px) {
 
-            grid-template-columns: 2fr;
+            grid-template-columns: repeat(2, 1fr);
 
         }
 
@@ -29,18 +29,17 @@
 
     &__item {
 
-        &:not(:first-child) {
-            @media (max-width: 600px) {
-                grid-column: span 2;
-                grid-row: span 2;
+        // &:not(:first-child) {
+        //     @media (max-width: 600px) {
+        //         grid-column: span 2;
+        //         grid-row: span 2;
 
 
-            }
-        }
-
+        //     }
+        // }
         &:first-child {
             grid-column: span 2;
-            /* занимает 2 колонки */
+            // /* занимает 2 колонки */
             grid-row: span 2;
 
             /* занимает 2 строки */
