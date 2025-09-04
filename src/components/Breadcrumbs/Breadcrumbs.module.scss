@@ -1,0 +1,36 @@
+.breadcrumbs {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li::after {
+    content: "/";
+    margin-left: 8px;
+    color: #999;
+}
+
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.active span {
+    font-weight: bold;
+    color: #333;
+}

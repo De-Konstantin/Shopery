@@ -20,7 +20,7 @@ export default function AppRouter() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<SignIn />} />
       <Route path="/CreateAccount" element={<CreateAccountForm />} />
-      <Route path="/prodact/:id" element={<Product />} />
+      <Route path="/product/:id" element={<Product />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
