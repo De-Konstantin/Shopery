@@ -1,7 +1,12 @@
 import React from 'react';
+import Filter from '../features/Filter/Filter';
 
 function Shop() {
-  return <div>Shop</div>;
+  return (
+    <div className="_container">
+      <Filter />
+    </div>
+  );
 }
 
 export default Shop;
