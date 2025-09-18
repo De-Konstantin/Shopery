@@ -8,6 +8,7 @@ import About from '../pages/About/About';
 import Blog from '../pages/blog';
 import Contact from '../pages/Contact';
 import Product from '../pages/Product';
+import CartPage from '../pages/CartPage/CartPage';
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
       <Route path="/login" element={<SignIn />} />
       <Route path="/CreateAccount" element={<CreateAccountForm />} />
       <Route path="/product/:id" element={<Product />} />
+      <Route path="/cart" element={<CartPage />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

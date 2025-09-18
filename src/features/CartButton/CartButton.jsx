@@ -1,20 +1,30 @@
 import React from 'react';
 import styles from './CartButton.module.scss';
-function CartButton({ count, totalAmount }) {
+import { Link } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
+function CartButton() {
+  const { cartTotal, totalItems } = useCart();
+
   return (
     <div className={styles.cartButton}>
-      <button type="button" className={styles.cartButton__button}>
+      <Link
+        to={'/cart'}
+        type="button"
+        className={styles.cartButton__button}
+      >
         <div className={`${styles.cartButton__icon} icon-bag`}>
-          {count > 0 && (
-            <span className={styles.cartButton__badge}>{count}</span>
+          {totalItems > 0 && (
+            <span className={styles.cartButton__badge}>
+              {totalItems}
+            </span>
           )}
         </div>
-      </button>
+      </Link>
       <div className={styles.cartButton__text}>
         <span> Shopping cart:</span>
 
         <span className={styles.cartButton__totalAlmount}>
-          ${totalAmount.toFixed(2)}
+          ${cartTotal.toFixed(2)}
         </span>
       </div>
     </div>

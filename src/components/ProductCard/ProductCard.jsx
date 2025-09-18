@@ -1,11 +1,25 @@
-import React from 'react';
 import styles from './ProductCard.module.scss';
 
 import ButtonRound from '../buttons/ButtonRound/ButtonRound';
+import { useCart } from 'react-use-cart';
 // import data from '../../utils/products.json';
 function ProductCard({ product, className }) {
   //   const product = data[0];
+  const { addItem } = useCart();
+  const handleAdd = () => {
+    const discountedPrice =
+      product.discount > 0
+        ? product.priceOrigin * (1 - product.discount / 100)
+        : product.priceOrigin;
 
+    addItem({
+      id: product.id,
+      name: product.productName,
+      image: product.image[0],
+      price: discountedPrice, // ← используем финальную цену
+      // discount: product.discount, // если нужно показать в корзине
+    });
+  };
   return (
     <div className={`${styles.productCard} ${className || ''}`}>
       {product.discount ? (
@@ -48,7 +62,12 @@ function ProductCard({ product, className }) {
             </div>{' '}
           </div>
 
-          <ButtonRound type="cart" size="medium" color="light">
+          <ButtonRound
+            onClick={handleAdd}
+            type="cart"
+            size="medium"
+            color="light"
+          >
             <span className="icon-bag"></span>
           </ButtonRound>
         </div>

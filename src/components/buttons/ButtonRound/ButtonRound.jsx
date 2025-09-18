@@ -18,9 +18,9 @@ function ButtonRound({
   ].join(' ');
 
   return (
-    <a href="#" className={classNames} {...props}>
+    <button className={classNames} {...props}>
       {children}
-    </a>
+    </button>
   );
 }
 
