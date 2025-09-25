@@ -23,7 +23,6 @@ export default function AppRouter() {
       <Route path="/CreateAccount" element={<CreateAccountForm />} />
       <Route path="/product/:id" element={<Product />} />
       <Route path="/cart" element={<CartPage />} />
-
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

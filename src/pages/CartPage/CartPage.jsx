@@ -27,71 +27,77 @@ function CartPage() {
       <div className={styles.content}>
         {/* Таблица товаров */}
         <div className={styles.items}>
-          <div className={styles.cart__header}>
-            <span>PRODUCT</span>
-            <span>PRICE</span>
-            <span>QUANTITY</span>
-            <span>SUBTOTAL</span>
-          </div>
+          <div className={styles.cartList}>
+            <div className={styles.cart__header}>
+              <span>PRODUCT</span>
+              <span>PRICE</span>
+              <span>QUANTITY</span>
+              <span>SUBTOTAL</span>
+            </div>
 
-          {items.map((item) => {
-            const subtotal = (item.price * item.quantity).toFixed(2);
-            return (
-              <div className={styles.row} key={item.id}>
-                <div className={styles.product}>
-                  <img src={item.image} alt={item.name} />
-                  <p>{item.name}</p>
+            {items.map((item) => {
+              const subtotal = (item.price * item.quantity).toFixed(
+                2,
+              );
+              return (
+                <div className={styles.row} key={item.id}>
+                  <div className={styles.product}>
+                    <img src={item.image} alt={item.name} />
+                    <p>{item.name}</p>
+                  </div>
+                  <div>${item.price.toFixed(2)}</div>
+                  <div className={styles.quantity__control}>
+                    <button
+                      onClick={() =>
+                        updateItemQuantity(item.id, item.quantity - 1)
+                      }
+                    >
+                      -
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      onClick={() =>
+                        updateItemQuantity(item.id, item.quantity + 1)
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className={styles.subtotal}>
+                    ${subtotal}
+                    <button
+                      className={styles.remove}
+                      onClick={() => removeItem(item.id)}
+                    >
+                      ✕
+                    </button>
+                  </div>
                 </div>
-                <div>${item.price.toFixed(2)}</div>
-                <div className={styles.quantity__control}>
-                  <button
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity - 1)
-                    }
-                  >
-                    -
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity + 1)
-                    }
-                  >
-                    +
-                  </button>
-                </div>
-                <div className={styles.subtotal}>
-                  ${subtotal}
-                  <button
-                    className={styles.remove}
-                    onClick={() => removeItem(item.id)}
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
 
-          <div className={styles.actions}>
-            <Link to="/">
-              <Button variant="border" size="medium">
-                Return to shop
+            <div className={styles.actions}>
+              <Link to="/">
+                <Button variant="border" size="medium">
+                  Return to shop
+                </Button>
+              </Link>
+              <Button
+                variant="border"
+                size="medium"
+                onClick={() => emptyCart()}
+                // className="btn update"
+              >
+                Delate All
               </Button>
-            </Link>
-            <Button
-              variant="border"
-              size="medium"
-              onClick={() => emptyCart()}
-              // className="btn update"
-            >
-              Delate All
-            </Button>
+            </div>
           </div>
-
           <div className={styles.coupon}>
-            <input type="text" placeholder="Enter code" />
-            <Button>Apply Coupon</Button>
+            <h3>Coupon code</h3>
+            <label>
+              <input type="text" placeholder="Enter code" />
+              <Button>Apply Coupon</Button>
+            </label>
           </div>
         </div>
 

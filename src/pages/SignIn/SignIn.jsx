@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 // ✅ Определяем схему валидации
 const schema = Yup.object().shape({
@@ -35,57 +36,63 @@ function SignIn() {
   //   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <section className={`${styles.signIn__container} _container`}>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <h2 className={styles.title}>Sign In</h2>
+    <>
+      <Breadcrumbs />
+      <section className={`${styles.signIn__container} _container`}>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <h2 className={styles.title}>Sign In</h2>
 
-        <input
-          type="email"
-          placeholder="Email"
-          {...register('email')}
-          className={styles.input}
-        />
-        <p className={styles.error}>{errors.email?.message}</p>
-        <div className={styles.passwordWrapper}>
           <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            {...register('password')}
+            type="email"
+            placeholder="Email"
+            {...register('email')}
             className={styles.input}
           />
-          <button
-            type="button"
-            className={styles.showPassword}
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            <span className="icon-eye"></span>
-          </button>
-        </div>
-        <p className={styles.error}>{errors.password?.message}</p>
-        <div className={styles.options}>
-          <label>
+          <p className={styles.error}>{errors.email?.message}</p>
+          <div className={styles.passwordWrapper}>
             <input
-              type="checkbox"
-              //   checked={rememberMe}
-              {...register('rememberMe')}
-              //   onChange={() => setRememberMe(!rememberMe)}
-            />{' '}
-            Remember me
-          </label>
-          <a href="#" className={styles.forgot}>
-            Forget Password
-          </a>
-        </div>
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              {...register('password')}
+              className={styles.input}
+            />
+            <button
+              type="button"
+              className={styles.showPassword}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              <span className="icon-eye"></span>
+            </button>
+          </div>
+          <p className={styles.error}>{errors.password?.message}</p>
+          <div className={styles.options}>
+            <label>
+              <input
+                type="checkbox"
+                //   checked={rememberMe}
+                {...register('rememberMe')}
+                //   onChange={() => setRememberMe(!rememberMe)}
+              />{' '}
+              Remember me
+            </label>
+            <a href="#" className={styles.forgot}>
+              Forget Password
+            </a>
+          </div>
 
-        <button type="submit" className={styles.button}>
-          Login
-        </button>
+          <button type="submit" className={styles.button}>
+            Login
+          </button>
 
-        <p className={styles.register}>
-          Don’t have account? <Link to="/register">Register</Link>
-        </p>
-      </form>
-    </section>
+          <p className={styles.register}>
+            Don’t have account? <Link to="/register">Register</Link>
+          </p>
+        </form>
+      </section>
+    </>
   );
 }
 
