@@ -23,7 +23,7 @@ export default function Breadcrumbs({ category, productName }) {
       <nav className={styles.breadcrumbs} aria-label="breadcrumb">
         <ol>
           <li>
-            <Link to="/">Главная</Link>
+            <Link to="/">Main</Link>
           </li>
           {isProductPage ? (
             <>
