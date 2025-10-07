@@ -1,11 +1,49 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './Filter.module.scss';
 import Button from '../../components/buttons/Button/Button';
 import categoriesData from '../../components/TopCategory/categories';
-import productData from '../../utils/products.json';
+import productsData from '../../utils/products.json';
 import { Range } from 'react-range';
-function Filter() {
+function Filter({ onFilterChange }) {
   const [values, setValues] = useState([50, 1500]);
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  // ✅ собираем все уникальные теги
+  const allTags = useMemo(() => {
+    const tags = productsData.flatMap(
+      (p) =>
+        (p.tags || '')
+          .split(',')
+          .map((t) => t.trim().toLowerCase())
+          .filter(Boolean), // ← фильтруем пустые и null
+    );
+    const unique = [...new Set(tags)];
+
+    // сортировка по алфавиту
+    unique.sort((a, b) => a.localeCompare(b));
+
+    // делаем первую букву заглавной
+    const formatted = unique.map(
+      (tag) => tag.charAt(0).toUpperCase() + tag.slice(1),
+    );
+    return formatted;
+  }, []);
+
+  const handleTagChange = (tag) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag)
+        ? prev.filter((t) => t !== tag)
+        : [...prev, tag],
+    );
+  };
+
+  // передаём наружу фильтры при каждом изменении
+  React.useEffect(() => {
+    onFilterChange({
+      price: values,
+      tags: selectedTags,
+    });
+  }, [values, selectedTags]);
 
   return (
     <>
@@ -123,6 +161,24 @@ function Filter() {
               & up
             </label>
           </li>
+        </ul>
+      </div>
+      <div className={styles.filter__section}>
+        <h4>Popular Tags</h4>
+        <ul className={styles.filter__tags}>
+          {allTags.map((tag) => (
+            <li key={tag}>
+              <label>
+                <input
+                  type="checkbox"
+                  className={styles.checkbox}
+                  checked={selectedTags.includes(tag)}
+                  onChange={() => handleTagChange(tag)}
+                />{' '}
+                {tag}
+              </label>
+            </li>
+          ))}
         </ul>
       </div>
     </>

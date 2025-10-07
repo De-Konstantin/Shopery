@@ -3,7 +3,7 @@ import Home from '../pages/Home';
 import NotFound from '../pages/NotFound/NotFound';
 import SignIn from '../pages/SignIn/SignIn';
 import CreateAccountForm from '../pages/Register/CreateAccountForm';
-import Shop from '../pages/Shop';
+import Shop from '../pages/Shop/Shop';
 import About from '../pages/About/About';
 import Blog from '../pages/blog';
 import Contact from '../pages/Contact';
