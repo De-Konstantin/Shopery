@@ -6,15 +6,19 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 function Shop() {
   const [filters, setFilters] = useState({
     tags: [],
-    price: [0, 1500],
+    price: [],
   });
-
   const filteredProducts = useMemo(() => {
     return productsData.filter((p) => {
       const price = p.priceOrigin;
+
+      const productTags = (p.tags || '')
+        .split(',')
+        .map((t) => t.trim().toLowerCase()); // приводим все теги к нижнему регистру
+
       const hasTag =
         filters.tags.length === 0 ||
-        filters.tags.some((tag) => p.tags.includes(tag));
+        filters.tags.some((tag) => productTags.includes(tag)); // сравнение в нижнем регистре
 
       return (
         price >= filters.price[0] &&
