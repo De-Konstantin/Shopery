@@ -48,6 +48,27 @@ function Filter({ onFilterChange }) {
   //   );
   //   return formatted;
   // }, []);
+  const allCategories = useMemo(() => {
+    const categories = productsData.flatMap(
+      (p) =>
+        (p.category || '')
+          .split(',')
+          .map((t) => t.trim().toLowerCase())
+          .filter(Boolean), // ← фильтруем пустые и null
+    );
+    const unique = [...new Set(categories)];
+
+    // сортировка по алфавиту
+    unique.sort((a, b) => a.localeCompare(b));
+
+    // делаем первую букву заглавной
+    const formatted = unique.map(
+      (tag) => tag.charAt(0).toUpperCase() + tag.slice(1),
+    );
+    return formatted;
+  }, []);
+
+  console.log(allCategories);
 
   //самые частые теги
   const topTags = useMemo(() => {
@@ -96,7 +117,7 @@ function Filter({ onFilterChange }) {
       <div className={styles.filter__section}>
         <h4>Categories</h4>
         <ul className={styles.filter__categories}>
-          {categoriesData.map((category) => (
+          {allCategories.map((category) => (
             <li
               key={category.name}
               className={styles.filter__category}
@@ -104,13 +125,13 @@ function Filter({ onFilterChange }) {
               <input
                 type="checkbox"
                 className={styles.checkbox}
-                id={category.name}
+                id={category}
               />
               <label
                 className={styles.checkbox__label}
-                htmlFor={category.name}
+                htmlFor={category}
               >
-                {category.name}
+                {category}
               </label>
             </li>
           ))}
