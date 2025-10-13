@@ -4,18 +4,30 @@ import ButtonRound from '../buttons/ButtonRound/ButtonRound';
 import { useCart } from 'react-use-cart';
 // import data from '../../utils/products.json';
 function ProductCard({ product, className }) {
-  //   const product = data[0];
   const { addItem } = useCart();
+
+  // Защита и нормализация входных данных
+  const priceOrigin = Number(product.priceOrigin) || 0;
+  const discount = Number(product.discount) || 0;
+
+  // Вычисляем финальную цену при рендере — используем её и для отображения, и для корзины
+  const discountedPrice =
+    discount > 0
+      ? +(priceOrigin * (1 - discount / 100)).toFixed(2)
+      : priceOrigin;
+
   const handleAdd = () => {
-    const discountedPrice =
-      product.discount > 0
-        ? product.priceOrigin * (1 - product.discount / 100)
-        : product.priceOrigin;
+    // const discountedPrice =
+    //   product.discount > 0
+    //     ? product.priceOrigin * (1 - product.discount / 100)
+    //     : product.priceOrigin;
 
     addItem({
       id: product.id,
       name: product.productName,
-      image: product.image[0],
+      image: Array.isArray(product.image)
+        ? product.image[0]
+        : product.image,
       price: discountedPrice, // ← используем финальную цену
       // discount: product.discount, // если нужно показать в корзине
     });
@@ -44,10 +56,10 @@ function ProductCard({ product, className }) {
               {product.discount ? (
                 <>
                   <span className={styles.productCard__price}>
-                    ${product.discount}
+                    ${discountedPrice.toFixed(2)}
                   </span>{' '}
                   <span className={styles.productCard__oldPrice}>
-                    ${product.priceOrigin}
+                    ${priceOrigin.toFixed(2)}
                   </span>
                 </>
               ) : (

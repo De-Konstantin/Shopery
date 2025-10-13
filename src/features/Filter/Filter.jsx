@@ -1,14 +1,15 @@
 import React, { useMemo, useState } from 'react';
 import styles from './Filter.module.scss';
 import Button from '../../components/buttons/Button/Button';
-import categoriesData from '../../components/TopCategory/categories';
+
 import productsData from '../../utils/products.json';
 import { Range } from 'react-range';
+
 function Filter({ onFilterChange }) {
   const [values, setValues] = useState([]); // пустой массив на старте
-  const step = 0.1; // шаг с точностью до десятых
-  const [selectedTags, setSelectedTags] = useState([]);
 
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedRating, setSelectedRating] = useState(null);
   // --- 🧮 Получаем минимальную и максимальную цену с учётом скидок
   const [minPrice, maxPrice] = useMemo(() => {
     // Для каждого товара считаем актуальную цену после скидки
@@ -21,33 +22,13 @@ function Filter({ onFilterChange }) {
     // Вычисляем минимальную и максимальную цену
     return [Math.min(...prices), Math.max(...prices)];
   }, []);
-
+  const step = 0.1; // шаг с точностью до десятых
   const roundToStep = (num) => Math.round(num / step) * step;
 
   React.useEffect(() => {
     setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
   }, [minPrice, maxPrice]);
 
-  // // ✅ собираем все уникальные теги
-  // const allTags = useMemo(() => {
-  //   const tags = productsData.flatMap(
-  //     (p) =>
-  //       (p.tags || '')
-  //         .split(',')
-  //         .map((t) => t.trim().toLowerCase())
-  //         .filter(Boolean), // ← фильтруем пустые и null
-  //   );
-  //   const unique = [...new Set(tags)];
-
-  //   // сортировка по алфавиту
-  //   unique.sort((a, b) => a.localeCompare(b));
-
-  //   // делаем первую букву заглавной
-  //   const formatted = unique.map(
-  //     (tag) => tag.charAt(0).toUpperCase() + tag.slice(1),
-  //   );
-  //   return formatted;
-  // }, []);
   const allCategories = useMemo(() => {
     const categories = productsData.flatMap(
       (p) =>
@@ -68,8 +49,21 @@ function Filter({ onFilterChange }) {
     return formatted;
   }, []);
 
-  console.log(allCategories);
+  const ratingRanges = [
+    { label: '5 ★', min: 5, max: 5 },
+    { label: '4.0 – 4.9 ★', min: 4.0, max: 4.9 },
+    { label: '3.0 – 3.9 ★', min: 3.0, max: 3.9 },
+    { label: '2.0 – 2.9 ★', min: 2.0, max: 2.9 },
+    { label: '1.0 – 1.9 ★', min: 1.0, max: 1.9 },
+  ];
 
+  const filteredProducts = selectedRating
+    ? productsData.filter(
+        (p) =>
+          p.rating >= selectedRating.min &&
+          p.rating <= selectedRating.max,
+      )
+    : productsData;
   //самые частые теги
   const topTags = useMemo(() => {
     // 1. Собираем все теги из товаров
@@ -108,8 +102,9 @@ function Filter({ onFilterChange }) {
     onFilterChange({
       price: values,
       tags: selectedTags,
+      rating: selectedRating,
     });
-  }, [values, selectedTags]);
+  }, [values, selectedTags, selectedRating]);
 
   return (
     <>
@@ -118,10 +113,7 @@ function Filter({ onFilterChange }) {
         <h4>Categories</h4>
         <ul className={styles.filter__categories}>
           {allCategories.map((category) => (
-            <li
-              key={category.name}
-              className={styles.filter__category}
-            >
+            <li key={category} className={styles.filter__category}>
               <input
                 type="checkbox"
                 className={styles.checkbox}
@@ -207,40 +199,28 @@ function Filter({ onFilterChange }) {
       <div className={styles.filter__section}>
         <h4>Rating</h4>
         <ul className={styles.ratingList}>
-          <li>
-            {' '}
-            <label>
-              <input className={styles.checkbox} type="checkbox" />{' '}
-              ⭐⭐⭐⭐⭐ 5.0
-            </label>
-          </li>
-          <li>
-            {' '}
-            <label>
-              <input className={styles.checkbox} type="checkbox" />{' '}
-              ⭐⭐⭐⭐ & up
-            </label>
-          </li>
-          <li>
-            {' '}
-            <label>
-              <input className={styles.checkbox} type="checkbox" />{' '}
-              ⭐⭐⭐ & up
-            </label>
-          </li>
-          <li>
-            <label>
-              <input className={styles.checkbox} type="checkbox" />{' '}
-              ⭐⭐ & up
-            </label>
-          </li>
-          <li>
-            <label>
-              <input className={styles.checkbox} type="checkbox" /> ⭐
-              & up
-            </label>
-          </li>
+          {ratingRanges.map((range) => (
+            <li key={range.label}>
+              <label>
+                <input
+                  type="radio"
+                  className={styles.checkbox}
+                  name="rating"
+                  checked={selectedRating?.label === range.label}
+                  onChange={() =>
+                    setSelectedRating(
+                      selectedRating?.label === range.label
+                        ? null
+                        : range,
+                    )
+                  }
+                />
+                {range.label}
+              </label>
+            </li>
+          ))}
         </ul>
+        <p>Товаров найдено: {filteredProducts.length}</p>
       </div>
       <div className={styles.filter__section}>
         <h4>Popular Tags</h4>

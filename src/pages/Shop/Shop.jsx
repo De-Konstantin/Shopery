@@ -7,6 +7,7 @@ function Shop() {
   const [filters, setFilters] = useState({
     tags: [],
     price: [],
+    rating: null,
   });
   const filteredProducts = useMemo(() => {
     return productsData.filter((p) => {
