@@ -21,10 +21,27 @@ function Shop() {
         filters.tags.length === 0 ||
         filters.tags.some((tag) => productTags.includes(tag)); // сравнение в нижнем регистре
 
+      const productCategories = (p.category || '')
+        .split(',')
+        .map((c) => c.trim().toLowerCase());
+
+      const inCategory =
+        !filters.categories?.length ||
+        filters.categories.some((cat) =>
+          productCategories.includes(cat),
+        );
+
+      const inRating =
+        !filters.rating ||
+        (p.rating >= filters.rating.min &&
+          p.rating <= filters.rating.max);
+
       return (
         price >= filters.price[0] &&
         price <= filters.price[1] &&
-        hasTag
+        hasTag &&
+        inCategory &&
+        inRating
       );
     });
   }, [filters]);
@@ -32,7 +49,10 @@ function Shop() {
   return (
     <div className={`${styles.shop} _container`}>
       <aside className={styles.sidebar}>
-        <Filter onFilterChange={setFilters} />
+        <Filter
+          onFilterChange={setFilters}
+          totalCount={filteredProducts.length}
+        />
       </aside>
       <main className={styles.products}>
         {filteredProducts.map((p) => (

@@ -5,11 +5,15 @@ import Button from '../../components/buttons/Button/Button';
 import productsData from '../../utils/products.json';
 import { Range } from 'react-range';
 
-function Filter({ onFilterChange }) {
+function Filter({ onFilterChange, totalCount }) {
   const [values, setValues] = useState([]); // пустой массив на старте
+  const step = 0.1; // шаг с точностью до десятых
+  const roundToStep = (num) => Math.round(num / step) * step;
 
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [selectedRating, setSelectedRating] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]); //lower case
+  const [selectedCategories, setSelectedCategories] = useState([]); // lower-case
+  const [selectedRating, setSelectedRating] = useState(null); //{min, max}, null
+
   // --- 🧮 Получаем минимальную и максимальную цену с учётом скидок
   const [minPrice, maxPrice] = useMemo(() => {
     // Для каждого товара считаем актуальную цену после скидки
@@ -22,12 +26,14 @@ function Filter({ onFilterChange }) {
     // Вычисляем минимальную и максимальную цену
     return [Math.min(...prices), Math.max(...prices)];
   }, []);
-  const step = 0.1; // шаг с точностью до десятых
-  const roundToStep = (num) => Math.round(num / step) * step;
 
   React.useEffect(() => {
-    setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
+    if (!isNaN(minPrice) && !isNaN(maxPrice) && minPrice < maxPrice) {
+      setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
+    }
   }, [minPrice, maxPrice]);
+
+  // категории (unique)
 
   const allCategories = useMemo(() => {
     const categories = productsData.flatMap(
@@ -42,10 +48,11 @@ function Filter({ onFilterChange }) {
     // сортировка по алфавиту
     unique.sort((a, b) => a.localeCompare(b));
 
-    // делаем первую букву заглавной
-    const formatted = unique.map(
-      (tag) => tag.charAt(0).toUpperCase() + tag.slice(1),
-    );
+    // создаём отображаемый вариант (чтобы была заглавная буква)
+    const formatted = unique.map((tag) => ({
+      value: tag, // внутреннее значение
+      display: tag.charAt(0).toUpperCase() + tag.slice(1), // для показа
+    }));
     return formatted;
   }, []);
 
@@ -57,13 +64,6 @@ function Filter({ onFilterChange }) {
     { label: '1.0 – 1.9 ★', min: 1.0, max: 1.9 },
   ];
 
-  const filteredProducts = selectedRating
-    ? productsData.filter(
-        (p) =>
-          p.rating >= selectedRating.min &&
-          p.rating <= selectedRating.max,
-      )
-    : productsData;
   //самые частые теги
   const topTags = useMemo(() => {
     // 1. Собираем все теги из товаров
@@ -97,36 +97,74 @@ function Filter({ onFilterChange }) {
     );
   };
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategories(
+      (prev) =>
+        prev.includes(category)
+          ? prev.filter((c) => c !== category) // убрать, если уже выбрана
+          : [...prev, category], // добавить, если не выбрана
+    );
+  };
+
+  const handleRatingSelect = (range) => {
+    setSelectedRating((prev) =>
+      prev?.label === range.label ? null : range,
+    );
+  };
+  const handleResetFilters = () => {
+    setSelectedTags([]);
+    setSelectedRating(null);
+    setSelectedCategories([]);
+    setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
+  };
+
   // передаём наружу фильтры при каждом изменении
   React.useEffect(() => {
     onFilterChange({
       price: values,
       tags: selectedTags,
       rating: selectedRating,
+      categories: selectedCategories,
     });
-  }, [values, selectedTags, selectedRating]);
+  }, [
+    values,
+    selectedTags,
+    selectedRating,
+    selectedCategories,
+    onFilterChange,
+  ]);
 
   return (
     <>
       <Button>Filter</Button>
+      <button
+        onClick={handleResetFilters}
+        className={styles.resetBtn}
+      >
+        Reset
+      </button>
       <div className={styles.filter__section}>
         <h4>Categories</h4>
         <ul className={styles.filter__categories}>
-          {allCategories.map((category) => (
-            <li key={category} className={styles.filter__category}>
-              <input
-                type="checkbox"
-                className={styles.checkbox}
-                id={category}
-              />
-              <label
-                className={styles.checkbox__label}
-                htmlFor={category}
-              >
-                {category}
-              </label>
-            </li>
-          ))}
+          {allCategories.map((cat) => {
+            return (
+              <li key={cat.value} className={styles.filter__category}>
+                <input
+                  type="checkbox"
+                  className={styles.checkbox}
+                  id={cat.value}
+                  checked={selectedCategories.includes(cat.value)}
+                  onChange={() => handleCategoryChange(cat.value)}
+                />
+                <label
+                  className={styles.checkbox__label}
+                  htmlFor={cat.value}
+                >
+                  {cat.display}
+                </label>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className={styles.filter__section}>
@@ -158,8 +196,8 @@ function Filter({ onFilterChange }) {
                       height: '6px',
                       background: '#00B207',
                       borderRadius: '3px',
-                      left: `${(values[0] / 1500) * 100}%`,
-                      width: `${((values[1] - values[0]) / 1500) * 100}%`,
+                      left: `${((values[0] - minPrice) / (maxPrice - minPrice)) * 100}%`,
+                      width: `${((values[1] - values[0]) / (maxPrice - minPrice)) * 100}%`,
                     }}
                   />
                   {children}
@@ -207,20 +245,14 @@ function Filter({ onFilterChange }) {
                   className={styles.checkbox}
                   name="rating"
                   checked={selectedRating?.label === range.label}
-                  onChange={() =>
-                    setSelectedRating(
-                      selectedRating?.label === range.label
-                        ? null
-                        : range,
-                    )
-                  }
+                  onChange={() => handleRatingSelect(range)}
                 />
                 {range.label}
               </label>
             </li>
           ))}
         </ul>
-        <p>Товаров найдено: {filteredProducts.length}</p>
+        <p>Товаров найдено: {totalCount}</p>
       </div>
       <div className={styles.filter__section}>
         <h4>Popular Tags</h4>

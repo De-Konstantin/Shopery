@@ -1,4 +1,18 @@
 /* From Uiverse.io by adamgiebl */
+
+.resetBtn {
+    display: flex;
+    background-color: #71926e;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    // margin-bottom: 20px;
+    margin-top: 4px;
+}
+
 .filter__section {
     max-width: 250px;
     // overflow: hidden;
