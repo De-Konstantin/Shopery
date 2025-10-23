@@ -18,6 +18,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.60.0",
+    "react-paginate": "^8.3.0",
+    "react-pagination": "^1.0.0",
     "react-range": "^1.10.0",
     "react-router-dom": "^7.6.2",
     "react-tabs": "^6.1.0",

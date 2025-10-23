@@ -252,7 +252,7 @@ function Filter({ onFilterChange, totalCount }) {
             </li>
           ))}
         </ul>
-        <p>Товаров найдено: {totalCount}</p>
+        <p>Products: {totalCount}</p>
       </div>
       <div className={styles.filter__section}>
         <h4>Popular Tags</h4>

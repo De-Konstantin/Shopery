@@ -1,9 +1,56 @@
 .shop {
     display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.sidebar {
+    flex: 0 0 200px;
+}
+
+.main {
+    flex: 1;
+}
+
+.count {
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .products {
+    // display: flex;
+    // // flex-direction: column;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+.pagination {
     display: flex;
-    // flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.pagination li {
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    user-select: none;
+}
+
+.pagination li:hover {
+    background: #f3f3f3;
+}
+
+.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }

@@ -80,3 +80,36 @@
         }
     }
 }
+
+
+.filter__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    input {
+        display: none;
+    }
+
+    label {
+        padding: 3px 6px;
+        background: #e4dfdf;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        // font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            border-color: var(--primary);
+        }
+
+        &:has(input:checked) {
+            background: var(--primary);
+            color: #fff;
+        }
+    }
+
+
+}
