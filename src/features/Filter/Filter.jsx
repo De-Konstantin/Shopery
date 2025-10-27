@@ -117,7 +117,6 @@ function Filter({ onFilterChange, totalCount }) {
     setSelectedCategories([]);
     setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
   };
-
   // передаём наружу фильтры при каждом изменении
   React.useEffect(() => {
     onFilterChange({
