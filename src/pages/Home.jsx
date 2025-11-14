@@ -6,7 +6,7 @@ import Logos from '../components/Logos/Logos';
 import TopCategory from '../components/TopCategory/TopCategory';
 import ProductCard from '../components/ProductCard/ProductCard';
 import TopProducts from '../components/topProducts/TopProducts';
-import Countdown from '../features/Countdown/Countdown';
+
 import Banner from '../components/Banner/Banner';
 import styles from './home.module.scss';
 import HotDeals from '../components/HotDeals/HotDeals';

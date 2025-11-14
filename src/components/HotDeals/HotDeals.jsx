@@ -1,22 +1,44 @@
 import React from 'react';
 import styles from './HotDeals.module.scss';
-import productData from '../../utils/products.json';
+import { getProducts } from '../../utils/api';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductCardLarge from '../ProductCardLarge/ProductCardLarge';
 
 function HotDeals() {
   const [products, setProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const highDiscount = productData.filter(
-      (product) => product.discount >= 35,
-    );
-    const shuffled = highDiscount.sort(() => Math.random() - 0.5);
-    const limitedProducts = shuffled.slice(0, 12); // or 12
-    setProducts(limitedProducts);
+    const loadHotDeals = async () => {
+      try {
+        // Получаем товары с высокой скидкой (можно передать minDiscount если backend поддерживает)
+        const response = await getProducts({
+          page: 1,
+          limit: 12,
+          sort: 'newest', // или другая сортировка
+        });
+
+        // Фильтруем на клиенте товары со скидкой >= 35%
+        const highDiscount = (response.items || []).filter(
+          (product) => product.discount >= 35,
+        );
+
+        // Перемешиваем и берем первые 12
+        const shuffled = highDiscount.sort(() => Math.random() - 0.5);
+        const limitedProducts = shuffled.slice(0, 12);
+        setProducts(limitedProducts);
+      } catch (error) {
+        console.error('Error loading hot deals:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadHotDeals();
   }, []);
 
+  if (loading) return null; // или показать скелетон
   if (products.length === 0) return null; // пока нет товаров — ничего не рендерим
 
   const featuredIndex = 5;

@@ -3,33 +3,41 @@ import styles from './ProductCard.module.scss';
 import ButtonRound from '../buttons/ButtonRound/ButtonRound';
 import { useCart } from 'react-use-cart';
 // import data from '../../utils/products.json';
-function ProductCard({ product, className }) {
+function ProductCard({ product = {}, className }) {
   const { addItem } = useCart();
 
-  // Защита и нормализация входных данных
+  // Нормализация и защита от отсутствующих полей
   const priceOrigin = Number(product.priceOrigin) || 0;
   const discount = Number(product.discount) || 0;
+  const rating = Math.max(
+    0,
+    Math.min(5, Number(product.rating) || 0),
+  );
 
-  // Вычисляем финальную цену при рендере — используем её и для отображения, и для корзины
+  // Унификация изображений (backend может отдавать images[] или image)
+  const images = Array.isArray(product.images)
+    ? product.images
+    : Array.isArray(product.image)
+      ? product.image
+      : product.image
+        ? [product.image]
+        : [];
+  const primaryImage = images[0] || '/no-image.png'; // TODO: добавить нормальный placeholder
+
+  const productName =
+    product.productName || product.name || 'Unnamed';
+
   const discountedPrice =
     discount > 0
       ? +(priceOrigin * (1 - discount / 100)).toFixed(2)
       : priceOrigin;
 
   const handleAdd = () => {
-    // const discountedPrice =
-    //   product.discount > 0
-    //     ? product.priceOrigin * (1 - product.discount / 100)
-    //     : product.priceOrigin;
-
     addItem({
-      id: product.id,
-      name: product.productName,
-      image: Array.isArray(product.image)
-        ? product.image[0]
-        : product.image,
-      price: discountedPrice, // ← используем финальную цену
-      // discount: product.discount, // если нужно показать в корзине
+      id: product.id || product.slug || productName,
+      name: productName,
+      image: primaryImage,
+      price: discountedPrice,
     });
   };
   return (
@@ -41,9 +49,13 @@ function ProductCard({ product, className }) {
       ) : null}
       <div className={styles.productCard__imageContainer}>
         <img
-          src={product.image[0]}
-          alt={product.productName}
+          src={primaryImage}
+          alt={productName}
           className={styles.productCard__image}
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = '/no-image.png';
+          }}
         />
       </div>
       <div className={styles.productCard__content}>
@@ -53,7 +65,7 @@ function ProductCard({ product, className }) {
         <div className={styles.productCard__bottom}>
           <div className={styles.productCard__right}>
             <p className={styles.productCard__priceBlock}>
-              {product.discount ? (
+              {discount > 0 ? (
                 <>
                   <span className={styles.productCard__price}>
                     ${discountedPrice.toFixed(2)}
@@ -64,13 +76,13 @@ function ProductCard({ product, className }) {
                 </>
               ) : (
                 <span className={styles.productCard__price}>
-                  ${product.priceOrigin}
+                  ${priceOrigin.toFixed(2)}
                 </span>
               )}
             </p>{' '}
             <div className={styles.productCard__rating}>
-              {'★'.repeat(Math.floor(product.rating))}
-              {'☆'.repeat(5 - Math.floor(product.rating))}
+              {'★'.repeat(Math.floor(rating))}
+              {'☆'.repeat(5 - Math.floor(rating))}
             </div>{' '}
           </div>
 

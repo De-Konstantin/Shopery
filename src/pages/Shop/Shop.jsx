@@ -1,9 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import { useState, useEffect } from 'react';
 import Filter from '../../features/Filter/Filter';
-import productsData from '../../utils/products.json';
+import { getProducts } from '../../utils/api';
+
 import styles from './Shop.module.scss';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import ReactPaginate from 'react-paginate';
+
 function Shop() {
   const [filters, setFilters] = useState({
     tags: [],
@@ -11,106 +13,138 @@ function Shop() {
     rating: null,
     categories: [],
   });
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 12,
+    total: 0,
+    totalPages: 0,
+  });
 
-  const itemsPerPage = 12; // Количество товаров на странице
-  const [currentPage, setCurrentPage] = useState(0);
+  // Загрузка товаров с API с учетом фильтров и пагинации
+  useEffect(() => {
+    const loadProducts = async () => {
+      setLoading(true);
+      setError(null);
 
-  //--- 🧮 Фильтрация товаров на основе выбранных фильтров
-  const filteredProducts = useMemo(() => {
-    return productsData.filter((p) => {
-      const price = p.priceOrigin;
+      try {
+        // Формируем параметры запроса на основе фильтров
+        const params = {
+          page: pagination.page,
+          limit: pagination.limit,
+        };
 
-      const productTags = (p.tags || '')
-        .split(',')
-        .map((t) => t.trim().toLowerCase()); // приводим все теги к нижнему регистру
+        // Добавляем фильтры, если они установлены
+        if (filters.categories?.length > 0) {
+          params.category = filters.categories.join(',');
+        }
 
-      const hasTag =
-        filters.tags.length === 0 ||
-        filters.tags.some((tag) => productTags.includes(tag)); // сравнение в нижнем регистре
+        if (filters.tags?.length > 0) {
+          params.tags = filters.tags.join(',');
+        }
 
-      const productCategories = (p.category || '')
-        .split(',')
-        .map((c) => c.trim().toLowerCase());
+        if (filters.price?.length === 2) {
+          params.minPrice = filters.price[0];
+          params.maxPrice = filters.price[1];
+        }
 
-      const inCategory =
-        !filters.categories?.length ||
-        filters.categories.some((cat) =>
-          productCategories.includes(cat),
+        if (filters.rating) {
+          params.rating = filters.rating.min || filters.rating;
+        }
+
+        // Запрос к API
+        const response = await getProducts(params);
+
+        // Обновляем состояние товарами и метаданными пагинации
+        setProducts(response.items || []);
+        setPagination((prev) => ({
+          ...prev,
+          total: response.meta?.total || 0,
+          totalPages: response.meta?.totalPages || 0,
+        }));
+      } catch (err) {
+        console.error('Error loading products:', err);
+        setError(
+          'Ошибка загрузки товаров. Пожалуйста, попробуйте позже.',
         );
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      const inRating =
-        !filters.rating ||
-        (p.rating >= filters.rating.min &&
-          p.rating <= filters.rating.max);
+    loadProducts();
+  }, [filters, pagination.page, pagination.limit]);
 
-      return (
-        price >= filters.price[0] &&
-        price <= filters.price[1] &&
-        hasTag &&
-        inCategory &&
-        inRating
-      );
-    });
+  // При смене фильтров возвращаемся на первую страницу
+  useEffect(() => {
+    setPagination((prev) => ({ ...prev, page: 1 }));
   }, [filters]);
 
-  //--расчет товаров для текущей страницы
-  const startIndex = currentPage * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = filteredProducts.slice(startIndex, endIndex); // плавная прокрутка вверх
-
+  // Обработчик смены страницы
   const handlePageChange = (event) => {
-    setCurrentPage(event.selected);
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // плавная прокрутка вверх
+    setPagination((prev) => ({ ...prev, page: event.selected + 1 }));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  // --- при смене фильтров возвращаемся на первую страницу
-  React.useEffect(() => {
-    setCurrentPage(0);
-  }, [filters]);
+
+  // Вычисляем индексы для отображения счетчика
+  const startIndex = (pagination.page - 1) * pagination.limit + 1;
+  const endIndex = Math.min(
+    pagination.page * pagination.limit,
+    pagination.total,
+  );
 
   return (
     <div className={`${styles.shop} _container`}>
       <aside className={styles.sidebar}>
         <Filter
           onFilterChange={setFilters}
-          totalCount={filteredProducts.length}
+          totalCount={pagination.total}
         />
       </aside>
       <main className={styles.main}>
         {/* Отображаем количество */}
         <p className={styles.count}>
-          {filteredProducts.length === 0
-            ? 'No products found'
-            : `${startIndex + 1}–${Math.min(
-                endIndex,
-                filteredProducts.length,
-              )} из ${filteredProducts.length}`}
+          {loading
+            ? 'Загрузка...'
+            : error
+              ? error
+              : pagination.total === 0
+                ? 'Товары не найдены'
+                : `${startIndex}–${endIndex} из ${pagination.total}`}
         </p>
+
         {/* Список карточек */}
-        <div className={styles.products}>
-          {currentItems.map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
-        </div>
+        {loading ? (
+          <div className={styles.loading}>Загрузка товаров...</div>
+        ) : error ? (
+          <div className={styles.error}>{error}</div>
+        ) : products.length === 0 ? (
+          <div className={styles.empty}>Товары не найдены</div>
+        ) : (
+          <div className={styles.products}>
+            {products.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        )}
 
         {/* Пагинация */}
-        {filteredProducts.length > itemsPerPage && (
+        {!loading && !error && pagination.totalPages > 1 && (
           <ReactPaginate
             previousLabel="←"
             nextLabel="→"
             breakLabel="..."
             onPageChange={handlePageChange}
-            pageCount={Math.ceil(
-              filteredProducts.length / itemsPerPage,
-            )}
+            pageCount={pagination.totalPages}
+            forcePage={pagination.page - 1}
             containerClassName={styles.pagination}
             activeClassName={styles.active}
             pageRangeDisplayed={3}
             marginPagesDisplayed={1}
           />
         )}
-        {/* {filteredProducts.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))} */}
       </main>
     </div>
   );

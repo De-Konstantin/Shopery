@@ -1,20 +1,37 @@
 import React from 'react';
 import styles from './TopProducts.module.scss';
-import productData from '../../utils/products.json';
+import { getPopularProducts } from '../../utils/api';
 import ProductCard from '../ProductCard/ProductCard';
 import { Link } from 'react-router-dom';
 
 function TopProducts() {
   const [products, setProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const highRated = productData.filter(
-      (product) => product.rating >= 4.5,
-    );
-    const shuffled = highRated.sort(() => Math.random() - 0.5);
-    const limitedProducts = shuffled.slice(0, 12); // or 12
-    setProducts(limitedProducts);
+    const loadTopProducts = async () => {
+      try {
+        // Используем специальную функцию для популярных товаров
+        const response = await getPopularProducts(4.5, 1);
+
+        // Перемешиваем и берем первые 12
+        const shuffled = (response.items || []).sort(
+          () => Math.random() - 0.5,
+        );
+        const limitedProducts = shuffled.slice(0, 12);
+        setProducts(limitedProducts);
+      } catch (error) {
+        console.error('Error loading top products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadTopProducts();
   }, []);
+
+  if (loading) return null; // или показать скелетон
+  if (products.length === 0) return null;
 
   return (
     <div className={styles.topProducts}>
