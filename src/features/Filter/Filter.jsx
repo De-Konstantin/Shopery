@@ -6,12 +6,12 @@ import { Range } from 'react-range';
 
 function Filter({ onFilterChange, totalCount }) {
   const [values, setValues] = useState([]); // пустой массив на старте
-  const step = 0.1; // шаг с точностью до десятых
-  const roundToStep = (num) => Math.round(num / step) * step;
+  const step = 1; // шаг с точностью до десятых
+  // const roundToStep = (num) => Math.round(num / step) * step;
 
   const [selectedTags, setSelectedTags] = useState([]); //lower case
   const [selectedCategories, setSelectedCategories] = useState([]); // lower-case
-  const [selectedRating, setSelectedRating] = useState(null); //{min, max}, null
+  const [selectedRating, setSelectedRating] = useState([]);
 
   // Состояние для метаданных фильтров
   const [filterMetadata, setFilterMetadata] = useState({
@@ -32,8 +32,8 @@ function Filter({ onFilterChange, totalCount }) {
         setFilterMetadata(metadata);
         // Устанавливаем начальные значения ценового диапазона
         setValues([
-          roundToStep(metadata.priceRange.min),
-          roundToStep(metadata.priceRange.max),
+          Math.round(metadata.priceRange.min),
+          Math.round(metadata.priceRange.max),
         ]);
       } catch (error) {
         console.error('Error loading filter metadata:', error);
@@ -45,7 +45,8 @@ function Filter({ onFilterChange, totalCount }) {
     loadMetadata();
   }, []);
 
-  const { minPrice, maxPrice } = filterMetadata.priceRange;
+  const minPrice = Math.round(filterMetadata.priceRange.min);
+  const maxPrice = Math.round(filterMetadata.priceRange.max);
 
   // категории (unique)
   const allCategories = useMemo(() => {
@@ -86,15 +87,24 @@ function Filter({ onFilterChange, totalCount }) {
   };
 
   const handleRatingSelect = (range) => {
-    setSelectedRating((prev) =>
-      prev?.label === range.label ? null : range,
-    );
+    setSelectedRating((prev) => {
+      // Проверяем, есть ли уже этот диапазон в массиве
+      const isSelected = prev.some((r) => r.label === range.label);
+
+      if (isSelected) {
+        // Убираем из массива
+        return prev.filter((r) => r.label !== range.label);
+      } else {
+        // Добавляем в массив
+        return [...prev, range];
+      }
+    });
   };
   const handleResetFilters = () => {
     setSelectedTags([]);
-    setSelectedRating(null);
+    setSelectedRating([]);
     setSelectedCategories([]);
-    setValues([roundToStep(minPrice), roundToStep(maxPrice)]);
+    setValues([minPrice, maxPrice]);
   };
   // передаём наружу фильтры при каждом изменении
   React.useEffect(() => {
@@ -163,8 +173,8 @@ function Filter({ onFilterChange, totalCount }) {
             {values.length > 0 && (
               <Range
                 step={step}
-                min={roundToStep(minPrice)}
-                max={roundToStep(maxPrice)}
+                min={minPrice}
+                max={maxPrice}
                 values={values}
                 onChange={setValues}
                 renderTrack={({ props, children }) => {
@@ -230,10 +240,16 @@ function Filter({ onFilterChange, totalCount }) {
                 <li key={range.label}>
                   <label>
                     <input
-                      type="radio"
+                      type="checkbox"
                       className={styles.checkbox}
                       name="rating"
-                      checked={selectedRating?.label === range.label}
+                      checked={
+                        Array.isArray(selectedRating)
+                          ? selectedRating.some(
+                              (r) => r.label === range.label,
+                            )
+                          : false
+                      }
                       onChange={() => handleRatingSelect(range)}
                     />
                     {range.label}

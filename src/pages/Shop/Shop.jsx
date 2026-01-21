@@ -50,10 +50,10 @@ function Shop() {
           params.maxPrice = filters.price[1];
         }
 
-        if (filters.rating) {
-          params.rating = filters.rating.min || filters.rating;
+        if (filters.rating && filters.rating.length > 0) {
+          const ratingValues = filters.rating.map((r) => r.min);
+          params.rating = ratingValues.join(',');
         }
-
         // Запрос к API
         const response = await getProducts(params);
 

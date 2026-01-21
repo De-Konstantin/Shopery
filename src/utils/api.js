@@ -28,18 +28,58 @@ const API_BASE_URL =
 export const getProducts = async (params = {}) => {
   try {
     // объединяем дефолтные параметры с переданными
-    const queryParams = new URLSearchParams({
-      page: params.page || 1,
-      limit: params.limit || 10,
-      ...(params.search && { search: params.search }),
-      ...(params.minPrice && { minPrice: params.minPrice }),
-      ...(params.maxPrice && { maxPrice: params.maxPrice }),
-      ...(params.category && { category: params.category }),
-      ...(params.tags && { tags: params.tags }),
-      ...(params.rating && { rating: params.rating }),
-      ...(params.sort && { sort: params.sort }),
-    });
+    // const queryParams = new URLSearchParams({
+    //   page: params.page || 1,
+    //   limit: params.limit || 10,
+    //   ...(params.search && { search: params.search }),
+    //   ...(params.minPrice && { minPrice: params.minPrice }),
+    //   ...(params.maxPrice && { maxPrice: params.maxPrice }),
+    //   ...(params.category && { category: params.category }),
+    //   ...(params.tags && { tags: params.tags }),
+    //   ...(params.rating && { rating: params.rating }),
+    //   ...(params.sort && { sort: params.sort }),
+    // });
 
+    const queryParams = new URLSearchParams();
+
+    // Базовые параметры
+    queryParams.append('page', params.page || 1);
+    queryParams.append('limit', params.limit || 10);
+
+    // Опциональные параметры
+    if (params.search) queryParams.append('search', params.search);
+    if (params.minPrice)
+      queryParams.append('minPrice', params.minPrice);
+    if (params.maxPrice)
+      queryParams.append('maxPrice', params.maxPrice);
+    if (params.category)
+      queryParams.append('category', params.category);
+    if (params.tags) queryParams.append('tags', params.tags);
+    if (params.sort) queryParams.append('sort', params.sort);
+
+    // Рейтинг — поддержка диапазона
+    if (params.rating) {
+      if (Array.isArray(params.rating)) {
+        const ratingValues = params.rating.map((r) => r.min);
+        ratingValues.forEach((val) =>
+          queryParams.append('rating', val),
+        );
+      } else if (typeof params.rating === 'string') {
+        // Уже строка типа "5,4,3"
+        params.rating
+          .split(',')
+          .forEach((val) => queryParams.append('rating', val.trim()));
+      } else if (typeof params.rating === 'number') {
+        queryParams.append('rating', params.rating);
+      }
+    }
+    // Для обратной совместимости (если rating — число)
+    else if (
+      params.rating !== undefined &&
+      typeof params.rating === 'number'
+    ) {
+      queryParams.append('rating', params.rating);
+    }
     // выполняем GET запрос с параметрами
     const response = await fetch(
       `${API_BASE_URL}/products?${queryParams}`,
