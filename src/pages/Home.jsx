@@ -4,14 +4,12 @@ import SubcribeBanner from '../components/SubcribeBanner/SubcribeBanner';
 import Hero from '../components/Hero/Hero';
 import Logos from '../components/Logos/Logos';
 import TopCategory from '../components/TopCategory/TopCategory';
-import ProductCard from '../components/ProductCard/ProductCard';
 import TopProducts from '../components/topProducts/TopProducts';
 
 import Banner from '../components/Banner/Banner';
 import styles from './home.module.scss';
 import HotDeals from '../components/HotDeals/HotDeals';
 import BannerLarge from '../components/BannerLarge/BannerLarge';
-import NewsCard from '../components/NewsCard/newsCard';
 import LatestNews from '../components/LatestNews/LatestNews';
 function Home() {
   return (

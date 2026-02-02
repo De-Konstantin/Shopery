@@ -1,10 +1,12 @@
 import styles from './ProductCard.module.scss';
-
+import { useNavigate } from 'react-router-dom';
 import ButtonRound from '../buttons/ButtonRound/ButtonRound';
 import { useCart } from 'react-use-cart';
+
 // import data from '../../utils/products.json';
 function ProductCard({ product = {}, className }) {
   const { addItem } = useCart();
+  const navigate = useNavigate();
 
   // Нормализация и защита от отсутствующих полей
   const priceOrigin = Number(product.priceOrigin) || 0;
@@ -32,16 +34,41 @@ function ProductCard({ product = {}, className }) {
       ? +(priceOrigin * (1 - discount / 100)).toFixed(2)
       : priceOrigin;
 
-  const handleAdd = () => {
+  // Обработчик клика на карточку
+  const handleCardClick = (e) => {
+    // Предотвращаем переход если кликнули на кнопку или ссылку
+    if (e.target.closest('button') || e.target.closest('a')) {
+      return;
+    }
+    // ✅ ИСПРАВЛЕНИЕ: безопасное получение ID
+    const productId = product._id || product.id || product.productId;
+
+    if (!productId) {
+      console.error('❌ Product ID not found:', product);
+      return;
+    }
+
+    // Переходим на страницу товара
+    navigate(`/product/${productId}`);
+  };
+
+  const handleAdd = (e) => {
+    e.stopPropagation(); //  предотвращаем всплытие клика к карточке
     addItem({
-      id: product.id || product.slug || productName,
+      id: product._id || product.id || product.slug || productName,
       name: productName,
       image: primaryImage,
       price: discountedPrice,
     });
   };
   return (
-    <div className={`${styles.productCard} ${className || ''}`}>
+    <div
+      onClick={handleCardClick}
+      style={{ cursor: 'pointer' }} // ✅ ДОБАВИТЬ: показываем что карточка кликабельна
+      role="button" // ✅ ДОБАВИТЬ: для доступности
+      tabIndex={0} // ✅ ДОБАВИТЬ: для навигации клавиатурой
+      className={`${styles.productCard} ${className || ''}`}
+    >
       {product.discount ? (
         <span className={styles.productCard__badge}>
           Sale {product.discount}%
