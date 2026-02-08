@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import styles from './ProductPage.module.css';
+import styles from './ProductPage.module.scss';
 import { getProductById } from '../../utils/api';
 
 export default function ProductPage() {
@@ -11,6 +11,7 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true); // состояние загрузки
   const [error, setError] = useState(null); // состояние ошибки
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
     // Загрузка товара из API
@@ -54,8 +55,10 @@ export default function ProductPage() {
     ? product.images
     : [product.images || '/placeholder.jpg'];
 
-  const mainImage = productImages[0] || '/placeholder.jpg';
-  const gallery = productImages.slice(1);
+  const mainImage =
+    productImages[activeImageIndex] || productImages[0]; // ✅ используем активный индекс
+  const hasThumbnails = productImages.length > 1; // ✅ проверка на наличие миниатюр
+  // const gallery = productImages.slice(1);
 
   const productRating = Math.round(Number(product.rating) || 0);
   const productTags = Array.isArray(product.tags)
@@ -75,93 +78,111 @@ export default function ProductPage() {
   const priceDiscounted = priceOrigin * (1 - discount / 100);
   return (
     <div className={styles.productPage}>
-      <div className={styles.gallery}>
-        <img
-          src={mainImage}
-          alt={product.productName || product.name}
-          className={styles.mainImage}
-        />
-        <div className={styles.thumbnails}>
-          {gallery.map((img, i) => (
+      <div className="_container">
+        <div className={styles.top}>
+          <div className={styles.gallery}>
+            {/* ✅ Миниатюры показываем только если их больше одной */}
+            {hasThumbnails && (
+              <div className={styles.thumbnails}>
+                {productImages.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`${product.productName || product.name}-${i}`}
+                    className={
+                      i === activeImageIndex ? styles.active : ''
+                    }
+                    onClick={() => setActiveImageIndex(i)} // ✅ переключение изображения
+                  />
+                ))}
+              </div>
+            )}
+
             <img
-              key={i}
-              src={img}
-              alt={`${product.productName || product.name}-${i}`}
+              src={mainImage}
+              alt={product.productName || product.name}
+              className={styles.mainImage}
             />
-          ))}
-        </div>
-      </div>
+          </div>
 
-      <div className={styles.info}>
-        <h1>{product.productName || product.name}</h1>
-        <div className={styles.stock}>
-          {product.inStock ? 'In Stock' : 'Out of Stock'}
-        </div>
-        <div className={styles.reviews}>
-          {'★'.repeat(productRating)} {'☆'.repeat(5 - productRating)}{' '}
-          ({product.reviews} Reviews)
-        </div>
-        <div className={styles.price}>
-          <span className={styles.old}>
-            ${priceOrigin.toFixed(2)}
-          </span>
-          <span className={styles.new}>
-            ${priceDiscounted.toFixed(2)}
-          </span>
-          <span className={styles.discount}>{discount}</span>
-        </div>
+          <div className={styles.info}>
+            <h1 className={styles.productName}>
+              {product.productName || product.name}
+            </h1>
+            <div className={styles.stock}>
+              {product.isAvailable ? 'In Stock' : 'Out of Stock'}
+            </div>
+            <div className={styles.reviews}>
+              {'★'.repeat(productRating)}{' '}
+              {'☆'.repeat(5 - productRating)}
+              <span className={styles.reviewCount}>
+                ({product.rating})
+              </span>
+            </div>
+            <div className={styles.price}>
+              <span className={styles.old}>
+                ${priceOrigin.toFixed(2)}
+              </span>
+              <span className={styles.new}>
+                ${priceDiscounted.toFixed(2)}
+              </span>
+              <span className={styles.discount}>{discount}</span>
+            </div>
 
-        {/* <p className={styles.brand}>
+            {/* <p className={styles.brand}>
           Brand: <span>{product.brand || 'N/A'}</span>
         </p> */}
-        <p className={styles.shortDesc}>
-          {product.shortDescription ||
-            product.description ||
-            'No description'}
-        </p>
+            <p className={styles.shortDesc}>
+              {product.shortDescription ||
+                product.description ||
+                'No description'}
+            </p>
 
-        <div className={styles.quantity}>
-          <button onClick={handleDecrease}>-</button>
-          <span>{quantity}</span>
-          <button onClick={handleIncrease}>+</button>
-        </div>
+            <div className={styles.quantity}>
+              <button onClick={handleDecrease}>-</button>
+              <span>{quantity}</span>
+              <button onClick={handleIncrease}>+</button>
+            </div>
 
-        <div className={styles.actions}>
-          <button className={styles.addToCart}>Add to Cart</button>
-          <button className={styles.wishlist}>♡</button>
-        </div>
+            <div className={styles.actions}>
+              <button className={styles.addToCart}>
+                Add to Cart
+              </button>
+              <button className={styles.wishlist}>♡</button>
+            </div>
 
-        <div className={styles.meta}>
-          <p>
-            Category: <span>{product.category || 'N/A'}</span>
-          </p>
-          <p>
-            Tags: <span>{productTags.join(', ') || 'N/A'}</span>
-          </p>
+            <div className={styles.meta}>
+              <p>
+                Category: <span>{product.category || 'N/A'}</span>
+              </p>
+              <p>
+                Tags: <span>{productTags.join(', ') || 'N/A'}</span>
+              </p>
+            </div>
+          </div>
         </div>
+        <Tabs className={styles.tabs}>
+          <TabList>
+            <Tab>Descriptions</Tab>
+            <Tab>Additional Information</Tab>
+            <Tab>Customer Feedback</Tab>
+          </TabList>
+
+          <TabPanel>
+            <ul>
+              {productDescription.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
+            </ul>
+          </TabPanel>
+          <TabPanel>
+            <p>Here will be product specifications...</p>
+          </TabPanel>
+          <TabPanel>
+            <p>Here will be customer feedback...</p>
+          </TabPanel>
+        </Tabs>
       </div>
-
-      <Tabs className={styles.tabs}>
-        <TabList>
-          <Tab>Descriptions</Tab>
-          <Tab>Additional Information</Tab>
-          <Tab>Customer Feedback</Tab>
-        </TabList>
-
-        <TabPanel>
-          <ul>
-            {productDescription.map((d, i) => (
-              <li key={i}>{d}</li>
-            ))}
-          </ul>
-        </TabPanel>
-        <TabPanel>
-          <p>Here will be product specifications...</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Here will be customer feedback...</p>
-        </TabPanel>
-      </Tabs>
     </div>
   );
 }

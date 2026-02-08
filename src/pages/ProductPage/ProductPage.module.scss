@@ -1,0 +1,162 @@
+.productPage {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* .container {
+  padding-top: 80px;
+
+  @media (max-width: 991px) {
+    padding-top: 40px;
+  }
+} */
+.top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.gallery {
+}
+.gallery {
+  flex: 1 0 40%;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  order: -1;
+  max-height: 436px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  /*  ✅ тонкая полоса прокрутки (Firefox) */
+  scrollbar-color: #06b60c84 #f0f0f0;
+}
+
+/* ✅ Стилизация полосы прокрутки для Chrome/Safari */
+.thumbnails::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thumbnails::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb {
+  background: #00b207;
+  border-radius: 10px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #009406;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #e6e6e6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.thumbnails img:hover,
+.thumbnails img.active {
+  border-color: #00b207;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+
+/* Если только одна картинка - убираем сетку */
+.gallery:has(.thumbnails:empty) {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+    order: 1;
+    min-height: none;
+    min-width: 100%;
+    overflow-y: hidden;
+  }
+}
+.mainImage {
+}
+.thumbnails {
+}
+
+.info {
+  flex: 50%;
+}
+.stock {
+  font-size: 12px;
+  color: var(--gray6);
+  background-color: var(--soft-primary);
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.productName {
+  font-size: 36px;
+  line-height: 1;
+}
+.reviews {
+  color: var(--warning);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.reviewCount {
+  color: var(--gray7);
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+.old {
+  font-size: 20px;
+  color: var(--gray6);
+  text-decoration: line-through;
+  margin-right: 12px;
+}
+.new {
+}
+
+.discount {
+}
+.shortDesc {
+}
+.quantity {
+}
+
+.actions {
+}
+.addToCart {
+}
+.wishlist {
+}
+.meta {
+}
+.tabs {
+}

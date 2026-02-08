@@ -7,7 +7,6 @@ import Shop from '../pages/Shop/Shop';
 import About from '../pages/About/About';
 import Blog from '../pages/blog';
 import Contact from '../pages/Contact';
-import Product from '../pages/Product';
 import CartPage from '../pages/CartPage/CartPage';
 import ProductPage from '../pages/ProductPage/ProductPage';
 
