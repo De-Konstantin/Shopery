@@ -4,24 +4,22 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import styles from './ProductPage.module.scss';
 import { getProductById } from '../../utils/api';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/image-gallery.css';
 
 export default function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const [loading, setLoading] = useState(true); // состояние загрузки
-  const [error, setError] = useState(null); // состояние ошибки
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     // Загрузка товара из API
     const loadProduct = async () => {
       setLoading(true);
       setError(null);
       try {
-        const data = await getProductById(id); // запрос к API
-        // ✅ ОТЛАДКА: смотрим структуру данных
-        console.log('Product data from API:', data);
+        const data = await getProductById(id);
         setProduct(data);
       } catch (err) {
         console.error('Error loading product:', err);
@@ -50,15 +48,10 @@ export default function ProductPage() {
   const handleDecrease = () =>
     setQuantity((q) => (q > 1 ? q - 1 : 1));
 
-  // ✅ ЗАЩИТА: нормализация данных под реальную структуру бэкенда
+  // Нормализация данных под реальную структуру бэкенда
   const productImages = Array.isArray(product.images)
     ? product.images
     : [product.images || '/placeholder.jpg'];
-
-  const mainImage =
-    productImages[activeImageIndex] || productImages[0]; // ✅ используем активный индекс
-  const hasThumbnails = productImages.length > 1; // ✅ проверка на наличие миниатюр
-  // const gallery = productImages.slice(1);
 
   const productRating = Math.round(Number(product.rating) || 0);
   const productTags = Array.isArray(product.tags)
@@ -75,33 +68,33 @@ export default function ProductPage() {
   // Вычисляем цену со скидкой
   const priceOrigin = Number(product.priceOrigin) || 0;
   const discount = Number(product.discount) || 0;
-  const priceDiscounted = priceOrigin * (1 - discount / 100);
+  const hasDiscount = discount > 0;
+  const priceDiscounted = hasDiscount
+    ? priceOrigin * (1 - discount / 100)
+    : priceOrigin;
+
+  const galleryImages = productImages.map((img) => {
+    // Картинки из папки public (frontend), не добавляем API_BASE_URL
+    const imageUrl = img.startsWith('http') ? img : img;
+
+    return {
+      original: imageUrl,
+      thumbnail: imageUrl,
+    };
+  });
+
   return (
     <div className={styles.productPage}>
       <div className="_container">
         <div className={styles.top}>
           <div className={styles.gallery}>
-            {/* ✅ Миниатюры показываем только если их больше одной */}
-            {hasThumbnails && (
-              <div className={styles.thumbnails}>
-                {productImages.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt={`${product.productName || product.name}-${i}`}
-                    className={
-                      i === activeImageIndex ? styles.active : ''
-                    }
-                    onClick={() => setActiveImageIndex(i)} // ✅ переключение изображения
-                  />
-                ))}
-              </div>
-            )}
-
-            <img
-              src={mainImage}
-              alt={product.productName || product.name}
-              className={styles.mainImage}
+            <ImageGallery
+              items={galleryImages}
+              showPlayButton={false}
+              showFullscreenButton={true}
+              showNav={true}
+              thumbnailPosition="left"
+              showThumbnails={true}
             />
           </div>
 
@@ -120,13 +113,20 @@ export default function ProductPage() {
               </span>
             </div>
             <div className={styles.price}>
-              <span className={styles.old}>
-                ${priceOrigin.toFixed(2)}
-              </span>
+              {hasDiscount && (
+                <span className={styles.old}>
+                  ${priceOrigin.toFixed(2)}
+                </span>
+              )}
               <span className={styles.new}>
                 ${priceDiscounted.toFixed(2)}
               </span>
-              <span className={styles.discount}>{discount}</span>
+              {''}
+              {hasDiscount && (
+                <span className={styles.discount}>
+                  {discount}% off
+                </span>
+              )}
             </div>
 
             {/* <p className={styles.brand}>
