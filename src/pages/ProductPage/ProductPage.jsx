@@ -6,6 +6,9 @@ import styles from './ProductPage.module.scss';
 import { getProductById } from '../../utils/api';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/image-gallery.css';
+import Button from '../../components/buttons/Button/Button';
+import ButtonRound from '../../components/buttons/ButtonRound/ButtonRound';
+import { useCart } from 'react-use-cart';
 
 export default function ProductPage() {
   const { id } = useParams();
@@ -13,6 +16,9 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { addItem, items, updateItemQuantity } = useCart();
+
   useEffect(() => {
     // Загрузка товара из API
     const loadProduct = async () => {
@@ -53,6 +59,33 @@ export default function ProductPage() {
     ? product.images
     : [product.images || '/placeholder.jpg'];
 
+  const handleAddToCart = () => {
+    const productId = product._id || product.id;
+    const mainImage = productImages[0] || '/placeholder.jpg';
+
+    const cartItem = {
+      id: productId,
+      name: product.productName || product.name || 'Unnamed',
+      price: priceDiscounted,
+      image: mainImage,
+    };
+
+    // ✅ Проверяем, есть ли товар уже в корзине
+    const existingItem = items.find((item) => item.id === productId);
+
+    if (existingItem) {
+      // ✅ Если товар есть, добавляем к существующему количеству
+      updateItemQuantity(productId, existingItem.quantity + quantity);
+    } else {
+      // ✅ Если товара нет, добавляем с выбранным количеством
+      addItem(cartItem, quantity);
+    }
+
+    alert(
+      `${quantity} × ${product.productName || product.name} added to cart!`,
+    );
+    setQuantity(1);
+  };
   const productRating = Math.round(Number(product.rating) || 0);
   const productTags = Array.isArray(product.tags)
     ? product.tags
@@ -137,26 +170,34 @@ export default function ProductPage() {
                 product.description ||
                 'No description'}
             </p>
-
-            <div className={styles.quantity}>
-              <button onClick={handleDecrease}>-</button>
-              <span>{quantity}</span>
-              <button onClick={handleIncrease}>+</button>
-            </div>
-
             <div className={styles.actions}>
-              <button className={styles.addToCart}>
+              <div className={styles.quantity}>
+                <button onClick={handleDecrease}>-</button>
+                <span>{quantity}</span>
+                <button onClick={handleIncrease}>+</button>
+              </div>
+
+              <Button
+                size="small"
+                width="long"
+                onClick={handleAddToCart}
+              >
+                <span className={styles.addToCart}></span>
                 Add to Cart
-              </button>
-              <button className={styles.wishlist}>♡</button>
+              </Button>
+              <ButtonRound size="large" type="cart">
+                <span className={styles.wishlist}>♡</span>
+              </ButtonRound>
             </div>
 
             <div className={styles.meta}>
               <p>
-                Category: <span>{product.category || 'N/A'}</span>
+                <b> Category:</b>{' '}
+                <span>{product.category || 'N/A'}</span>
               </p>
               <p>
-                Tags: <span>{productTags.join(', ') || 'N/A'}</span>
+                <b>Tags:</b>{' '}
+                <span>{productTags.join(', ') || 'N/A'}</span>
               </p>
             </div>
           </div>
