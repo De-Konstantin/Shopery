@@ -4,19 +4,19 @@ import {
   useState,
   useEffect,
 } from 'react';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance';
 
 const AuthContext = createContext(null);
-
-const API_URL =
-  import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [loading, setLoading] = useState(true);
 
-  // Загрузка данных пользователя при монтировании
+  /**
+   * Загрузить данные пользователя при монтировании компонента
+   * или при изменении токена
+   */
   useEffect(() => {
     if (token) {
       loadUser();
@@ -25,14 +25,12 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token]);
 
-  // Загрузить данные пользователя
+  /**
+   * Загрузить профиль пользователя с backend
+   */
   const loadUser = async () => {
     try {
-      const response = await axios.get(`${API_URL}/auth/me`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axiosInstance.get('/auth/me');
       setUser(response.data);
     } catch (error) {
       console.error('Failed to load user:', error);
@@ -42,57 +40,78 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Регистрация
+  /**
+   * Регистрация нового пользователя
+   * @param {Object} userData - { email, password, firstName, lastName }
+   * @returns {Object} { success: boolean, error?: string }
+   */
   const register = async (userData) => {
     try {
-      const response = await axios.post(
-        `${API_URL}/auth/register`,
+      const response = await axiosInstance.post(
+        '/auth/register',
         userData,
       );
-      const { access_token, user: userData } = response.data;
+      const { access_token, user: newUser } = response.data;
 
+      // Сохраняем токен в localStorage
       localStorage.setItem('token', access_token);
       setToken(access_token);
-      setUser(userData);
+      setUser(newUser);
 
       return { success: true };
     } catch (error) {
+      const errorMessage =
+        error.response?.data?.message || 'Registration failed';
+      console.error('Registration error:', errorMessage);
       return {
         success: false,
-        error: error.response?.data?.message || 'Registration failed',
+        error: errorMessage,
       };
     }
   };
 
-  // Вход
+  /**
+   * Вход пользователя
+   * @param {Object} credentials - { email, password }
+   * @returns {Object} { success: boolean, error?: string }
+   */
   const login = async (credentials) => {
     try {
-      const response = await axios.post(
-        `${API_URL}/auth/login`,
+      const response = await axiosInstance.post(
+        '/auth/login',
         credentials,
       );
       const { access_token, user: userData } = response.data;
 
+      // Сохраняем токен в localStorage
       localStorage.setItem('token', access_token);
       setToken(access_token);
       setUser(userData);
 
       return { success: true };
     } catch (error) {
+      const errorMessage =
+        error.response?.data?.message || 'Login failed';
+      console.error('Login error:', errorMessage);
       return {
         success: false,
-        error: error.response?.data?.message || 'Login failed',
+        error: errorMessage,
       };
     }
   };
 
-  // Выход
+  /**
+   * Выход пользователя (логаут)
+   */
   const logout = () => {
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
   };
 
+  /**
+   * Значение контекста с методами и состоянием
+   */
   const value = {
     user,
     token,
@@ -111,6 +130,11 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+/**
+ * Hook для использования AuthContext в компонентах
+ * @returns {Object} значение контекста
+ * @throws {Error} если использован вне AuthProvider
+ */
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
