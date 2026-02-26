@@ -55,7 +55,7 @@ function ProductCard({ product = {}, className }) {
   const handleAdd = (e) => {
     e.stopPropagation(); //  предотвращаем всплытие клика к карточке
     addItem({
-      id: product._id || product.id || product.slug || productName,
+      id: product.id,
       name: productName,
       image: primaryImage,
       price: discountedPrice,

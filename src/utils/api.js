@@ -135,6 +135,38 @@ export const getProductById = async (id) => {
 };
 
 /**
+ * Создать новый заказ (гость или авторизованный пользователь)
+ * @param {Object} order - данные заказа
+ * @returns {Promise<Object>} созданный заказ
+ */
+export const createOrder = async (order) => {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${API_BASE_URL}/orders`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: JSON.stringify(order),
+    });
+
+    if (!response.ok) {
+      const message = await response.text();
+      throw new Error(
+        message || `HTTP error! status: ${response.status}`,
+      );
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error creating order:', error);
+    throw error;
+  }
+};
+
+/**
  * Создать новый товар
  * @param {Object} product - объект товара
  * @param {string} product.productName - название товара
@@ -158,12 +190,18 @@ export const createProduct = async (product) => {
       throw new Error('productName and slug are required');
     }
 
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
     // выполняем POST запрос с данными товара
     const response = await fetch(`${API_BASE_URL}/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       // преобразуем объект в JSON строку
       body: JSON.stringify(product),
@@ -171,7 +209,10 @@ export const createProduct = async (product) => {
 
     // проверяем статус ответа
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const message = await response.text();
+      throw new Error(
+        message || `HTTP error! status: ${response.status}`,
+      );
     }
 
     // парсим и возвращаем созданный товар
@@ -196,12 +237,18 @@ export const updateProduct = async (id, updates) => {
       throw new Error('Product ID is required');
     }
 
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
     // выполняем PATCH запрос с частичными обновлениями
     const response = await fetch(`${API_BASE_URL}/products/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       // преобразуем обновления в JSON строку
       body: JSON.stringify(updates),
@@ -209,7 +256,10 @@ export const updateProduct = async (id, updates) => {
 
     // проверяем статус ответа
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const message = await response.text();
+      throw new Error(
+        message || `HTTP error! status: ${response.status}`,
+      );
     }
 
     // парсим и возвращаем обновленный товар
@@ -233,18 +283,36 @@ export const deleteProduct = async (id) => {
       throw new Error('Product ID is required');
     }
 
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
     // выполняем DELETE запрос
     const response = await fetch(`${API_BASE_URL}/products/${id}`, {
       method: 'DELETE',
       headers: {
         Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     });
 
     // проверяем статус ответа
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const message = await response.text();
+      throw new Error(
+        message || `HTTP error! status: ${response.status}`,
+      );
     }
+
+    // парсим и возвращаем (обычно пусто для DELETE)
+    const data = await response.json().catch(() => ({ success: true }));
+    return data;
+  } catch (error) {
+    console.error(`Error deleting product ${id}:`, error);
+    throw error;
+  }
+};
 
     // парсим и возвращаем результат
     const data = await response.json();

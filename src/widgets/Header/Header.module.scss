@@ -35,8 +35,26 @@
         &:hover {
             color: var(--primary);
         }
+    }
 
+    &__user {
+        color: var(--gray6);
+        font-weight: 500;
+    }
 
+    &__logout {
+        background: none;
+        border: none;
+        color: var(--gray6);
+        cursor: pointer;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 0;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--primary);
+        }
     }
 }
 

@@ -116,7 +116,9 @@ function CartPage() {
           >
             <span>Total:</span> <span>${cartTotal.toFixed(2)}</span>
           </div>
-          <Button>Proceed to checkout</Button>
+          <Link to="/checkout" className={styles.checkoutLink}>
+            <Button>Proceed to checkout</Button>
+          </Link>
         </div>
       </div>
     </div>

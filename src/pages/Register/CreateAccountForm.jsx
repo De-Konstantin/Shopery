@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './CreateAccountForm.module.scss';
+import { useAuth } from '../../contexts/AuthContext';
 
 // ✅ Определяем схему валидации
 const schema = Yup.object().shape({
@@ -24,24 +26,47 @@ const schema = Yup.object().shape({
 });
 
 function CreateAccountForm() {
+  const navigate = useNavigate();
+  const { register: registerUser } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [authError, setAuthError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const {
     register,
     handleSubmit,
-    // watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log('Form Data:', data);
-    alert('Account created successfully!');
+  const onSubmit = async (data) => {
+    setAuthError('');
+    setIsSubmitting(true);
+
+    const payload = {
+      email: data.email,
+      password: data.password,
+      firstName: data.firstName,
+      lastName: data.lastName,
+    };
+
+    const result = await registerUser(payload);
+
+    if (result.success) {
+      navigate('/');
+    } else {
+      setAuthError(result.error || 'Failed to create account.');
+    }
+
+    setIsSubmitting(false);
   };
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPass, setShowConfirmPass] = useState(false);
 
   return (
-    <page className={`${styles.createAccount__container} _container`}>
+    <section
+      className={`${styles.createAccount__container} _container`}
+    >
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.title}>Create Account</h2>
         <input
@@ -49,6 +74,7 @@ function CreateAccountForm() {
           placeholder="First Name"
           {...register('firstName')}
           className={styles.input}
+          disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.firstName?.message}</p>
         <input
@@ -56,6 +82,7 @@ function CreateAccountForm() {
           placeholder="Last Name"
           {...register('lastName')}
           className={styles.input}
+          disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.lastName?.message}</p>
         <input
@@ -63,6 +90,7 @@ function CreateAccountForm() {
           placeholder="Email"
           {...register('email')}
           className={styles.input}
+          disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.email?.message}</p>
         <div className={styles.passwordWrapper}>
@@ -72,6 +100,7 @@ function CreateAccountForm() {
             placeholder="Password"
             {...register('password')}
             className={styles.input}
+            disabled={isSubmitting}
           />
           <button
             type="button"
@@ -88,11 +117,12 @@ function CreateAccountForm() {
             placeholder="Confirm Password"
             {...register('confirmPassword')}
             className={styles.input}
+            disabled={isSubmitting}
           />
           <button
             type="button"
             className={styles.showPassword}
-            onClick={() => setShowConfirmPass(!showPassword)}
+            onClick={() => setShowConfirmPass(!showConfirmPass)}
           >
             <span className="icon-eye"></span>
           </button>{' '}
@@ -107,14 +137,19 @@ function CreateAccountForm() {
           </label>
         </div>
         <p className={styles.error}>{errors.acceptTerms?.message}</p>
-        <button type="submit" className={styles.button}>
-          Create Account
+        {authError && <p className={styles.error}>{authError}</p>}
+        <button
+          type="submit"
+          className={styles.button}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Creating...' : 'Create Account'}
         </button>
         <p className={styles.login}>
-          Already have an account? <a href="#">Login</a>
+          Already have an account? <Link to="/signin">Login</Link>
         </p>
       </form>
-    </page>
+    </section>
   );
 }
 

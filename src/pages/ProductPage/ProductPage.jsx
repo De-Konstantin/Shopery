@@ -60,7 +60,7 @@ export default function ProductPage() {
     : [product.images || '/placeholder.jpg'];
 
   const handleAddToCart = () => {
-    const productId = product._id || product.id;
+    const productId = product.id;
     const mainImage = productImages[0] || '/placeholder.jpg';
 
     const cartItem = {

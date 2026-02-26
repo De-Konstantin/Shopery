@@ -9,6 +9,8 @@ import Blog from '../pages/blog';
 import Contact from '../pages/Contact';
 import CartPage from '../pages/CartPage/CartPage';
 import ProductPage from '../pages/ProductPage/ProductPage';
+import Checkout from '../pages/Checkout/Checkout';
+import OrderSuccess from '../pages/OrderSuccess/OrderSuccess';
 
 export default function AppRouter() {
   return (
@@ -19,10 +21,15 @@ export default function AppRouter() {
       <Route path="/about" element={<About />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/login" element={<SignIn />} />
-      <Route path="/CreateAccount" element={<CreateAccountForm />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/register" element={<CreateAccountForm />} />
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route
+        path="/order-success/:orderId"
+        element={<OrderSuccess />}
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

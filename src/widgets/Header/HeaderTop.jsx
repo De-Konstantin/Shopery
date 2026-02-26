@@ -4,7 +4,11 @@ import Adress from '../../components/Adress/Adress';
 import ChangeCurrency from '../../features/ChangeCurrency/ChangeCurrency';
 import ChangeLanguage from '../../features/ChangeLang/ChangeLang';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+
 function HeaderTop() {
+  const { isAuthenticated, user, logout } = useAuth();
+
   return (
     <div className={styles.headerTop}>
       <div className={`${styles.headerTop__container} _container`}>
@@ -14,16 +18,30 @@ function HeaderTop() {
           <ChangeCurrency />
           <ChangeLanguage />
           <span>|</span>
-          <Link to="/login" className={styles.headerTop__link}>
-            Sign In
-          </Link>
-          <span>/</span>
-          <Link
-            to="/CreateAccount"
-            className={styles.headerTop__link}
-          >
-            Create Account
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <span className={styles.headerTop__user}>
+                Hello, {user?.firstName || 'User'}
+              </span>
+              <span>|</span>
+              <button
+                onClick={logout}
+                className={styles.headerTop__logout}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/signin" className={styles.headerTop__link}>
+                Sign In
+              </Link>
+              <span>/</span>
+              <Link to="/register" className={styles.headerTop__link}>
+                Create Account
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

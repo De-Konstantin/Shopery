@@ -1,0 +1,271 @@
+.page {
+  background: radial-gradient(1200px 600px at 50% -200px, #f4f8ef 0%, #ffffff 60%),
+    linear-gradient(180deg, #fbfaf7 0%, #ffffff 55%);
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 auto 24px;
+  line-height: 1;
+}
+
+.iconGlyph {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 12px;
+  color: var(--gray9);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--gray6);
+  margin-bottom: 32px;
+}
+
+.message {
+  font-size: 16px;
+  color: var(--gray6);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.orderNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.orderId {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: var(--gray05);
+  color: var(--gray9);
+  font-weight: 600;
+}
+
+.copyButton {
+  background: none;
+  border: 1px solid var(--gray05);
+  color: var(--gray7);
+  border-radius: 999px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+.copied {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.orderInfo {
+  background-color: var(--white);
+  border: 1px solid var(--gray05);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray05);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  font-weight: 500;
+  color: var(--gray7);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labelIcon {
+  font-size: 16px;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.value {
+  font-weight: 600;
+  color: var(--gray9);
+  text-align: right;
+}
+
+.itemsSection {
+  background-color: var(--white);
+  border: 1px solid var(--gray05);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--gray9);
+}
+
+.itemsList {
+  margin-bottom: 16px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray05);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-weight: 500;
+  color: var(--gray9);
+}
+
+.itemQuantity {
+  font-size: 14px;
+  color: var(--gray6);
+}
+
+.itemPrice {
+  font-weight: 600;
+  color: var(--gray9);
+}
+
+.summary {
+  border-top: 2px solid var(--gray9);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray9);
+}
+
+.summaryValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.actions {
+  text-align: center;
+}
+
+.actionsButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.buttonLink {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .orderInfo,
+  .itemsSection {
+    padding: 16px;
+  }
+
+  .infoRow,
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .value,
+  .itemPrice {
+    text-align: left;
+  }
+
+  .orderNumberRow {
+    justify-content: flex-start;
+  }
+
+  .actionsButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

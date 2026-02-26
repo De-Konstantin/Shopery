@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './SignIn.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { useAuth } from '../../contexts/AuthContext';
 
 // ✅ Определяем схему валидации
 const schema = Yup.object().shape({
@@ -17,23 +18,57 @@ const schema = Yup.object().shape({
 });
 
 function SignIn() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [authError, setAuthError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const demoMode = import.meta.env.VITE_DEMO_MODE === 'true';
+  const demoCredentials = {
+    user: {
+      email:
+        import.meta.env.VITE_DEMO_USER_EMAIL || 'demo@shopery.dev',
+      password:
+        import.meta.env.VITE_DEMO_USER_PASSWORD || 'demo12345',
+    },
+    admin: {
+      email:
+        import.meta.env.VITE_DEMO_ADMIN_EMAIL || 'admin@shopery.dev',
+      password:
+        import.meta.env.VITE_DEMO_ADMIN_PASSWORD || 'admin12345',
+    },
+  };
+
   const {
     register,
     handleSubmit,
-    // watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log('Form Data:', data);
-    alert('Login successfully!');
+  const handleAuth = async (credentials) => {
+    setIsSubmitting(true);
+    setAuthError('');
+    const result = await login(credentials);
+
+    if (result.success) {
+      navigate('/');
+    } else {
+      setAuthError(result.error || 'Unable to sign in.');
+    }
+
+    setIsSubmitting(false);
   };
 
-  //   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  //   const [rememberMe, setRememberMe] = useState(false);
+  const onSubmit = (data) => {
+    handleAuth({ email: data.email, password: data.password });
+  };
+
+  const handleDemoLogin = (type) => {
+    handleAuth(demoCredentials[type]);
+  };
 
   return (
     <>
@@ -50,6 +85,7 @@ function SignIn() {
             placeholder="Email"
             {...register('email')}
             className={styles.input}
+            disabled={isSubmitting}
           />
           <p className={styles.error}>{errors.email?.message}</p>
           <div className={styles.passwordWrapper}>
@@ -58,6 +94,7 @@ function SignIn() {
               placeholder="Password"
               {...register('password')}
               className={styles.input}
+              disabled={isSubmitting}
             />
             <button
               type="button"
@@ -83,9 +120,37 @@ function SignIn() {
             </a>
           </div>
 
-          <button type="submit" className={styles.button}>
-            Login
+          {authError && <p className={styles.error}>{authError}</p>}
+
+          <button
+            type="submit"
+            className={styles.button}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Signing in...' : 'Login'}
           </button>
+
+          {demoMode && (
+            <div className={styles.demoBlock}>
+              <p>Quick demo access:</p>
+              <div className={styles.demoButtons}>
+                <button
+                  type="button"
+                  onClick={() => handleDemoLogin('user')}
+                  disabled={isSubmitting}
+                >
+                  Demo User
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleDemoLogin('admin')}
+                  disabled={isSubmitting}
+                >
+                  Demo Admin
+                </button>
+              </div>
+            </div>
+          )}
 
           <p className={styles.register}>
             Don’t have account? <Link to="/register">Register</Link>
