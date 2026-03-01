@@ -4,6 +4,7 @@ import { getProducts } from '../../utils/api';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductCardLarge from '../ProductCardLarge/ProductCardLarge';
+import ProductSkeleton from '../ProductSkeleton/ProductSkeleton';
 
 function HotDeals() {
   const [products, setProducts] = React.useState([]);
@@ -38,8 +39,7 @@ function HotDeals() {
     loadHotDeals();
   }, []);
 
-  if (loading) return null; // или показать скелетон
-  if (products.length === 0) return null; // пока нет товаров — ничего не рендерим
+  if (products.length === 0 && !loading) return null; // пока нет товаров — ничего не рендерим
 
   const featuredIndex = 5;
   const featuredProduct = products[featuredIndex];
@@ -57,19 +57,35 @@ function HotDeals() {
           </Link>
         </div>
         <div className={styles.hotDeals__items}>
-          {featuredProduct && (
-            <ProductCardLarge
-              className={styles.hotDeals__item}
-              product={featuredProduct}
-            />
+          {loading ? (
+            <>
+              <ProductSkeleton className={styles.hotDeals__item} />
+              {Array(11)
+                .fill(0)
+                .map((_, i) => (
+                  <ProductSkeleton
+                    key={`skeleton-${i}`}
+                    className={styles.hotDeals__item}
+                  />
+                ))}
+            </>
+          ) : (
+            <>
+              {featuredProduct && (
+                <ProductCardLarge
+                  className={styles.hotDeals__item}
+                  product={featuredProduct}
+                />
+              )}
+              {otherProducts.map((product, index) => (
+                <ProductCard
+                  className={styles.hotDeals__item}
+                  key={index}
+                  product={product}
+                />
+              ))}
+            </>
           )}
-          {otherProducts.map((product, index) => (
-            <ProductCard
-              className={styles.hotDeals__item}
-              key={index}
-              product={product}
-            />
-          ))}
         </div>
       </div>
     </div>

@@ -185,15 +185,26 @@ export const createOrder = async (order) => {
  */
 export const createProduct = async (product) => {
   try {
-    // валидируем обязательные поля
-    if (!product.productName || !product.slug) {
-      throw new Error('productName and slug are required');
-    }
-
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('Authentication required');
     }
+
+    // Преобразуем frontend данные в backend формат
+    const payload = {
+      productName: product.name,
+      slug: product.slug,
+      priceOrigin: parseFloat(product.price),
+      images: product.image ? [product.image] : [],
+      category: product.category,
+      tags: Array.isArray(product.tags)
+        ? product.tags.join(',')
+        : product.tags,
+      weight: product.weight || null,
+      description: product.description || null,
+      quantity: product.quantity ? parseInt(product.quantity, 10) : 0,
+      discount: product.discount ? parseInt(product.discount, 10) : 0,
+    };
 
     // выполняем POST запрос с данными товара
     const response = await fetch(`${API_BASE_URL}/products`, {
@@ -204,7 +215,7 @@ export const createProduct = async (product) => {
         Authorization: `Bearer ${token}`,
       },
       // преобразуем объект в JSON строку
-      body: JSON.stringify(product),
+      body: JSON.stringify(payload),
     });
 
     // проверяем статус ответа
@@ -242,6 +253,34 @@ export const updateProduct = async (id, updates) => {
       throw new Error('Authentication required');
     }
 
+    // Преобразуем frontend данные в backend формат
+    const payload = {};
+    if (updates.name !== undefined)
+      payload.productName = updates.name;
+    if (updates.slug !== undefined) payload.slug = updates.slug;
+    if (updates.price !== undefined)
+      payload.priceOrigin = parseFloat(updates.price);
+    if (updates.image !== undefined)
+      payload.images = updates.image ? [updates.image] : [];
+    if (updates.category !== undefined)
+      payload.category = updates.category;
+    if (updates.tags !== undefined)
+      payload.tags = Array.isArray(updates.tags)
+        ? updates.tags.join(',')
+        : updates.tags;
+    if (updates.weight !== undefined)
+      payload.weight = updates.weight || null;
+    if (updates.description !== undefined)
+      payload.description = updates.description || null;
+    if (updates.quantity !== undefined)
+      payload.quantity = updates.quantity
+        ? parseInt(updates.quantity, 10)
+        : 0;
+    if (updates.discount !== undefined)
+      payload.discount = updates.discount
+        ? parseInt(updates.discount, 10)
+        : 0;
+
     // выполняем PATCH запрос с частичными обновлениями
     const response = await fetch(`${API_BASE_URL}/products/${id}`, {
       method: 'PATCH',
@@ -251,7 +290,7 @@ export const updateProduct = async (id, updates) => {
         Authorization: `Bearer ${token}`,
       },
       // преобразуем обновления в JSON строку
-      body: JSON.stringify(updates),
+      body: JSON.stringify(payload),
     });
 
     // проверяем статус ответа
@@ -306,16 +345,9 @@ export const deleteProduct = async (id) => {
     }
 
     // парсим и возвращаем (обычно пусто для DELETE)
-    const data = await response.json().catch(() => ({ success: true }));
-    return data;
-  } catch (error) {
-    console.error(`Error deleting product ${id}:`, error);
-    throw error;
-  }
-};
-
-    // парсим и возвращаем результат
-    const data = await response.json();
+    const data = await response
+      .json()
+      .catch(() => ({ success: true }));
     return data;
   } catch (error) {
     console.error(`Error deleting product ${id}:`, error);
@@ -339,6 +371,34 @@ export const searchProducts = async (searchTerm, page = 1) => {
     page,
     limit: 10,
   });
+};
+
+/**
+ * Получить все доступные категории товаров
+ * @returns {Promise<Object>} список уникальных категорий
+ */
+export const getCategories = async () => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/products/categories/list`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.categories || [];
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    throw error;
+  }
 };
 
 /**
@@ -557,4 +617,102 @@ export default {
   getNewestProducts,
   getProductsByTags,
   getFilterMetadata,
+};
+
+// ============================================
+// ADMIN ORDERS API
+// ============================================
+
+/**
+ * Получить все заказы (только для администраторов)
+ */
+export const getAllOrders = async () => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
+    const response = await fetch(`${API_BASE_URL}/orders`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch orders');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching orders:', error);
+    throw error;
+  }
+};
+
+/**
+ * Загрузить изображение товара (FormData)
+ */
+export const uploadProductImage = async (file) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch(`${API_BASE_URL}/products/upload`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to upload image');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error uploading image:', error);
+    throw error;
+  }
+};
+
+/**
+ * Обновить статус заказа (только для администраторов)
+ */
+export const updateOrderStatus = async (orderId, status) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Authentication required');
+    }
+
+    const response = await fetch(
+      `${API_BASE_URL}/orders/${orderId}/status`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ status }),
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error('Failed to update order status');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error updating order status:', error);
+    throw error;
+  }
 };

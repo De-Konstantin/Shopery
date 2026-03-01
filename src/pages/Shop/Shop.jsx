@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Filter from '../../features/Filter/Filter';
 import { getProducts } from '../../utils/api';
-
+import ProductSkeleton from '../../components/ProductSkeleton/ProductSkeleton';
 import styles from './Shop.module.scss';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import ReactPaginate from 'react-paginate';
 
 function Shop() {
+  const location = useLocation();
   const [filters, setFilters] = useState({
     tags: [],
     price: [],
@@ -22,6 +24,18 @@ function Shop() {
     total: 0,
     totalPages: 0,
   });
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const categoryFromQuery = searchParams.get('category');
+
+    if (categoryFromQuery) {
+      setFilters((prev) => ({
+        ...prev,
+        categories: [categoryFromQuery],
+      }));
+    }
+  }, [location.search]);
 
   // Загрузка товаров с API с учетом фильтров и пагинации
   useEffect(() => {
@@ -117,7 +131,13 @@ function Shop() {
 
         {/* Список карточек */}
         {loading ? (
-          <div className={styles.loading}>Загрузка товаров...</div>
+          <div className={styles.products}>
+            {Array(pagination.limit)
+              .fill(0)
+              .map((_, i) => (
+                <ProductSkeleton key={`skeleton-${i}`} />
+              ))}
+          </div>
         ) : error ? (
           <div className={styles.error}>{error}</div>
         ) : products.length === 0 ? (

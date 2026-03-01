@@ -5,6 +5,20 @@ import ButtonRound from '../buttons/ButtonRound/ButtonRound';
 import Countdown from '../../features/Countdown/Countdown';
 
 function ProductCardLarge({ product, className }) {
+  // Нормализация изображений
+  const images = Array.isArray(product.images)
+    ? product.images
+    : Array.isArray(product.image)
+      ? product.image
+      : product.image
+        ? [product.image]
+        : [];
+  const primaryImage = images[0] || '/images/placeholder.svg';
+
+  // Обработчик ошибки загрузки изображения
+  const handleImageError = (e) => {
+    e.currentTarget.src = '/images/placeholder.svg';
+  };
   return (
     <div className={`${styles.productCardLarge} ${className || ''}`}>
       {product.discount ? (
@@ -14,9 +28,11 @@ function ProductCardLarge({ product, className }) {
       ) : null}
       <div className={styles.productCardLarge__imageContainer}>
         <img
-          src={product.image[0]}
+          src={primaryImage}
           alt={product.productName}
           className={styles.productCardLarge__image}
+          loading="lazy"
+          onError={handleImageError}
         />
       </div>
 

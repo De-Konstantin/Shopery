@@ -1,0 +1,40 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.heart {
+  font-size: 24px;
+  color: var(--gray60);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.button.active .heart {
+  color: #e91e63;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heart {
+    font-size: 20px;
+  }
+
+  .button:hover {
+    transform: scale(1.05);
+  }
+
+  .button.active .heart {
+    transform: scale(1.1);
+  }
+}

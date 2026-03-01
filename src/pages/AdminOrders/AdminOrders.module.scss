@@ -1,0 +1,288 @@
+.container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+
+.count {
+  font-size: 16px;
+  color: var(--gray60);
+  margin: 0;
+}
+
+.filterBar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 8px 16px;
+  border: 1px solid var(--gray20);
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  color: var(--gray70);
+  font-weight: 500;
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  &.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: var(--gray10);
+  border-radius: 8px;
+  color: var(--gray60);
+}
+
+.error {
+  color: #f44336;
+  padding: 16px;
+  background-color: #ffebee;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.ordersTable {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 80px 1fr 150px 100px 100px 120px;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--gray10);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gray70);
+  border-bottom: 2px solid var(--gray20);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 150px 100px 100px 120px;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--gray20);
+  align-items: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--gray10);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.colId {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.colCustomer {
+  font-size: 14px;
+  color: var(--black);
+  word-break: break-word;
+}
+
+.colDate {
+  font-size: 13px;
+  color: var(--gray70);
+  white-space: nowrap;
+}
+
+.colTotal {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 14px;
+}
+
+.colStatus {
+  display: flex;
+  justify-content: center;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.colActions {
+  display: flex;
+  justify-content: center;
+}
+
+.statusSelect {
+  padding: 6px 12px;
+  border: 1px solid var(--gray20);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--black);
+  max-width: 100%;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--primary);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: var(--gray10);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 70px 1fr 120px 80px 80px 100px;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .colDate {
+    font-size: 12px;
+  }
+
+  .statusSelect {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .filterBar {
+    gap: 8px;
+  }
+
+  .filterBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 60px 1fr 100px 70px 70px;
+    gap: 8px;
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .colId {
+    font-size: 12px;
+  }
+
+  .colCustomer {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tableHeader .colActions,
+  .tableRow .colActions {
+    display: none;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 60px 1fr 100px 70px 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tableHeader {
+    display: none;
+  }
+
+  .tableRow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--gray10);
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  [class^=\"col\"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: var(--gray70);
+    }
+  }
+
+  .colId::before { content: "Order:"; }
+  .colCustomer::before { content: "Customer:"; }
+  .colDate::before { content: "Date:"; }
+  .colTotal::before { content: "Total:"; }
+  .colStatus::before { content: "Status:"; }
+  .colActions::before { content: "Update:"; }
+
+  .statusSelect {
+    width: 100%;
+    padding: 8px 12px;
+  }
+}

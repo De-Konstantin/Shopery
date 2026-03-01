@@ -9,6 +9,7 @@ import 'react-image-gallery/styles/image-gallery.css';
 import Button from '../../components/buttons/Button/Button';
 import ButtonRound from '../../components/buttons/ButtonRound/ButtonRound';
 import { useCart } from 'react-use-cart';
+import ProductReviews from '../../components/ProductReviews/ProductReviews';
 
 export default function ProductPage() {
   const { id } = useParams();
@@ -223,6 +224,9 @@ export default function ProductPage() {
             <p>Here will be customer feedback...</p>
           </TabPanel>
         </Tabs>
+
+        {/* Product Reviews Section */}
+        <ProductReviews productId={parseInt(id)} />
       </div>
     </div>
   );

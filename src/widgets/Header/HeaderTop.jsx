@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 function HeaderTop() {
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, user, logout, isAdmin } = useAuth();
 
   return (
     <div className={styles.headerTop}>
@@ -24,6 +24,32 @@ function HeaderTop() {
                 Hello, {user?.firstName || 'User'}
               </span>
               <span>|</span>
+              <Link to="/orders" className={styles.headerTop__link}>
+                My Orders
+              </Link>
+              <span>|</span>
+              <Link to="/wishlist" className={styles.headerTop__link}>
+                Wishlist
+              </Link>
+              <span>|</span>
+              {isAdmin && (
+                <>
+                  <Link
+                    to="/admin/products"
+                    className={styles.headerTop__link}
+                  >
+                    Products
+                  </Link>
+                  <span>|</span>
+                  <Link
+                    to="/admin/orders"
+                    className={styles.headerTop__link}
+                  >
+                    Orders
+                  </Link>
+                  <span>|</span>
+                </>
+              )}
               <button
                 onClick={logout}
                 className={styles.headerTop__logout}

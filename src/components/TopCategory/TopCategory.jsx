@@ -17,7 +17,7 @@ function TopCategory() {
           <h2 className={styles.topCategory__title}>
             Popular Categories
           </h2>
-          <Link className={styles.topCategory__view}>
+          <Link to="/shop" className={styles.topCategory__view}>
             View All <span className="icon-arr-r"></span>
           </Link>
         </div>
@@ -26,7 +26,7 @@ function TopCategory() {
             {limitedCategories.map((category, index) => (
               <li key={index} className={styles.topCategory__item}>
                 <Link
-                  to={category.path}
+                  to={`/shop?category=${encodeURIComponent(category.name)}`}
                   className={styles.topCategory__link}
                 >
                   <img src={category.img} alt={category.name} />

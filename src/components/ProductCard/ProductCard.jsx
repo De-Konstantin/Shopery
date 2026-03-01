@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.scss';
 import { useNavigate } from 'react-router-dom';
 import ButtonRound from '../buttons/ButtonRound/ButtonRound';
+import WishlistButton from '../WishlistButton/WishlistButton';
 import { useCart } from 'react-use-cart';
 
 // import data from '../../utils/products.json';
@@ -24,7 +25,12 @@ function ProductCard({ product = {}, className }) {
       : product.image
         ? [product.image]
         : [];
-  const primaryImage = images[0] || '/no-image.png'; // TODO: добавить нормальный placeholder
+  const primaryImage = images[0] || '/images/placeholder.svg';
+
+  // Обработчик ошибки загрузки изображения
+  const handleImageError = (e) => {
+    e.currentTarget.src = '/images/placeholder.svg';
+  };
 
   const productName =
     product.productName || product.name || 'Unnamed';
@@ -80,10 +86,11 @@ function ProductCard({ product = {}, className }) {
           alt={productName}
           className={styles.productCard__image}
           loading="lazy"
-          onError={(e) => {
-            e.currentTarget.src = '/no-image.png';
-          }}
+          onError={handleImageError}
         />
+        <div className={styles.wishlistButton}>
+          <WishlistButton product={product} variant="icon" />
+        </div>
       </div>
       <div className={styles.productCard__content}>
         <h3 className={styles.productCard__name}>

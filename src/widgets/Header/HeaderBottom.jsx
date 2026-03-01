@@ -61,7 +61,7 @@ function HeaderBottom() {
                 className={({ isActive }) =>
                   isActive ? 'headerMenuLink' : ''
                 }
-                to="/blog"
+                to="/blog-disabled"
               >
                 Blog
               </NavLink>

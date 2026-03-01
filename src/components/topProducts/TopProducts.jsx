@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TopProducts.module.scss';
 import { getPopularProducts } from '../../utils/api';
 import ProductCard from '../ProductCard/ProductCard';
+import ProductSkeleton from '../ProductSkeleton/ProductSkeleton';
 import { Link } from 'react-router-dom';
 
 function TopProducts() {
@@ -30,8 +31,7 @@ function TopProducts() {
     loadTopProducts();
   }, []);
 
-  if (loading) return null; // или показать скелетон
-  if (products.length === 0) return null;
+  if (products.length === 0 && !loading) return null;
 
   return (
     <div className={styles.topProducts}>
@@ -45,13 +45,22 @@ function TopProducts() {
           </Link>
         </div>
         <div className={styles.topProducts__items}>
-          {products.map((product, index) => (
-            <ProductCard
-              className={styles.topProducts__item}
-              key={index}
-              product={product}
-            />
-          ))}
+          {loading
+            ? Array(12)
+                .fill(0)
+                .map((_, i) => (
+                  <ProductSkeleton
+                    key={`skeleton-${i}`}
+                    className={styles.topProducts__item}
+                  />
+                ))
+            : products.map((product, index) => (
+                <ProductCard
+                  className={styles.topProducts__item}
+                  key={index}
+                  product={product}
+                />
+              ))}
         </div>
       </div>
     </div>
