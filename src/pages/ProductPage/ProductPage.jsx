@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import styles from './ProductPage.module.scss';
@@ -82,8 +83,8 @@ export default function ProductPage() {
       addItem(cartItem, quantity);
     }
 
-    alert(
-      `${quantity} × ${product.productName || product.name} added to cart!`,
+    toast.success(
+      `${quantity} × ${product.productName || product.name} добавлено в корзину!`,
     );
     setQuantity(1);
   };

@@ -21,8 +21,7 @@ export default function AdminDashboard() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [sortField, setSortField] = useState('productName');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortBy, setSortBy] = useState('newest');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
 
@@ -32,17 +31,11 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     applyFiltersAndSort();
-  }, [products, searchTerm, selectedCategory, sortField, sortOrder]);
+  }, [products, searchTerm, selectedCategory, sortBy]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [
-    searchTerm,
-    selectedCategory,
-    sortField,
-    sortOrder,
-    itemsPerPage,
-  ]);
+  }, [searchTerm, selectedCategory, sortBy, itemsPerPage]);
 
   const loadData = async () => {
     try {
@@ -106,35 +99,24 @@ export default function AdminDashboard() {
       );
     }
 
+    // Apply sorting
     result.sort((a, b) => {
-      let valueA = a[sortField];
-      let valueB = b[sortField];
-
-      if (valueA == null) valueA = '';
-      if (valueB == null) valueB = '';
-
-      if (typeof valueA === 'number' && typeof valueB === 'number') {
-        return sortOrder === 'asc'
-          ? valueA - valueB
-          : valueB - valueA;
+      switch (sortBy) {
+        case 'price_asc':
+          return (a.priceOrigin || 0) - (b.priceOrigin || 0);
+        case 'price_desc':
+          return (b.priceOrigin || 0) - (a.priceOrigin || 0);
+        case 'rating_desc':
+          return (b.rating || 0) - (a.rating || 0);
+        case 'newest':
+        default:
+          return (
+            new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
+          );
       }
-
-      const comparison = String(valueA).localeCompare(String(valueB));
-
-      return sortOrder === 'asc' ? comparison : -comparison;
     });
 
     setFilteredProducts(result);
-  };
-
-  const handleSort = (field) => {
-    if (sortField === field) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-      return;
-    }
-
-    setSortField(field);
-    setSortOrder('asc');
   };
 
   const handleDelete = async (id) => {
@@ -154,11 +136,7 @@ export default function AdminDashboard() {
   };
 
   const handleEdit = (id) => {
-    navigate(`/admin/products/$ {
-                id
-            }
-
-            /edit`);
+    navigate(`/admin/products/${id}/edit`);
   };
 
   const handleAddNew = () => {
@@ -181,11 +159,6 @@ export default function AdminDashboard() {
             ) / products.length
           ).toFixed(2)
         : '0.00',
-  };
-
-  const getSortIcon = (field) => {
-    if (sortField !== field) return '⇅';
-    return sortOrder === 'asc' ? '▲' : '▼';
   };
 
   const totalPages = Math.max(
@@ -330,6 +303,28 @@ export default function AdminDashboard() {
                 </option>
               ))}
             </select>{' '}
+            <div className={styles.sortControl}>
+              {' '}
+              <label
+                htmlFor="sort-select"
+                className={styles.sortLabel}
+              >
+                {' '}
+                Sort by:{' '}
+              </label>{' '}
+              <select
+                id="sort-select"
+                className={styles.sortSelect}
+                value={sortBy}
+                onChange={(event) => setSortBy(event.target.value)}
+              >
+                {' '}
+                <option value="newest">Newest</option>{' '}
+                <option value="price_asc">Price: Low to High</option>{' '}
+                <option value="price_desc">Price: High to Low</option>{' '}
+                <option value="rating_desc">By Rating</option>{' '}
+              </select>{' '}
+            </div>{' '}
             <div className={styles.pageSizeControl}>
               {' '}
               <label
@@ -395,53 +390,22 @@ export default function AdminDashboard() {
               total){' '}
             </p>{' '}
             <div className={styles.tableWrapper}>
-              {' '}
               <table className={styles.table}>
-                {' '}
                 <thead>
-                  {' '}
                   <tr>
-                    {' '}
-                    <th
-                      className={styles.sortable}
-                      onClick={() => handleSort('productName')}
-                    >
-                      {' '}
-                      Name {getSortIcon('productName')}
-                    </th>{' '}
-                    <th
-                      className={styles.sortable}
-                      onClick={() => handleSort('category')}
-                    >
-                      {' '}
-                      Category {getSortIcon('category')}
-                    </th>{' '}
-                    <th
-                      className={styles.sortable}
-                      onClick={() => handleSort('priceOrigin')}
-                    >
-                      {' '}
-                      Price {getSortIcon('priceOrigin')}
-                    </th>{' '}
-                    <th
-                      className={styles.sortable}
-                      onClick={() => handleSort('quantity')}
-                    >
-                      {' '}
-                      Quantity {getSortIcon('quantity')}
-                    </th>{' '}
-                    <th>Discount</th> <th>Actions</th>{' '}
-                  </tr>{' '}
-                </thead>{' '}
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Discount</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  {' '}
                   {paginatedProducts.map((product) => (
                     <tr key={product.id}>
-                      {' '}
                       <td>
-                        {' '}
                         <div className={styles.productName}>
-                          {' '}
                           {product.images && product.images[0] && (
                             <img
                               src={product.images[0]}
@@ -449,22 +413,18 @@ export default function AdminDashboard() {
                               className={styles.productImage}
                             />
                           )}
-                          <span> {product.productName}</span>{' '}
-                        </div>{' '}
-                      </td>{' '}
+                          <span>{product.productName}</span>
+                        </div>
+                      </td>
                       <td>
-                        {' '}
                         <span className={styles.badge}>
-                          {' '}
                           {product.category || 'N/A'}
-                        </span>{' '}
-                      </td>{' '}
+                        </span>
+                      </td>
                       <td className={styles.price}>
-                        {' '}
-                        $ {product.priceOrigin?.toFixed(2) || '0.00'}
-                      </td>{' '}
+                        ${product.priceOrigin?.toFixed(2) || '0.00'}
+                      </td>
                       <td>
-                        {' '}
                         <span
                           className={
                             product.quantity > 0
@@ -472,38 +432,33 @@ export default function AdminDashboard() {
                               : styles.outStock
                           }
                         >
-                          {' '}
                           {product.quantity || 0}
-                        </span>{' '}
-                      </td>{' '}
-                      <td> {product.discount || 0}%</td>{' '}
+                        </span>
+                      </td>
+                      <td>{product.discount || 0}%</td>
                       <td>
-                        {' '}
                         <div className={styles.actions}>
-                          {' '}
                           <button
                             onClick={() => handleEdit(product.id)}
                             className={styles.editBtn}
                             title="Edit product"
                           >
-                            {' '}
-                            ✎ Edit{' '}
-                          </button>{' '}
+                            ✎ Edit
+                          </button>
                           <button
                             onClick={() => handleDelete(product.id)}
                             className={styles.deleteBtn}
                             title="Delete product"
                           >
-                            {' '}
-                            🗑 Delete{' '}
-                          </button>{' '}
-                        </div>{' '}
-                      </td>{' '}
+                            🗑 Delete
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   ))}
-                </tbody>{' '}
-              </table>{' '}
-            </div>{' '}
+                </tbody>
+              </table>
+            </div>
             {totalPages > 1 && (
               <div className={styles.pagination}>
                 {' '}

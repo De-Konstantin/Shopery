@@ -15,6 +15,7 @@ function Shop() {
     rating: null,
     categories: [],
   });
+  const [sortBy, setSortBy] = useState('newest');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -68,6 +69,11 @@ function Shop() {
           const ratingValues = filters.rating.map((r) => r.min);
           params.rating = ratingValues.join(',');
         }
+
+        // Добавляем сортировку
+        if (sortBy !== 'newest') {
+          params.sort = sortBy;
+        }
         // Запрос к API
         const response = await getProducts(params);
 
@@ -89,12 +95,12 @@ function Shop() {
     };
 
     loadProducts();
-  }, [filters, pagination.page, pagination.limit]);
+  }, [filters, pagination.page, pagination.limit, sortBy]);
 
-  // При смене фильтров возвращаемся на первую страницу
+  // При смене фильтров или сортировки возвращаемся на первую страницу
   useEffect(() => {
     setPagination((prev) => ({ ...prev, page: 1 }));
-  }, [filters]);
+  }, [filters, sortBy]);
 
   // Обработчик смены страницы
   const handlePageChange = (event) => {
@@ -118,16 +124,65 @@ function Shop() {
         />
       </aside>
       <main className={styles.main}>
-        {/* Отображаем количество */}
-        <p className={styles.count}>
-          {loading
-            ? 'Загрузка...'
-            : error
-              ? error
-              : pagination.total === 0
-                ? 'Товары не найдены'
-                : `${startIndex}–${endIndex} из ${pagination.total}`}
-        </p>
+        <div
+          className={styles.topBar}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '20px',
+          }}
+        >
+          {/* Отображаем количество */}
+          <p className={styles.count}>
+            {loading
+              ? 'Загрузка...'
+              : error
+                ? error
+                : pagination.total === 0
+                  ? 'Товары не найдены'
+                  : `${startIndex}–${endIndex} из ${pagination.total}`}
+          </p>
+
+          {/* Выбор сортировки */}
+          <div
+            className={styles.sortContainer}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+          >
+            <label
+              htmlFor="sort-select"
+              style={{ fontWeight: '500', fontSize: '14px' }}
+            >
+              Сортировка:
+            </label>
+            <select
+              id="sort-select"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              style={{
+                padding: '8px 12px',
+                borderRadius: '4px',
+                border: '1px solid #ddd',
+                fontSize: '14px',
+                cursor: 'pointer',
+                backgroundColor: '#fff',
+              }}
+            >
+              <option value="newest">Новые</option>
+              <option value="price_asc">
+                Цена: от меньше к больше
+              </option>
+              <option value="price_desc">
+                Цена: от больше к меньше
+              </option>
+              <option value="rating_desc">По рейтингу</option>
+            </select>
+          </div>
+        </div>
 
         {/* Список карточек */}
         {loading ? (

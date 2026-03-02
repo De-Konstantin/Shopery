@@ -209,3 +209,126 @@
   font-size: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
+.imageUploadSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageUrlInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+
+  input {
+    flex: 1;
+  }
+}
+
+.addImageBtn {
+  padding: 10px 16px;
+  background: var(--primary, #ff6b35);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  white-space: nowrap;
+  height: 42px;
+
+  &:hover {
+    background: var(--primary-dark, #e55a28);
+  }
+}
+
+.uploading {
+  font-size: 12px;
+  color: var(--primary, #ff6b35);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.imageGallery {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray10);
+}
+
+.galleryTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 16px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+}
+
+.imageItem {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray10);
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.removeImageBtn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 32px;
+  height: 32px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  opacity: 0;
+
+  .imageItem:hover & {
+    opacity: 1;
+  }
+
+  &:hover {
+    background: #b91c1c;
+    transform: scale(1.1);
+  }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Button from '../buttons/Button/Button';
@@ -63,7 +64,7 @@ export default function ProductReviews({ productId }) {
     }
 
     if (!formData.comment.trim()) {
-      alert('Please write a comment');
+      toast.warning('Пожалуйста, напишите комментарий');
       return;
     }
 
@@ -97,8 +98,9 @@ export default function ProductReviews({ productId }) {
       setFormData({ rating: 5, comment: '' });
       setShowForm(false);
       await loadReviews();
+      toast.success('Ваш отзыв успешно опубликован!');
     } catch (err) {
-      alert(err.message || 'Failed to submit review');
+      toast.error(err.message || 'Ошибка при отправке отзыва');
       console.error('Error submitting review:', err);
     } finally {
       setSubmitting(false);
@@ -112,7 +114,7 @@ export default function ProductReviews({ productId }) {
 
   const handleEditSubmit = async (reviewId) => {
     if (!editForm.comment.trim()) {
-      alert('Please write a comment');
+      toast.warning('Пожалуйста, напишите комментарий');
       return;
     }
 
@@ -141,9 +143,9 @@ export default function ProductReviews({ productId }) {
       }
 
       setEditingId(null);
-      await loadReviews();
+      toast.success('Отзыв успешно обновлён!');
     } catch (err) {
-      alert(err.message || 'Failed to update review');
+      toast.error(err.message || 'Ошибка при обновлении отзыва');
       console.error('Error updating review:', err);
     }
   };
@@ -175,9 +177,9 @@ export default function ProductReviews({ productId }) {
         );
       }
 
-      await loadReviews();
+      toast.success('Отзыв успешно удалён!');
     } catch (err) {
-      alert(err.message || 'Failed to delete review');
+      toast.error(err.message || 'Ошибка при удалении отзыва');
       console.error('Error deleting review:', err);
     }
   };

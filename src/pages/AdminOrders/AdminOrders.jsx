@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { getAllOrders, updateOrderStatus } from '../../utils/api';
@@ -41,8 +42,11 @@ export default function AdminOrders() {
       setUpdating(orderId);
       await updateOrderStatus(orderId, newStatus);
       await loadOrders();
+      toast.success('Статус заказа успешно обновлен!');
     } catch (err) {
-      alert(err.message || 'Failed to update order status');
+      toast.error(
+        err.message || 'Ошибка при обновлении статуса заказа',
+      );
       console.error('Error updating status:', err);
     } finally {
       setUpdating(null);

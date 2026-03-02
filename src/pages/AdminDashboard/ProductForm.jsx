@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   getProducts,
@@ -20,7 +21,8 @@ export default function ProductForm() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [uploadingImage, setUploadingImage] = useState(false);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [uploadingImageIndex, setUploadingImageIndex] =
+    useState(null);
   const [categories, setCategories] = useState([]);
   const [isAddingCategory, setIsAddingCategory] = useState(false);
   const [newCategory, setNewCategory] = useState('');
@@ -33,7 +35,7 @@ export default function ProductForm() {
     quantity: '',
     category: '',
     description: '',
-    image: '',
+    images: [],
     tags: '',
     weight: '',
   });
@@ -86,7 +88,7 @@ export default function ProductForm() {
           quantity: product.quantity || '',
           category: product.category || '',
           description: product.description || '',
-          image: product.images?.[0] || '',
+          images: Array.isArray(product.images) ? product.images : [],
           tags: product.tags
             ? product.tags.split(',').join(', ')
             : '',
@@ -112,47 +114,66 @@ export default function ProductForm() {
   };
 
   const handleImageUpload = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
 
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      setError('Please select a valid image file');
-      return;
-    }
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
 
-    // Validate file size (5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      setError('Image size should not exceed 5MB');
-      return;
-    }
-
-    try {
-      setUploadingImage(true);
-      setError(null);
-
-      // Show preview
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImagePreview(e.target.result);
-      };
-      reader.readAsDataURL(file);
-
-      // Upload file
-      const response = await uploadProductImage(file);
-      if (response.success && response.imageUrl) {
-        setFormData((prev) => ({
-          ...prev,
-          image: response.imageUrl,
-        }));
-        setSuccess('Image uploaded successfully!');
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        setError(`File ${file.name} is not a valid image`);
+        continue;
       }
-    } catch (err) {
-      setError(err.message || 'Failed to upload image');
-      console.error('Error uploading image:', err);
-    } finally {
-      setUploadingImage(false);
+
+      // Validate file size (5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setError(`Image ${file.name} exceeds 5MB limit`);
+        continue;
+      }
+
+      try {
+        setUploadingImage(true);
+        setUploadingImageIndex(i);
+        setError(null);
+
+        // Upload file
+        const response = await uploadProductImage(file);
+        if (response.success && response.imageUrl) {
+          setFormData((prev) => ({
+            ...prev,
+            images: [...prev.images, response.imageUrl],
+          }));
+          setSuccess(`Image ${file.name} uploaded successfully!`);
+        }
+      } catch (err) {
+        setError(err.message || `Failed to upload ${file.name}`);
+        console.error('Error uploading image:', err);
+      } finally {
+        setUploadingImage(false);
+        setUploadingImageIndex(null);
+      }
     }
+    // Reset input
+    e.target.value = '';
+  };
+
+  const handleRemoveImage = (index) => {
+    setFormData((prev) => ({
+      ...prev,
+      images: prev.images.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleAddImageUrl = (url) => {
+    if (!url.trim()) {
+      setError('Please enter a valid image URL');
+      return;
+    }
+    setFormData((prev) => ({
+      ...prev,
+      images: [...prev.images, url.trim()],
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -194,7 +215,7 @@ export default function ProductForm() {
         quantity: parseInt(formData.quantity, 10) || 0,
         category: finalCategory,
         description: formData.description.trim(),
-        image: formData.image.trim(),
+        images: formData.images.filter((img) => img && img.trim()),
         tags: formData.tags
           ? formData.tags
               .split(',')
@@ -210,7 +231,11 @@ export default function ProductForm() {
       } else {
         await createProduct(payload);
         setSuccess('Product created successfully!');
+        toast.success('Product created successfully!');
       }
+      toast.success(
+        isEditing ? 'Product updated!' : 'Product created!',
+      );
 
       if (finalCategory && !categories.includes(finalCategory)) {
         setCategories((prev) => [...prev, finalCategory]);
@@ -220,7 +245,9 @@ export default function ProductForm() {
         navigate('/admin/products');
       }, 1500);
     } catch (err) {
-      setError(err.message || 'Failed to save product');
+      const errorMsg = err.message || 'Failed to save product';
+      setError(errorMsg);
+      toast.error(errorMsg);
       console.error('Error saving product:', err);
     } finally {
       setSubmitting(false);
@@ -325,8 +352,8 @@ export default function ProductForm() {
                       className={styles.input}
                     >
                       <option value="">-- Select Category --</option>
-                      {categories.map((cat) => (
-                        <option key={cat} value={cat}>
+                      {categories.map((cat, index) => (
+                        <option key={`${cat}-${index}`} value={cat}>
                           {cat}
                         </option>
                       ))}
@@ -411,58 +438,106 @@ export default function ProductForm() {
 
               <div className={styles.formGroup}>
                 <label htmlFor="weight" className={styles.label}>
-                  Weight (kg)
+                  Weight (with unit)
                 </label>
                 <input
                   id="weight"
-                  type="number"
+                  type="text"
                   name="weight"
                   value={formData.weight}
                   onChange={handleChange}
-                  placeholder="0.00"
-                  step="0.01"
+                  placeholder="e.g., 750g, 1.5L, 2kg, 10pcs"
                   className={styles.input}
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="image" className={styles.label}>
-                  Image URL
-                </label>
-                <input
-                  id="image"
-                  type="url"
-                  name="image"
-                  value={formData.image}
-                  onChange={handleChange}
-                  placeholder="https://example.com/image.jpg"
-                  className={styles.input}
-                />
+                <label className={styles.label}>Product Images</label>
+                <div className={styles.imageUploadSection}>
+                  <div>
+                    <label
+                      htmlFor="imageFile"
+                      className={styles.label}
+                    >
+                      Upload Images (multiple)
+                    </label>
+                    <input
+                      id="imageFile"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      onChange={handleImageUpload}
+                      disabled={uploadingImage}
+                      className={styles.input}
+                    />
+                    {uploadingImage && (
+                      <p className={styles.uploading}>
+                        Uploading image{' '}
+                        {(uploadingImageIndex || 0) + 1}...
+                      </p>
+                    )}
+                  </div>
+
+                  <div className={styles.imageUrlInput}>
+                    <label
+                      htmlFor="imageUrlAdd"
+                      className={styles.label}
+                    >
+                      Or Add Image URL
+                    </label>
+                    <div className={styles.inputGroup}>
+                      <input
+                        id="imageUrlAdd"
+                        type="url"
+                        placeholder="https://example.com/image.jpg"
+                        className={styles.input}
+                        onKeyPress={(e) => {
+                          if (e.key === 'Enter') {
+                            handleAddImageUrl(e.target.value);
+                            e.target.value = '';
+                          }
+                        }}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const input =
+                            document.getElementById('imageUrlAdd');
+                          handleAddImageUrl(input.value);
+                          input.value = '';
+                        }}
+                        className={styles.addImageBtn}
+                      >
+                        + Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className={styles.formGroup}>
-                <label htmlFor="imageFile" className={styles.label}>
-                  Or Upload Image
-                </label>
-                <input
-                  id="imageFile"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  disabled={uploadingImage}
-                  className={styles.input}
-                />
-                {uploadingImage && (
-                  <p className={styles.uploading}>Uploading...</p>
-                )}
-              </div>
-
-              {(imagePreview || formData.image) && (
-                <div className={styles.imagePreview}>
-                  <img
-                    src={imagePreview || formData.image}
-                    alt="Preview"
-                  />
+              {formData.images.length > 0 && (
+                <div className={styles.imageGallery}>
+                  <h3 className={styles.galleryTitle}>
+                    Images ({formData.images.length})
+                  </h3>
+                  <div className={styles.imageGrid}>
+                    {formData.images.map((image, index) => (
+                      <div key={index} className={styles.imageItem}>
+                        <img
+                          src={image}
+                          alt={`Product ${index + 1}`}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveImage(index)}
+                          className={styles.removeImageBtn}
+                          title="Remove image"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 

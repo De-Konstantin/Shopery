@@ -167,6 +167,40 @@
   gap: 8px;
 }
 
+.sortControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortLabel {
+  font-size: 13px;
+  color: var(--gray70);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.sortSelect {
+  height: 42px;
+  border: 1px solid var(--gray10);
+  border-radius: 6px;
+  background: white;
+  color: var(--gray70);
+  padding: 0 8px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary05);
+  }
+
+  &:hover {
+    border-color: var(--gray30);
+  }
+}
+
 .pageSizeLabel {
   font-size: 13px;
   color: var(--gray70);
