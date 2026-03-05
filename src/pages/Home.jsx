@@ -45,7 +45,11 @@ function Home() {
       <HotDeals />
       <BannerLarge />
       <LatestNews />
-      <SubcribeBanner />
+      <div className="_container" style={{ marginBottom: '60px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <SubcribeBanner />
+        </div>
+      </div>
       <Logos />
     </div>
   );

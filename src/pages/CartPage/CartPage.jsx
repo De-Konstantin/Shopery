@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
 // import './CartPage.css'; // подключи стили
 import styles from './CartPage.module.scss';
 import Button from '../../components/buttons/Button/Button';
+import { getDemoProductsInCart } from '../../utils/demoMode';
 function CartPage() {
   const {
     isEmpty,
@@ -13,6 +14,11 @@ function CartPage() {
     cartTotal,
     emptyCart,
   } = useCart();
+
+  const demoProducts = useMemo(
+    () => getDemoProductsInCart(items),
+    [items],
+  );
 
   if (isEmpty)
     return (
@@ -39,11 +45,37 @@ function CartPage() {
               const subtotal = (item.price * item.quantity).toFixed(
                 2,
               );
+              const isDemoProduct = demoProducts.some(
+                (p) => p.id === item.id,
+              );
               return (
                 <div className={styles.row} key={item.id}>
                   <div className={styles.product}>
                     <img src={item.image} alt={item.name} />
-                    <p>{item.name}</p>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}
+                    >
+                      <p>{item.name}</p>
+                      {isDemoProduct && (
+                        <span
+                          style={{
+                            backgroundColor: '#ff9800',
+                            color: 'white',
+                            padding: '2px 8px',
+                            borderRadius: '4px',
+                            fontSize: '11px',
+                            fontWeight: 'bold',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          DEMO
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div>${item.price.toFixed(2)}</div>
                   <div className={styles.quantity__control}>
@@ -77,9 +109,9 @@ function CartPage() {
             })}
 
             <div className={styles.actions}>
-              <Link to="/">
+              <Link to="/shop">
                 <Button variant="border" size="medium">
-                  Return to shop
+                  Return to Shop
                 </Button>
               </Link>
               <Button
@@ -88,7 +120,7 @@ function CartPage() {
                 onClick={() => emptyCart()}
                 // className="btn update"
               >
-                Delate All
+                Delete All
               </Button>
             </div>
           </div>

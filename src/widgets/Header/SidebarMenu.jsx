@@ -1,11 +1,10 @@
 import React from 'react';
 import CategoryList from './CategoryList';
-// import styles from './Header.module.scss';
 
-export default function SidebarMenu({ className }) {
+export default function SidebarMenu({ className, onClose }) {
   return (
     <aside className={className}>
-      <CategoryList />
+      <CategoryList onClose={onClose} />
     </aside>
   );
 }

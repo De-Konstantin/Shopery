@@ -74,6 +74,7 @@ function CreateAccountForm() {
           placeholder="First Name"
           {...register('firstName')}
           className={styles.input}
+          aria-label="First name"
           disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.firstName?.message}</p>
@@ -82,6 +83,7 @@ function CreateAccountForm() {
           placeholder="Last Name"
           {...register('lastName')}
           className={styles.input}
+          aria-label="Last name"
           disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.lastName?.message}</p>
@@ -90,6 +92,7 @@ function CreateAccountForm() {
           placeholder="Email"
           {...register('email')}
           className={styles.input}
+          aria-label="Email"
           disabled={isSubmitting}
         />
         <p className={styles.error}>{errors.email?.message}</p>
@@ -100,12 +103,16 @@ function CreateAccountForm() {
             placeholder="Password"
             {...register('password')}
             className={styles.input}
+            aria-label="Password"
             disabled={isSubmitting}
           />
           <button
             type="button"
             className={styles.showPassword}
             onClick={() => setShowPassword(!showPassword)}
+            aria-label={
+              showPassword ? 'Hide password' : 'Show password'
+            }
           >
             <span className="icon-eye"></span>
           </button>{' '}
@@ -117,12 +124,18 @@ function CreateAccountForm() {
             placeholder="Confirm Password"
             {...register('confirmPassword')}
             className={styles.input}
+            aria-label="Confirm password"
             disabled={isSubmitting}
           />
           <button
             type="button"
             className={styles.showPassword}
             onClick={() => setShowConfirmPass(!showConfirmPass)}
+            aria-label={
+              showConfirmPass
+                ? 'Hide confirm password'
+                : 'Show confirm password'
+            }
           >
             <span className="icon-eye"></span>
           </button>{' '}
@@ -133,7 +146,7 @@ function CreateAccountForm() {
         <div className={styles.options}>
           <label>
             <input type="checkbox" {...register('acceptTerms')} />{' '}
-            Accept all terms & Conditions
+            Accept all terms & conditions
           </label>
         </div>
         <p className={styles.error}>{errors.acceptTerms?.message}</p>

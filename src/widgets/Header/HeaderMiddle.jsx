@@ -5,9 +5,15 @@ import Logo from '../../components/logo/logo';
 import WishlistButton from '../../features/WishlistButton/WishlistButton';
 import CartButton from '../../features/CartButton/CartButton';
 import { useWishlist } from '../../contexts/WishlistContext';
+import { useNavigate } from 'react-router-dom';
 
 function HeaderMiddle() {
+  const navigate = useNavigate();
   const { wishlist } = useWishlist();
+
+  const handleWishlistClick = () => {
+    navigate('/wishlist');
+  };
 
   return (
     <div className={styles.headerMiddle}>
@@ -16,7 +22,10 @@ function HeaderMiddle() {
         <SearchBar />
 
         <div className={styles.headerMiddle__controls}>
-          <WishlistButton count={wishlist.length} />
+          <WishlistButton
+            count={wishlist.length}
+            onClick={handleWishlistClick}
+          />
           <div className={styles.headerMiddle__line}></div>
           <CartButton count={8} totalAmount={153.2} />
         </div>

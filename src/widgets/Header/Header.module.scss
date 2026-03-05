@@ -98,6 +98,18 @@
 
 .headerBottom {
     background-color: var(--gray8);
+    position: relative;
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 150;
+        animation: fadeIn 0.2s ease;
+    }
 
     &__container {
         display: flex;
@@ -121,6 +133,7 @@
         // bottom: -100px;
         // bottom: 0;
         top: calc(100% + 10px);
+        animation: slideDown 0.2s ease;
     }
 
     &__menuToggle {
@@ -128,9 +141,10 @@
         align-items: center;
         gap: 16px;
         text-transform: capitalize;
-
-
-
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
     }
 
     &__menuToggleIcon {
@@ -254,8 +268,7 @@
 
 
 .categoryList {
-
-    border: 1px solid var(-gray-100);
+    border: 1px solid var(--gray1);
     background: var(--white, #FFF);
     list-style: none;
     // ;
@@ -263,17 +276,74 @@
     // flex-direction: column;
     // gap: 32px;
     padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     li {
-        a {
+        button {
             display: block;
+            width: 100%;
             padding: 16px 20px;
-            transition: color 0.3s ease;
-
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--gray6);
+            transition: all 0.3s ease;
+            
             &:hover {
-
                 background-color: var(--primary);
+                color: var(--white);
+                padding-left: 24px;
             }
         }
+    }
+
+    .viewAll {
+        border-top: 1px solid var(--gray2);
+        padding: 0;
+    }
+
+    .viewAllButton {
+        background: none;
+        border: none;
+        width: 100%;
+        padding: 16px 20px !important;
+        font-weight: 600;
+        color: var(--primary);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: var(--gray05) !important;
+            color: var(--primary) !important;
+        }
+    }
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

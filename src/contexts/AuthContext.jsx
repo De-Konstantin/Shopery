@@ -5,6 +5,7 @@ import {
   useEffect,
 } from 'react';
 import axiosInstance from '../utils/axiosInstance';
+import { clearDemoSession, setDemoSession } from '../utils/demoMode';
 
 const AuthContext = createContext(null);
 
@@ -88,6 +89,11 @@ export const AuthProvider = ({ children }) => {
       setToken(access_token);
       setUser(userData);
 
+      // 🔒 Устанавливаем флаг демо-сессии для demo-admin
+      if (userData.email === 'admin@shopery.dev') {
+        setDemoSession();
+      }
+
       return { success: true };
     } catch (error) {
       const errorMessage =
@@ -107,6 +113,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
+    clearDemoSession(); // ➕ Очищаем демо-сессию при логауте
   };
 
   /**

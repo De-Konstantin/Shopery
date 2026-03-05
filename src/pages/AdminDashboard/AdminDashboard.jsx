@@ -7,6 +7,11 @@ import {
   deleteProduct,
   getCategories,
 } from '../../utils/api';
+import {
+  isDemoProduct,
+  deleteDemoProduct,
+  isDemoSession,
+} from '../../utils/demoMode';
 import Button from '../../components/buttons/Button/Button';
 import styles from './AdminDashboard.module.scss';
 
@@ -127,6 +132,22 @@ export default function AdminDashboard() {
     }
 
     try {
+      // ➕ Проверяем, является ли товар демо-товаром
+      if (isDemoProduct(id)) {
+        deleteDemoProduct(id);
+        setProducts(products.filter((p) => p.id !== id));
+        return;
+      }
+
+      // 🔒 Блокируем удаление реальных товаров для демо-админа
+      if (isDemoSession()) {
+        alert(
+          'Demo admin cannot delete real products from the database. You can only delete your own demo products (temporary test items).',
+        );
+        return;
+      }
+
+      // Удаляем реальный товар через API (только для настоящего админа)
       await deleteProduct(id);
       setProducts(products.filter((p) => p.id !== id));
     } catch (err) {
@@ -136,6 +157,22 @@ export default function AdminDashboard() {
   };
 
   const handleEdit = (id) => {
+    // ➕ Проверяем, является ли товар демо-товаром
+    if (isDemoProduct(id)) {
+      // Демо-товары можно редактировать, перенаправляем в форму
+      navigate(`/admin/products/${id}/edit`);
+      return;
+    }
+
+    // 🔒 Блокируем редактирование реальных товаров для демо-админа
+    if (isDemoSession()) {
+      alert(
+        'Demo admin cannot edit real products from the database. You can only edit your own demo products (temporary test items).',
+      );
+      return;
+    }
+
+    // Реальный товар + настоящий админ → разрешаем редактирование
     navigate(`/admin/products/${id}/edit`);
   };
 

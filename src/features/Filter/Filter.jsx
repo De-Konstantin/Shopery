@@ -37,7 +37,7 @@ function Filter({ onFilterChange, totalCount }) {
         ]);
       } catch (error) {
         console.error('Error loading filter metadata:', error);
-        setMetaError('Не удалось загрузить фильтры');
+        setMetaError('Failed to load filters');
       }
       setMetaLoading(false);
     };
@@ -132,9 +132,7 @@ function Filter({ onFilterChange, totalCount }) {
         Reset
       </button>
       {metaLoading && (
-        <div className={styles.filter__loading}>
-          Загрузка фильтров…
-        </div>
+        <div className={styles.filter__loading}>Loading filters…</div>
       )}
       {metaError && !metaLoading && (
         <div className={styles.filter__error}>{metaError}</div>

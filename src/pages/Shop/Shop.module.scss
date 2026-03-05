@@ -2,14 +2,48 @@
     display: flex;
     gap: 20px;
     padding-top: 20px;
+    position: relative;
+}
+
+.filterToggle {
+    display: none;
 }
 
 .sidebar {
     flex: 0 0 200px;
+    max-width: 420px;
 }
 
 .main {
     flex: 1;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.sortContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sortLabel {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.sortSelect {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--gray2);
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--white);
 }
 
 .count {
@@ -53,4 +87,68 @@
     background-color: var(--primary);
     color: white;
     border-color: var(--primary);
+}
+
+.filterOverlay {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .shop {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .filterToggle {
+        display: block;
+        padding: 10px 16px;
+        background-color: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--hard-primary);
+        }
+    }
+
+    .sidebar {
+        flex: 1 1 auto;
+        max-width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        position: relative;
+        z-index: 10;
+    }
+
+    .sidebarOpen {
+        max-height: 1000px;
+        overflow-y: auto;
+    }
+
+    .filterOverlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+    .topBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
 }

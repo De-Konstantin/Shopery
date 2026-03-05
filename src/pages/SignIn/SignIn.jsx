@@ -85,6 +85,7 @@ function SignIn() {
             placeholder="Email"
             {...register('email')}
             className={styles.input}
+            aria-label="Email"
             disabled={isSubmitting}
           />
           <p className={styles.error}>{errors.email?.message}</p>
@@ -94,12 +95,16 @@ function SignIn() {
               placeholder="Password"
               {...register('password')}
               className={styles.input}
+              aria-label="Password"
               disabled={isSubmitting}
             />
             <button
               type="button"
               className={styles.showPassword}
               onClick={() => setShowPassword(!showPassword)}
+              aria-label={
+                showPassword ? 'Hide password' : 'Show password'
+              }
             >
               <span className="icon-eye"></span>
             </button>
@@ -116,7 +121,7 @@ function SignIn() {
               Remember me
             </label>
             <a href="#" className={styles.forgot}>
-              Forget Password
+              Forgot password?
             </a>
           </div>
 
@@ -153,7 +158,8 @@ function SignIn() {
           )}
 
           <p className={styles.register}>
-            Don’t have account? <Link to="/register">Register</Link>
+            Don’t have an account?{' '}
+            <Link to="/register">Register</Link>
           </p>
         </form>
       </section>

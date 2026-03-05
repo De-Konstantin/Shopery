@@ -1,12 +1,19 @@
 import React from 'react';
 import styles from './WishlistButton.module.scss';
 
-function WishlistButton({ count }) {
+function WishlistButton({ count, onClick }) {
   return (
-    <button className={styles.wishlistButton}>
+    <button
+      type="button"
+      className={styles.wishlistButton}
+      aria-label="Wishlist"
+      onClick={onClick}
+    >
       <div className={`${styles.wishlistButton__icon} icon-heart`}>
         {count > 0 && (
-          <span className={styles.wishlistButton__badge}>{count}</span>
+          <span className={styles.wishlistButton__badge}>
+            {count}
+          </span>
         )}
       </div>
     </button>

@@ -31,7 +31,7 @@ export default function ProductPage() {
         setProduct(data);
       } catch (err) {
         console.error('Error loading product:', err);
-        setError('Не удалось загрузить товар');
+        setError('Failed to load product');
         setProduct(null);
       } finally {
         setLoading(false);

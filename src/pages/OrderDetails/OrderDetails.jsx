@@ -28,7 +28,7 @@ export default function OrderDetails() {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        `http://localhost:3000/orders/${orderId}`,
+        `${API_BASE_URL}/orders/${orderId}`,
         {
           method: 'GET',
           headers: {

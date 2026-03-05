@@ -3,8 +3,15 @@
  * Содержит все функции для CRUD операций с товарами
  */
 
+import {
+  mergeWithDemoProducts,
+  isDemoProduct,
+  getAllDemoProducts,
+  isDemoSession,
+} from './demoMode';
+
 // базовый URL backend'а
-const API_BASE_URL =
+export const API_BASE_URL =
   import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 // ============================================
@@ -98,6 +105,20 @@ export const getProducts = async (params = {}) => {
 
     // парсим и возвращаем JSON
     const data = await response.json();
+
+    // ➕ Мержим с демо-товарами только на первой странице
+    if (data.items && Array.isArray(data.items)) {
+      const currentPage = data.meta?.page || 1;
+      if (currentPage === 1) {
+        data.items = mergeWithDemoProducts(data.items);
+        // Пересчитываем total для корректной пагинации
+        if (isDemoSession() && data.meta) {
+          const demoCount = getAllDemoProducts().length;
+          data.meta.total += demoCount;
+        }
+      }
+    }
+
     return data;
   } catch (error) {
     console.error('Error fetching products:', error);
@@ -111,6 +132,16 @@ export const getProducts = async (params = {}) => {
  * @returns {Promise<Object>} объект товара
  */
 export const getProductById = async (id) => {
+  // ➕ Проверка демо-товара
+  if (isDemoProduct(Number(id))) {
+    const demoProducts = getAllDemoProducts();
+    const product = demoProducts.find((p) => p.id === Number(id));
+    if (!product) {
+      throw new Error('Demo product not found');
+    }
+    return product;
+  }
+
   try {
     // выполняем GET запрос к конкретному товару
     const response = await fetch(`${API_BASE_URL}/products/${id}`, {
@@ -531,8 +562,12 @@ export const getFilterMetadata = async () => {
             .forEach((cat) => categoriesSet.add(cat));
         }
         if (p.tags) {
-          p.tags
-            .split(',')
+          // ➕ Поддержка tags как строки или массива (для демо-товаров)
+          const tagsList = Array.isArray(p.tags)
+            ? p.tags
+            : p.tags.split(',');
+
+          tagsList
             .map((t) => t.trim().toLowerCase())
             .filter(Boolean)
             .forEach((tag) => {

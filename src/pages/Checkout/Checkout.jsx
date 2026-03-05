@@ -2,9 +2,12 @@ import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import { useAuth } from '../../contexts/AuthContext';
+import { toast } from 'react-toastify';
 import Button from '../../components/buttons/Button/Button';
+import StripePayment from '../../components/StripePayment/StripePayment';
 import styles from './Checkout.module.scss';
 import { createOrder } from '../../utils/api';
+import { getDemoProductsInCart } from '../../utils/demoMode';
 
 const demoMode = import.meta.env.VITE_DEMO_MODE === 'true';
 
@@ -21,6 +24,8 @@ function Checkout() {
     phone: user?.phone || '',
     address: user?.address || '',
   });
+  const [paymentMethod, setPaymentMethod] = useState('cash'); // 'cash' or 'card'
+  const [showStripePayment, setShowStripePayment] = useState(false);
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -53,20 +58,41 @@ function Checkout() {
     setError('');
 
     if (!orderItems.length) {
-      setError('Корзина пуста.');
+      setError('Cart is empty.');
+      return;
+    }
+
+    // Check for demo products in cart
+    const demoProducts = getDemoProductsInCart(items);
+    if (demoProducts.length > 0) {
+      const demoTitles = demoProducts.map((p) => p.title).join(', ');
+      setError(
+        `Demo products cannot be purchased: ${demoTitles}. Please remove them from your cart.`,
+      );
       return;
     }
 
     if (!form.address) {
-      setError('Укажите адрес доставки.');
+      setError('Please provide shipping address.');
       return;
     }
 
     if (!isAuthenticated && (!form.fullName || !form.email)) {
-      setError('Для гостевого заказа укажите имя и email.');
+      setError('For guest checkout, please provide name and email.');
       return;
     }
 
+    // If card payment selected - show Stripe form
+    if (paymentMethod === 'card') {
+      setShowStripePayment(true);
+      return;
+    }
+
+    // Process order with cash payment
+    await processOrder();
+  };
+
+  const processOrder = async (paymentIntentId = null) => {
     const payload = {
       items: orderItems,
       shippingAddress: form.address,
@@ -83,20 +109,80 @@ function Checkout() {
         state: { order: orderData },
       });
     } catch {
-      setError('Не удалось оформить заказ. Попробуйте еще раз.');
+      setError('Failed to place order. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handlePaymentSuccess = (paymentIntent) => {
+    console.log('Payment successful:', paymentIntent.id);
+    // Pass form data and orderItems to processOrder
+    const payload = {
+      items: orderItems,
+      shippingAddress: form.address,
+      guestName: isAuthenticated ? undefined : form.fullName,
+      guestEmail: isAuthenticated ? undefined : form.email,
+      guestPhone: isAuthenticated ? undefined : form.phone,
+    };
+    processOrderWithPayment(payload, paymentIntent.id);
+  };
+
+  const processOrderWithPayment = async (
+    payload,
+    paymentIntentId,
+  ) => {
+    try {
+      setIsSubmitting(true);
+      console.log('Creating order with payload:', payload);
+      const orderData = await createOrder(payload);
+      console.log('Order created successfully:', orderData);
+      emptyCart();
+      navigate(`/order-success/${orderData.id}`, {
+        state: { order: orderData },
+      });
+    } catch (err) {
+      console.error('Order creation error:', err);
+      const errorMsg =
+        err.response?.data?.message ||
+        err.message ||
+        'Failed to create order';
+      setError(errorMsg);
+      setShowStripePayment(false);
+      toast.error(errorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handlePaymentError = (error) => {
+    console.error('Payment error:', error);
+    setShowStripePayment(false);
+  };
+
+  // Show Stripe payment form
+  if (showStripePayment) {
+    return (
+      <section className={`${styles.checkout} _container`}>
+        <h2 className={styles.title}>Payment</h2>
+        <StripePayment
+          amount={Math.round(cartTotal * 100)} // convert to cents
+          onSuccess={handlePaymentSuccess}
+          onError={handlePaymentError}
+          onCancel={() => setShowStripePayment(false)}
+        />
+      </section>
+    );
+  }
+
   if (isEmpty) {
     return (
       <section className={`${styles.checkout} _container`}>
         <div className={styles.emptyState}>
-          <h2>Корзина пуста</h2>
-          <p>Добавьте товары, чтобы оформить заказ.</p>
+          <h2>Your cart is empty</h2>
+          <p>Add products to continue checkout.</p>
           <Button onClick={() => navigate('/shop')}>
-            Перейти в каталог
+            Go to Shop
           </Button>
         </div>
       </section>
@@ -161,10 +247,55 @@ function Checkout() {
             </Button>
           )}
 
+          <div className={styles.paymentMethod}>
+            <h3>Payment method</h3>
+            <div className={styles.paymentOptions}>
+              <label className={styles.paymentOption}>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="cash"
+                  checked={paymentMethod === 'cash'}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+                <div className={styles.paymentOptionContent}>
+                  <span className={styles.paymentOptionTitle}>
+                    Cash on delivery
+                  </span>
+                  <span className={styles.paymentOptionDescription}>
+                    Pay with cash when you receive your order
+                  </span>
+                </div>
+              </label>
+
+              <label className={styles.paymentOption}>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="card"
+                  checked={paymentMethod === 'card'}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+                <div className={styles.paymentOptionContent}>
+                  <span className={styles.paymentOptionTitle}>
+                    Card payment (Stripe)
+                  </span>
+                  <span className={styles.paymentOptionDescription}>
+                    Secure online card payment
+                  </span>
+                </div>
+              </label>
+            </div>
+          </div>
+
           {error && <p className={styles.error}>{error}</p>}
 
           <Button type="submit" width="long" disabled={isSubmitting}>
-            {isSubmitting ? 'Placing order...' : 'Place order'}
+            {isSubmitting
+              ? 'Placing order...'
+              : paymentMethod === 'card'
+                ? 'Proceed to payment'
+                : 'Place order'}
           </Button>
         </form>
 

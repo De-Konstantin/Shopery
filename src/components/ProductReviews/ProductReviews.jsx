@@ -4,6 +4,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Button from '../buttons/Button/Button';
 import styles from './ProductReviews.module.scss';
+import { API_BASE_URL } from '../../utils/api';
+import { isDemoProduct } from '../../utils/demoMode';
 
 export default function ProductReviews({ productId }) {
   const { isAuthenticated, user } = useAuth();
@@ -31,8 +33,16 @@ export default function ProductReviews({ productId }) {
     try {
       setLoading(true);
       setError(null);
+
+      // ➕ Для демо-товаров не загружаем отзывы
+      if (isDemoProduct(productId)) {
+        setReviews([]);
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch(
-        `http://localhost:3000/products/${productId}/reviews`,
+        `${API_BASE_URL}/products/${productId}/reviews`,
         {
           method: 'GET',
           headers: {
@@ -73,7 +83,7 @@ export default function ProductReviews({ productId }) {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        `http://localhost:3000/products/${productId}/reviews`,
+        `${API_BASE_URL}/products/${productId}/reviews`,
         {
           method: 'POST',
           headers: {
@@ -121,7 +131,7 @@ export default function ProductReviews({ productId }) {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://localhost:3000/products/${productId}/reviews/${reviewId}`,
+        `${API_BASE_URL}/products/${productId}/reviews/${reviewId}`,
         {
           method: 'PATCH',
           headers: {
@@ -160,7 +170,7 @@ export default function ProductReviews({ productId }) {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://localhost:3000/products/${productId}/reviews/${reviewId}`,
+        `${API_BASE_URL}/products/${productId}/reviews/${reviewId}`,
         {
           method: 'DELETE',
           headers: {

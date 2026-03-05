@@ -2,8 +2,8 @@
 
 .resetBtn {
     display: flex;
-    background-color: #71926e;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--white);
     border: none;
     padding: 4px 8px;
     border-radius: 40px;
@@ -93,7 +93,7 @@
 
     label {
         padding: 3px 6px;
-        background: #e4dfdf;
+        background: var(--gray05);
         border: 1px solid transparent;
         border-radius: 20px;
         // font-size: 14px;
@@ -112,4 +112,10 @@
     }
 
 
+}
+
+@media (max-width: 992px) {
+    .filter__section {
+        max-width: 100%;
+    }
 }

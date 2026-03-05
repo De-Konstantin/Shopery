@@ -110,3 +110,70 @@
         margin-bottom: 20px;
     }
 }
+
+.paymentMethod {
+    margin-top: 10px;
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--gray9);
+    }
+}
+
+.paymentOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.paymentOption {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid var(--gray1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        border-color: var(--gray3);
+        background: var(--gray05);
+    }
+
+    input[type='radio'] {
+        margin-top: 3px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+    }
+
+    input[type='radio']:checked ~ .paymentOptionContent {
+        .paymentOptionTitle {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    }
+}
+
+.paymentOptionContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.paymentOptionTitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray9);
+    transition: all 0.3s;
+}
+
+.paymentOptionDescription {
+    font-size: 13px;
+    color: var(--gray6);
+}

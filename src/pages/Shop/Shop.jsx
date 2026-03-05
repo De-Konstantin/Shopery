@@ -9,6 +9,9 @@ import ReactPaginate from 'react-paginate';
 
 function Shop() {
   const location = useLocation();
+  const searchQuery =
+    new URLSearchParams(location.search).get('search')?.trim() || '';
+  const [showFilter, setShowFilter] = useState(false);
   const [filters, setFilters] = useState({
     tags: [],
     price: [],
@@ -40,6 +43,8 @@ function Shop() {
 
   // Загрузка товаров с API с учетом фильтров и пагинации
   useEffect(() => {
+    let isCancelled = false;
+
     const loadProducts = async () => {
       setLoading(true);
       setError(null);
@@ -74,8 +79,17 @@ function Shop() {
         if (sortBy !== 'newest') {
           params.sort = sortBy;
         }
+
+        if (searchQuery) {
+          params.search = searchQuery;
+        }
+
         // Запрос к API
         const response = await getProducts(params);
+
+        if (isCancelled) {
+          return;
+        }
 
         // Обновляем состояние товарами и метаданными пагинации
         setProducts(response.items || []);
@@ -85,22 +99,36 @@ function Shop() {
           totalPages: response.meta?.totalPages || 0,
         }));
       } catch (err) {
+        if (isCancelled) {
+          return;
+        }
+
         console.error('Error loading products:', err);
-        setError(
-          'Ошибка загрузки товаров. Пожалуйста, попробуйте позже.',
-        );
+        setError('Failed to load products. Please try again later.');
       } finally {
-        setLoading(false);
+        if (!isCancelled) {
+          setLoading(false);
+        }
       }
     };
 
     loadProducts();
-  }, [filters, pagination.page, pagination.limit, sortBy]);
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [
+    filters,
+    pagination.page,
+    pagination.limit,
+    sortBy,
+    searchQuery,
+  ]);
 
   // При смене фильтров или сортировки возвращаемся на первую страницу
   useEffect(() => {
     setPagination((prev) => ({ ...prev, page: 1 }));
-  }, [filters, sortBy]);
+  }, [filters, sortBy, searchQuery]);
 
   // Обработчик смены страницы
   const handlePageChange = (event) => {
@@ -117,69 +145,55 @@ function Shop() {
 
   return (
     <div className={`${styles.shop} _container`}>
-      <aside className={styles.sidebar}>
+      <button
+        className={styles.filterToggle}
+        onClick={() => setShowFilter(!showFilter)}
+        aria-label="Toggle filters"
+      >
+        {showFilter ? 'Hide Filters' : 'Show Filters'}
+      </button>
+      <aside
+        className={`${styles.sidebar} ${showFilter ? styles.sidebarOpen : ''}`}
+      >
         <Filter
           onFilterChange={setFilters}
           totalCount={pagination.total}
         />
       </aside>
-      <main className={styles.main}>
+      {showFilter && (
         <div
-          className={styles.topBar}
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '20px',
-          }}
-        >
+          className={styles.filterOverlay}
+          onClick={() => setShowFilter(false)}
+        />
+      )}
+      <main className={styles.main}>
+        <div className={styles.topBar}>
           {/* Отображаем количество */}
           <p className={styles.count}>
             {loading
-              ? 'Загрузка...'
+              ? 'Loading...'
               : error
                 ? error
                 : pagination.total === 0
-                  ? 'Товары не найдены'
-                  : `${startIndex}–${endIndex} из ${pagination.total}`}
+                  ? 'No products found'
+                  : `${startIndex}–${endIndex} of ${pagination.total}`}
           </p>
 
           {/* Выбор сортировки */}
-          <div
-            className={styles.sortContainer}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
-          >
-            <label
-              htmlFor="sort-select"
-              style={{ fontWeight: '500', fontSize: '14px' }}
-            >
-              Сортировка:
+          <div className={styles.sortContainer}>
+            <label htmlFor="sort-select" className={styles.sortLabel}>
+              Sort by:
             </label>
             <select
               id="sort-select"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              style={{
-                padding: '8px 12px',
-                borderRadius: '4px',
-                border: '1px solid #ddd',
-                fontSize: '14px',
-                cursor: 'pointer',
-                backgroundColor: '#fff',
-              }}
+              className={styles.sortSelect}
             >
-              <option value="newest">Новые</option>
-              <option value="price_asc">
-                Цена: от меньше к больше
-              </option>
-              <option value="price_desc">
-                Цена: от больше к меньше
-              </option>
-              <option value="rating_desc">По рейтингу</option>
+              <option value="newest">Newest</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+              <option value="rating_desc">Rating</option>
             </select>
           </div>
         </div>
@@ -196,7 +210,7 @@ function Shop() {
         ) : error ? (
           <div className={styles.error}>{error}</div>
         ) : products.length === 0 ? (
-          <div className={styles.empty}>Товары не найдены</div>
+          <div className={styles.empty}>No products found</div>
         ) : (
           <div className={styles.products}>
             {products.map((p) => (

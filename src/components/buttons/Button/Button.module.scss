@@ -42,6 +42,16 @@
     &:hover {
         background-color: var(--hard-primary);
     }
+
+    &:focus-visible {
+        outline: 2px solid var(--hard-primary);
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 }
 
 .border {
@@ -54,6 +64,16 @@
         border-color: var(--hard-primary);
         color: var(--hard-primary);
     }
+
+    &:focus-visible {
+        outline: 2px solid var(--hard-primary);
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 }
 
 .ghost {
@@ -65,5 +85,15 @@
     &:hover {
         background-color: var(--gray3);
         color: var(--hard-primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--hard-primary);
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
     }
 }

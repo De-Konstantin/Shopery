@@ -8,6 +8,13 @@ import {
   uploadProductImage,
   getCategories,
 } from '../../utils/api';
+import {
+  isDemoSession,
+  isDemoProduct,
+  addDemoProduct,
+  updateDemoProduct,
+  getAllDemoProducts,
+} from '../../utils/demoMode';
 import Button from '../../components/buttons/Button/Button';
 import styles from './ProductForm.module.scss';
 
@@ -63,6 +70,37 @@ export default function ProductForm() {
     try {
       setLoading(true);
       setError(null);
+
+      // Check if it's a demo product first
+      if (isDemoProduct(Number(id))) {
+        const demoProducts = getAllDemoProducts();
+        const product = demoProducts.find((p) => p.id === Number(id));
+
+        if (product) {
+          setFormData({
+            name: product.productName || '',
+            slug: product.slug || '',
+            price: product.priceOrigin || '',
+            discount: product.discount || '',
+            quantity: product.quantity || '',
+            category: product.category || '',
+            description: product.description || '',
+            images: Array.isArray(product.images)
+              ? product.images
+              : [],
+            tags: Array.isArray(product.tags)
+              ? product.tags.join(', ')
+              : product.tags
+                ? product.tags.split(',').join(', ')
+                : '',
+            weight: product.weight || '',
+          });
+          setLoading(false);
+          return;
+        }
+      }
+
+      // Load from API for real products
       const productsResponse = await getProducts({
         page: 1,
         limit: 100,
@@ -89,9 +127,11 @@ export default function ProductForm() {
           category: product.category || '',
           description: product.description || '',
           images: Array.isArray(product.images) ? product.images : [],
-          tags: product.tags
-            ? product.tags.split(',').join(', ')
-            : '',
+          tags: Array.isArray(product.tags)
+            ? product.tags.join(', ')
+            : product.tags
+              ? product.tags.split(',').join(', ')
+              : '',
           weight: product.weight || '',
         });
       } else {
@@ -116,6 +156,14 @@ export default function ProductForm() {
   const handleImageUpload = async (e) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
+
+    if (isDemoSession()) {
+      setError(
+        'Demo mode: file upload is disabled. Use "Add Image URL" to attach images.',
+      );
+      e.target.value = '';
+      return;
+    }
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
@@ -226,16 +274,62 @@ export default function ProductForm() {
       };
 
       if (isEditing) {
-        await updateProduct(id, payload);
-        setSuccess('Product updated successfully!');
+        // Check if editing a demo product
+        if (isDemoProduct(id)) {
+          updateDemoProduct(parseInt(id, 10), {
+            productName: payload.name,
+            slug: payload.slug,
+            priceOrigin: payload.price,
+            discount: payload.discount,
+            quantity: payload.quantity,
+            category: payload.category,
+            description: payload.description,
+            images: payload.images,
+            tags: payload.tags,
+            weight: payload.weight,
+          });
+          setSuccess('Demo product updated successfully!');
+        } else {
+          // 🔒 Блокируем редактирование реальных товаров для демо-админа
+          if (isDemoSession()) {
+            setError(
+              'Demo admin cannot edit real products from the database. You can only edit your own demo products (temporary test items).',
+            );
+            setSubmitting(false);
+            return;
+          }
+          await updateProduct(id, payload);
+          setSuccess('Product updated successfully!');
+        }
       } else {
-        await createProduct(payload);
-        setSuccess('Product created successfully!');
-        toast.success('Product created successfully!');
+        // Check if in demo session for new product
+        if (isDemoSession()) {
+          const newProduct = addDemoProduct({
+            productName: payload.name,
+            slug: payload.slug,
+            priceOrigin: payload.price,
+            discount: payload.discount,
+            quantity: payload.quantity,
+            category: payload.category,
+            description: payload.description,
+            images: payload.images,
+            tags: payload.tags,
+            weight: payload.weight,
+          });
+          setSuccess('Demo product created successfully!');
+          toast.success('Demo product created!');
+        } else {
+          await createProduct(payload);
+          setSuccess('Product created successfully!');
+          toast.success('Product created successfully!');
+        }
       }
-      toast.success(
-        isEditing ? 'Product updated!' : 'Product created!',
-      );
+
+      if (!isEditing || !isDemoSession()) {
+        toast.success(
+          isEditing ? 'Product updated!' : 'Product created!',
+        );
+      }
 
       if (finalCategory && !categories.includes(finalCategory)) {
         setCategories((prev) => [...prev, finalCategory]);

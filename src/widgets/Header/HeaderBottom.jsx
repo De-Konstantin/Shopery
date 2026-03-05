@@ -1,18 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Header.module.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
 
 function HeaderBottom() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
+  // Закрыть меню при нажатии Escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isSidebarOpen) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    if (isSidebarOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isSidebarOpen]);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className={styles.headerBottom}>
+      {/* Overlay backdrop для закрытия меню при клике вне */}
+      {isSidebarOpen && (
+        <div
+          className={styles.headerBottom__overlay}
+          onClick={closeSidebar}
+        />
+      )}
+
       <div className={`${styles.headerBottom__container} _container`}>
         <div className={styles.headerBottom__sidebarWrapper}>
           <button
             className={styles.headerBottom__menuToggle}
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isSidebarOpen}
           >
             <div
               className={`${styles.headerBottom__menuToggleIcon} ${isSidebarOpen ? styles.open : ''}`}
@@ -30,7 +61,10 @@ function HeaderBottom() {
           </button>
 
           {isSidebarOpen && (
-            <SidebarMenu className={styles.headerBottom__sidebar} />
+            <SidebarMenu
+              className={styles.headerBottom__sidebar}
+              onClose={closeSidebar}
+            />
           )}
         </div>
         <nav className={styles.headerBottom__mainNav}>
@@ -61,7 +95,7 @@ function HeaderBottom() {
                 className={({ isActive }) =>
                   isActive ? 'headerMenuLink' : ''
                 }
-                to="/blog-disabled"
+                to="/404"
               >
                 Blog
               </NavLink>
