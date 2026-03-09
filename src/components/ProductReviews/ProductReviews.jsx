@@ -99,9 +99,12 @@ export default function ProductReviews({ productId }) {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(
-          errorData.message || 'Failed to submit review',
-        );
+        const errorMsg =
+          response.status === 403
+            ? errorData.message ||
+              'Comments are disabled in demo mode'
+            : errorData.message || 'Failed to submit review';
+        throw new Error(errorMsg);
       }
 
       // Очистить форму и перезагрузить отзывы
@@ -147,9 +150,12 @@ export default function ProductReviews({ productId }) {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(
-          errorData.message || 'Failed to update review',
-        );
+        const errorMsg =
+          response.status === 403
+            ? errorData.message ||
+              'Comments are disabled in demo mode'
+            : errorData.message || 'Failed to update review';
+        throw new Error(errorMsg);
       }
 
       setEditingId(null);
@@ -182,9 +188,12 @@ export default function ProductReviews({ productId }) {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(
-          errorData.message || 'Failed to delete review',
-        );
+        const errorMsg =
+          response.status === 403
+            ? errorData.message ||
+              'Comments are disabled in demo mode'
+            : errorData.message || 'Failed to delete review';
+        throw new Error(errorMsg);
       }
 
       toast.success('Отзыв успешно удалён!');
@@ -232,7 +241,7 @@ export default function ProductReviews({ productId }) {
         <h2 className={styles.title}>
           Customer Reviews ({reviews.length})
         </h2>
-        {isAuthenticated ? (
+        {isAuthenticated && user?.role === 'admin' ? (
           <Button
             onClick={() => setShowForm(!showForm)}
             variant="fill"
@@ -240,13 +249,26 @@ export default function ProductReviews({ productId }) {
           >
             {showForm ? 'Cancel' : 'Write a Review'}
           </Button>
+        ) : isAuthenticated ? (
+          <div
+            style={{
+              padding: '10px 16px',
+              backgroundColor: '#fff3cd',
+              borderRadius: '4px',
+              color: '#856404',
+              fontSize: '12px',
+              fontWeight: '500',
+            }}
+          >
+            ℹ️ Reviews are closed in demo mode
+          </div>
         ) : (
           <Button
             onClick={() => navigate('/signin')}
             variant="fill"
             size="small"
           >
-            Sign In to Review
+            Sign In
           </Button>
         )}
       </div>

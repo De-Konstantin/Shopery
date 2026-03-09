@@ -1,0 +1,1770 @@
+<testsuites id="" name="" tests="44" failures="44" skipped="0" errors="0" time="206.600001">
+<testsuite name="checkout.e2e.js" timestamp="2026-03-09T18:49:17.098Z" hostname="chromium" tests="11" failures="11" skipped="0" time="0.145" errors="0">
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:24:5 ✅ Главная: страниця загружается корректно" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:24:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт" classname="checkout.e2e.js" time="0.01">
+<failure message="checkout.e2e.js:44:5 ✅ Регистрация: user может создать аккаунт" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:44:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:82:5 ✅ Вход: user может залогиниться demo-аккаунтом" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:82:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:128:5 ✅ Каталог: показывает список товаров" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:128:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:157:5 ✅ Фильтр: фильтрует товары по цене" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:157:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:185:5 ✅ Товар: открывает страницу товара при клике" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:185:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow" classname="checkout.e2e.js" time="0.016">
+<failure message="checkout.e2e.js:228:5 ✅ Checkout: completes full checkout flow" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:228:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:330:5 ❌ DEMO Mode: блокирует оплату демо-товаров" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:330:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:373:5 ✅ Мои заказы: user может просмотреть историю заказов" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:373:5 › 🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны" classname="checkout.e2e.js" time="0.015">
+<failure message="checkout.e2e.js:412:5 ✅ Навигация: все основные страницы доступны" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:412:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:443:5 ✅ Console: нет критичных ошибок в console" type="FAILURE">
+<![CDATA[  [chromium] › checkout.e2e.js:443:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-chromium-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="checkout.e2e.js" timestamp="2026-03-09T18:49:17.098Z" hostname="firefox" tests="11" failures="11" skipped="0" time="0.139" errors="0">
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно" classname="checkout.e2e.js" time="0.016">
+<failure message="checkout.e2e.js:24:5 ✅ Главная: страниця загружается корректно" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:24:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:44:5 ✅ Регистрация: user может создать аккаунт" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:44:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:82:5 ✅ Вход: user может залогиниться demo-аккаунтом" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:82:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:128:5 ✅ Каталог: показывает список товаров" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:128:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:157:5 ✅ Фильтр: фильтрует товары по цене" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:157:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:185:5 ✅ Товар: открывает страницу товара при клике" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:185:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:228:5 ✅ Checkout: completes full checkout flow" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:228:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:330:5 ❌ DEMO Mode: блокирует оплату демо-товаров" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:330:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:373:5 ✅ Мои заказы: user может просмотреть историю заказов" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:373:5 › 🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны" classname="checkout.e2e.js" time="0.009">
+<failure message="checkout.e2e.js:412:5 ✅ Навигация: все основные страницы доступны" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:412:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:443:5 ✅ Console: нет критичных ошибок в console" type="FAILURE">
+<![CDATA[  [firefox] › checkout.e2e.js:443:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-firefox-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="checkout.e2e.js" timestamp="2026-03-09T18:49:17.098Z" hostname="webkit" tests="11" failures="11" skipped="0" time="0.144" errors="0">
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно" classname="checkout.e2e.js" time="0.016">
+<failure message="checkout.e2e.js:24:5 ✅ Главная: страниця загружается корректно" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:24:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:44:5 ✅ Регистрация: user может создать аккаунт" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:44:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:82:5 ✅ Вход: user может залогиниться demo-аккаунтом" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:82:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров" classname="checkout.e2e.js" time="0.016">
+<failure message="checkout.e2e.js:128:5 ✅ Каталог: показывает список товаров" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:128:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене" classname="checkout.e2e.js" time="0.015">
+<failure message="checkout.e2e.js:157:5 ✅ Фильтр: фильтрует товары по цене" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:157:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике" classname="checkout.e2e.js" time="0.015">
+<failure message="checkout.e2e.js:185:5 ✅ Товар: открывает страницу товара при клике" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:185:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:228:5 ✅ Checkout: completes full checkout flow" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:228:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:330:5 ❌ DEMO Mode: блокирует оплату демо-товаров" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:330:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов" classname="checkout.e2e.js" time="0.01">
+<failure message="checkout.e2e.js:373:5 ✅ Мои заказы: user может просмотреть историю заказов" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:373:5 › 🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:412:5 ✅ Навигация: все основные страницы доступны" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:412:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:443:5 ✅ Console: нет критичных ошибок в console" type="FAILURE">
+<![CDATA[  [webkit] › checkout.e2e.js:443:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-webkit-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="checkout.e2e.js" timestamp="2026-03-09T18:49:17.098Z" hostname="Mobile Chrome" tests="11" failures="11" skipped="0" time="0.144" errors="0">
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно" classname="checkout.e2e.js" time="0.011">
+<failure message="checkout.e2e.js:24:5 ✅ Главная: страниця загружается корректно" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:24:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Главная: страниця загружается корректно 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-06608-аниця-загружается-корректно-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:44:5 ✅ Регистрация: user может создать аккаунт" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:44:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Регистрация: user может создать аккаунт 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a4e4c--user-может-создать-аккаунт-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:82:5 ✅ Вход: user может залогиниться demo-аккаунтом" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:82:5 › 🛒 Shopery Smoke Tests › Auth Flow (Вход в систему) › ✅ Вход: user может залогиниться demo-аккаунтом 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-31bd9-залогиниться-demo-аккаунтом-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:128:5 ✅ Каталог: показывает список товаров" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:128:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Каталог: показывает список товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-8e4ca-г-показывает-список-товаров-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:157:5 ✅ Фильтр: фильтрует товары по цене" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:157:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Фильтр: фильтрует товары по цене 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-e5006-тр-фильтрует-товары-по-цене-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:185:5 ✅ Товар: открывает страницу товара при клике" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:185:5 › 🛒 Shopery Smoke Tests › Shop (Каталог товаров) › ✅ Товар: открывает страницу товара при клике 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-fa28a-т-страницу-товара-при-клике-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow" classname="checkout.e2e.js" time="0.013">
+<failure message="checkout.e2e.js:228:5 ✅ Checkout: completes full checkout flow" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:228:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ✅ Checkout: completes full checkout flow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-f9760-ompletes-full-checkout-flow-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Cart &amp; Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:330:5 ❌ DEMO Mode: блокирует оплату демо-товаров" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:330:5 › 🛒 Shopery Smoke Tests › Cart & Checkout (Корзина и оплата) › ❌ DEMO Mode: блокирует оплату демо-товаров 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-a766c-окирует-оплату-демо-товаров-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов" classname="checkout.e2e.js" time="0.015">
+<failure message="checkout.e2e.js:373:5 ✅ Мои заказы: user может просмотреть историю заказов" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:373:5 › 🛒 Shopery Smoke Tests › User Profile (Профіль користувача) › ✅ Мои заказы: user может просмотреть историю заказов 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-97c1b-просмотреть-историю-заказов-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны" classname="checkout.e2e.js" time="0.014">
+<failure message="checkout.e2e.js:412:5 ✅ Навигация: все основные страницы доступны" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:412:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Навигация: все основные страницы доступны 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-13e94--основные-страницы-доступны-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+<testcase name="🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console" classname="checkout.e2e.js" time="0.012">
+<failure message="checkout.e2e.js:443:5 ✅ Console: нет критичных ошибок в console" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › checkout.e2e.js:443:5 › 🛒 Shopery Smoke Tests › Health Checks (Проверка стабільності) › ✅ Console: нет критичных ошибок в console 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\De-Konst\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-Mobile-Chrome-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-Mobile-Chrome-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-err>
+<![CDATA[
+Warning: attachment checkout.e2e.js-🛒-Shopery-7afcf--критичных-ошибок-в-console-Mobile-Chrome-retry1\trace.zip is missing]]>
+</system-err>
+</testcase>
+</testsuite>
+</testsuites>
